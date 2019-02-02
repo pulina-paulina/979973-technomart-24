@@ -5,8 +5,6 @@
 	<title>technomart-catalog</title>
 </head>
 <body>
-</head>
-<body>
 	<header class="main-header">
 		<div class="shopping-bar">
 			<a href="index.html" class="logo">Техномарт</a>
@@ -56,15 +54,37 @@
 		</ul>
 		<section class="filters">
 			<h2>Фильтры товаров</h2>
-			<!--здесь будет форма-->
+			<form>
+				<label for="manufacturers_checkbox"><h3>Производители:</h3>
+					<input type="checkbox" name="manufacturers" id="manufacturers_checkbox" value="BOSCH" checked>BOSCH<br>
+					<input type="checkbox" name="manufacturers" id="manufacturers_checkbox" value="Интерскол">Интерсол<br>
+					<input type="checkbox" name="manufacturers" id="manufacturers_checkbox" value="Makita" checked>Makita<br>
+					<input type="checkbox" name="manufacturers" id="manufacturers_checkbox" value="Dewalt">Dewalt<br>
+					<input type="checkbox" name="manufacturers" id="manufacturers_checkbox" value="Hitachi">Hitachi<br>
+				</label>
+			</form>
+			<form>
+				<label for="supply"><h3>Питание:</h3>
+					<input type="radio" value="rechargeable" name="supply" checked>Аккумуляторные<br>
+					<input type="radio" value="networked" name="supply">Сетевые<br>
+				</label>
+			</form>
+			<label for="sorting">Сортировка:
+				<select id="sorting" name="sorting_goods">
+					<option value="by price">по цене</option>
+					<option value="by type">по типу</option>
+					<option value="by functional">по функционалу</option>
+				</select>
+			</label>
+			<p><a href="#">Показать</a></p>
 		</section>
 		<section class="catalog">
 			<h2>Список перфораторов</h2>
 			<ul class="catalog-lits">
 				<li class="catalog-item">
-					<h3><a href="catalog-lits.html"><span class="product-name">Перфоратор BOSCH BFG 3000</span></a></h3>
+					<h3><a href="catalog-lits.html">Перфоратор BOSCH BFG 3000</a></h3>
 					<p>
-						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 3000" width="#" height="#"></a>
+						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 3000" width="218px" height="170px"></a>
 					</p>
 					<button class="buy-button">Купить</button>
 					<button class="bookmark-button">В закладки</button>
@@ -74,9 +94,9 @@
 					</p>
 				</li>
 				<li class="catalog-item">
-					<h3><a href="catalog-lits.html"><span class="product-name">Перфоратор BOSCH BFG 6000</span></a></h3>
+					<h3><a href="catalog-lits.html">Перфоратор BOSCH BFG 6000</a></h3>
 					<p>
-						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 6000" width="#" height="#"></a>
+						<a href="catalog-item.html"><img src="img/Perforator_2" alt="Перфоратор BOSCH BFG 6000" width="218px" height="170px"></a>
 					</p>
 					<button class="buy-button">Купить</button>
 					<button class="bookmark-button">В закладки</button>
@@ -86,9 +106,9 @@
 					</p>
 				</li>
 				<li class="catalog-item">
-					<h3><a href="catalog-lits.html"><span class="product-name">Перфоратор BOSCH BFG 2000</span></a></h3>
+					<h3><a href="catalog-lits.html">Перфоратор BOSCH BFG 2000</a></h3>
 					<p>
-						<a href="catalog-item.html"><img src="img/Perforator_1" alt="img-hover" width="#" height="#"></a>
+						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 2000" width="218px" height="170px"></a>
 					</p>
 					<span class="new">new</span>
 					<button class="buy-button">Купить</button>
@@ -98,9 +118,9 @@
 					</p>
 				</li>
 				<li class="catalog-item">
-					<h3><a href="catalog-lits.html"><span class="product-name">Перфоратор BOSCH BFG 3000</span></a></h3>
+					<h3><a href="catalog-lits.html">Перфоратор BOSCH BFG 3000</a></h3>
 					<p>
-						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 3000" width="#" height="#"></a>
+						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 3000" width="218px" height="170px"></a>
 					</p>
 
 					<button class="buy-button">Купить</button>
@@ -111,9 +131,9 @@
 					</p>
 				</li>
 				<li class="catalog-item">
-					<h3><a href="catalog-lits.html"><span class="product-name">Перфоратор BOSCH BFG 6000</span></a></h3>
+					<h3><a href="catalog-lits.html">Перфоратор BOSCH BFG 6000</a></h3>
 					<p>
-						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 6000" width="#" height="#"></a>
+						<a href="catalog-item.html"><img src="img/Perforator_2" alt="Перфоратор BOSCH BFG 6000" width="218px" height="170px"></a>
 					</p>
 					<span class="new">new</span>
 					<button class="buy-button">Купить</button>
@@ -124,22 +144,20 @@
 					</p>
 				</li>
 				<li class="catalog-item">
-					<h3><a href="catalog-lits.html"><span class="product-name">Перфоратор BOSCH BFG 2000</span></a></h3>
+					<h3><a href="catalog-lits.html">Перфоратор BOSCH BFG 2000</a></h3>
 					<p>
-						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 2000" width="#" height="#"></a>
+						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 2000" width="218px" height="170px"></a>
 					</p>
-
 					<button class="buy-button">Купить</button>
 					<button class="bookmark-button">В закладки</button>
 					<p>
 						<span class="new-price" href="#"> 12500 Р.</span>
 					</p>
-
 				</li>
 				<li class="catalog-item">
-					<h3><a href="catalog-lits.html"><span class="product-name">Перфоратор BOSCH BFG 3000</span></a></h3>
+					<h3><a href="catalog-lits.html">Перфоратор BOSCH BFG 3000</a></h3>
 					<p>
-						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 3000" width="#" height="#"></a>
+						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 3000" width="218px" height="170px"></a>
 					</p>
 					<span class="new">new</span>
 					<button class="buy-button">Купить</button>
@@ -150,9 +168,9 @@
 					</p>
 				</li>
 				<li class="catalog-item">
-					<h3><a href="catalog-lits.html"><span class="product-name">Перфоратор BOSCH BFG 6000</span></a></h3>
+					<h3><a href="catalog-lits.html">Перфоратор BOSCH BFG 6000</a></h3>
 					<p>
-						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 6000" width="#" height="#"></a>
+						<a href="catalog-item.html"><img src="img/Perforator_2" alt="Перфоратор BOSCH BFG 6000" width="218px" height="170px"></a>
 					</p>
 
 					<button class="buy-button">Купить</button>
@@ -163,9 +181,9 @@
 					</p>
 				</li>
 				<li class="catalog-item">
-					<h3><a href="catalog-lits.html"><span class="product-name">Перфоратор BOSCH BFG 2000</span></a></h3>
+					<h3><a href="catalog-lits.html">Перфоратор BOSCH BFG 2000</a></h3>
 					<p>
-						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 2000" width="#" height="#"></a>
+						<a href="catalog-item.html"><img src="img/Perforator_1" alt="Перфоратор BOSCH BFG 2000" width="218px" height="170px"></a>
 					</p>
 					<button class="buy-button">Купить</button>
 					<button class="bookmark-button">В закладки</button>
@@ -185,8 +203,14 @@
 		<p>Перфоратор — универсальный строительный инструмент. Предназначен для сверления и дробления оверстий в кирпиче, бетоне и камне.<br>
 			Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка. В <br>
 			ассортиментном ряду есть выбор "техрежимников": в одном устройстве будут совмещены отбойный молоток и ударная дрель. </p>
-
-
+			<div class="popup_catalog">
+				<h1 class="popua_catalog_headline">Товар добавлен в корзину!</h1>
+				<ul class="popup_catalog_button">
+					<li><a href="#">Оформить заказ</a></li>
+					<li><a href="#">Продолжить покупки</a></li>
+					<li><button class="popup_catalog_close">Закрыть</button></li>
+				</ul>
+			</div>
 		</main>
 		<footer>
 			<div class="footer-site-info">
@@ -212,7 +236,7 @@
 			<div class="additional-information">
 				<p>©2010-2017 Компания "Техномарт"<br>
 					Все права защищены</p>
-					<h2>Соц.сети</h2>
+					<h2 class=" visually-hidden">Соц.сети</h2>
 					<ul>
 						<li><a href="#" class="social-button">vkontacte</a></li>
 						<li><a href="#" class="social-button">facebook</a></li>
