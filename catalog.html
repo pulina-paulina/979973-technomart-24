@@ -53,33 +53,39 @@
 			<li class="breadcrumbs-current">Перфораторы</li>
 		</ul>
 		<section class="filters">
-			<h2>Фильтры товаров</h2>
+			<h2>Фильтр:</h2>
+			<form>
+				<label for="price_radio"><h3>Цена:</h3>
+					<input type="radio" value="ascending"  name="filter by price" id="price_radio"checked>По убывнию<br>
+					<input type="radio" value="descending" name="filter by price" id="price_radio">По возростанию<br>
+				</label>
+			</form>
 			<form>
 				<label for="manufacturers_checkbox"><h3>Производители:</h3>
-					<input type="checkbox" name="manufacturers" id="manufacturers_checkbox" value="BOSCH" checked>BOSCH<br>
-					<input type="checkbox" name="manufacturers" id="manufacturers_checkbox" value="Интерскол">Интерсол<br>
-					<input type="checkbox" name="manufacturers" id="manufacturers_checkbox" value="Makita" checked>Makita<br>
-					<input type="checkbox" name="manufacturers" id="manufacturers_checkbox" value="Dewalt">Dewalt<br>
-					<input type="checkbox" name="manufacturers" id="manufacturers_checkbox" value="Hitachi">Hitachi<br>
+					<input type="checkbox" name="filter by manufacturers" id="manufacturers_checkbox" value="BOSCH" checked>BOSCH<br>
+					<input type="checkbox" name="filter by manufacturers" id="manufacturers_checkbox" value="Интерскол">Интерсол<br>
+					<input type="checkbox" name="filter by manufacturers" id="manufacturers_checkbox" value="Makita" checked>Makita<br>
+					<input type="checkbox" name="filter by manufacturers" id="manufacturers_checkbox" value="Dewalt">Dewalt<br>
+					<input type="checkbox" name="filter by manufacturers" id="manufacturers_checkbox" value="Hitachi">Hitachi<br>
 				</label>
 			</form>
 			<form>
-				<label for="supply"><h3>Питание:</h3>
-					<input type="radio" value="rechargeable" name="supply" checked>Аккумуляторные<br>
-					<input type="radio" value="networked" name="supply">Сетевые<br>
+				<label for="supply_radio"><h3>Питание:</h3>
+					<input type="radio" value="rechargeable" id="supply_radio" name="by supply"checked>Аккумуляторные<br>
+					<input type="radio" value="networked"    id="supply_radio" name="by supply">Сетевые<br>
 				</label>
 			</form>
-			<label for="sorting">Сортировка:
-				<select id="sorting" name="sorting_goods">
-					<option value="by price">по цене</option>
-					<option value="by type">по типу</option>
-					<option value="by functional">по функционалу</option>
-				</select>
-			</label>
 			<p><a href="#">Показать</a></p>
+			<form>
+				<label for="sorting"><h2>Сортировка:</h2>
+					<input  type="radio" value="by price" id="sorting" name="sorting_goods"checked><h3>по цене</h3>
+					<input  type="radio" value="by type"  id="sorting" name="sorting_goods"><h3>по типу</h3>
+					<input  type="radio" value="by functional" id="sorting" name="sorting_goods"><h3>по функционалу</h3>
+				</label>
+			</form>
 		</section>
 		<section class="catalog">
-			<h2>Список перфораторов</h2>
+			<h2 class="visually-hidden">Список перфораторов</h2>
 			<ul class="catalog-lits">
 				<li class="catalog-item">
 					<h3><a href="catalog-lits.html">Перфоратор BOSCH BFG 3000</a></h3>
