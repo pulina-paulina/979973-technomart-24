@@ -9,7 +9,6 @@ body {
   background-color: #ffffff;
 }
 
-
 a {
   text-decoration: none;
 
@@ -402,7 +401,7 @@ height: 21px; */
 
 }
 
-.brand_manufacturers_list{
+.brand-manufacturers_list {
   list-style: none;
 }
 .logo_manufacturer:active{
@@ -503,25 +502,7 @@ height: 19px;*/
 .transport_companies_item {
   font-size: 18px;
   list-style: 20px;
-} 
-
-
-/*popua_map*/
-
-.box_popup_map{
-width: 940px;
-height: 447px;
-box-shadow: 0 0 15px 1px rgba(47, 42, 43, 0.5);
-background-color: #565656;
 }
-/*не понимаю почему не работает*/
-
-/*
-*/
-
-
-/*footer*/
-
 
 .footer_site_info {
   /*width: 1917px;
@@ -1066,81 +1047,4 @@ font-weight: 400;
 line-height: 24px;
  */
 
-}
-
-
-/*--------------CЕТКИ!------------------*/
-/*шапка -сетка*/
-body >*{
-  background-color: #998eae;
-}
-body >*>* {
-  background-color: #1876d2;
-}
-
-
-.main_header {
- /* Временно для сетки */
- min-height: 285px;
- width: 169px;
- background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-}
-
-.box_shopping_bar{
-  width: 100%;
-
-  min-height: 42px;
-  background-color: #293449;
-  margin-bottom: 60px;
-}
-.box_inform_and_navigation{
-  width: 100%;
-  min-height: 278px;
-  background-color:#f3f7f8;
-  margin-bottom: 60px;
-
-}
-.
-.shopping_bar {
- margin: 0;
- padding: 0;
-  min-height: 42px;
-  width: 940px;
-}
-
-.inform_bar {
-  margin: 0;
-  padding: 0;
-
-  min-height: 158px;
-  width: 940px;
- 
-}
-
-.site_navigation {
-  margin: 0;
-  padding: 0;
-  
-
-  min-height: 60px;
-  width: 940px;
-}
- /*----main----*/
- .index-columns{
-display: flex;
-justify-content: space-between;
-width: 945px;
-min-height: 375px;
- }
- .about_company{
-width: 525px;
-min-height: 375px;
-}
-.contacts{
-width: 300px;
-min-height: 375px;
 }
