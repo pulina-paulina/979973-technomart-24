@@ -4,15 +4,13 @@ body {
 
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 18px;
   font-weight: 400;
-  background-color: #ffffff;
 }
+
 
 a {
   text-decoration: none;
-
-
 }
 
 .button {
@@ -22,8 +20,6 @@ a {
   background-color: #ee3643;
   vertical-align: middle;
   text-transform: uppercase;
-  font-size: 14px;
-  line-height: 18px;
   border: none;
 }
 
@@ -38,21 +34,17 @@ a {
 .button:active {
   background-color: #ba2732;
 }
- /* ОСНОВНЫЕ ПРОБЛЕМЫ
-самая большая проьлема с сылками, часто не работают стили для них(
-не нашла шрифт для абзацев 
-не нашла как отменись собственные стили тега address
-как понять когда задавать класс ссылке а когда элементу списка?
-не знаю как при наведении "открыть" кнопки в карточках товара
-
-*/
 
 
-/*hader*/
+/*---------------------------------hader-------------------------------------------*/
 
 
-/* логотип это картинка и ссылка одновременно, цвет меняется при навкдении и клике , как это сверстать?*/
-
+.box_shopping_bar {
+  /*
+width: 1280px;--------нужно ли прописовать максимальную длинну?*/
+  /*height: 42px;*/
+  background-color: #293449;
+}
 
 .shopping_bar {
   background-color: #293449;
@@ -60,24 +52,85 @@ a {
 
 .shopping_bar:hover {
   background-color: #212a3a;
-  /*цвет фона меняется в разнвх состояниях, можно и ссылке задать hover и тп? что делать с иконками дальше?*/
 }
 
-.search {
-  color: #ffffff;
-}
-
-.purchase_information_list {
-  list-style: none;
-}
-
-.purchase_information_item {
+/*--------------------------------------------СТРОКА ПОИСКА----------------------------------------------*/
+.search_headline {
   color: #ffffff;
   font-size: 17px;
   line-height: 18px;
 }
 
-.place_order_button {
+
+.search_line {
+  background-color: #293449;
+  color: #000;
+  font-size: 17px;
+  line-height: 18px;
+  border: none;
+  outline: none;
+}
+
+.search_line:hover,
+  {
+  background-color: #212a3a;
+}
+
+.search_line:focus {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: Cuprum;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.search_line:focus .search_headline {
+  display: none;
+}
+
+/*<----как скрыть лейбл при клике  на поиске?*/
+
+
+.search_line:active {
+  background-color: #ffffff;
+  /*------------------как задать стиль текста для ввода+ не работает белый фон при  введени текста в строку--?*/
+  color: #000;
+  font-size: 17px;
+  line-height: 18px;
+}
+
+.search_button {
+  border: none;
+}
+
+
+/*--------------------КОРЗИНА-ЗАКЛАДКИ-ОФОРМИТЬЮЗАКАЗ------------------------*/
+.purchase_inform_list {
+  list-style: none;
+  margin-bottom: 0px;
+}
+
+.purchase_inform_item:link,
+.purchase_inform_item:visited {
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 18px;
+  background-color: #293449;
+}
+
+.purchase_inform_item:hover,
+.purchase_inform_item:focus {
+  background-color: #212a3a;
+}
+
+.purchase_inform_item:active {
+  background-color: #161d29;
+  opacity: 0.6;
+}
+
+.checkout_button:link,
+.checkout_button:visited {
   color: #ffffff;
   font-size: 17px;
   line-height: 18px;
@@ -85,95 +138,66 @@ a {
 
 }
 
-.place_order_button:hover {
-  background-color: #5fbb2d;
-
-}
-
-.place_order_button:focus {
+.checkout_button:hover,
+.checkout_button:focus {
   background-color: #5fbb2d;
 }
 
-/*"курсор в поле поиска" запуталась , не понимаю где и как оформлять. Получается если навожу курсор на поиск меняится 
-  и фон навигации и фон гнопки и логотипа
-
-
-
-.place_order_button:active {
+.checkout_button:active {
+  opacity: 0.5;
   background-color: #518534;
-
 }
 
-.place_order_button:visited {
-  background-color: #518534;
-}*/
 
+/*-----------------------------------------inform_bar-----------*/
 
 
 .inform_bar {
-  background-color: #f3f7f8;
+  background-color: #f1f5f7;
 }
-
-
 
 h1,
 .about_technomart {
-
   color: #ee3643;
   font-size: 16px;
   line-height: 23px;
   font-style: italic;
+  font-weight: 400;
+  margin-top: 0px;
+}
+
+address {
+  text-decoration: none;
+  font-style: normal;
 }
 
 .tel_box {
-
   width: 270px;
   height: 45px;
   border: 3px solid #ffffff;
   background-color: #f2f6f8;
 }
 
-.tel_technomart {
-
-  width: 144px;
-  height: 21px !important;
+.tel_technomart:link,
+.tel_technomart:visited,
+.tel_technomart:hover,
+.tel_technomart:focus .tel_technomart:active {
   color: #e9292a;
   font-size: 21px;
   line-height: 21px;
+  letter-spacing: 0.42px;
 }
 
-/*не работают стили для ссылок*/
 
-address {
-  text-decoration: none;
-}
-
-/*как убрать собственный стиль тега?*/
 .technomart_address {
-
-  width: 250px;
-  height: 13px;
   color: #32425c;
-
   font-size: 14px;
-
   line-height: 24px;
 }
 
 .profile_list {
   list-style: none;
-  ;
-}
-
-.profile_item {
-  width: 210px;
-  height: 14px;
-  color: #32425c;
-
-  font-size: 16px;
-
-  line-height: 18px;
-  text-decoration: underline;
+  margin-bottom: 0px;
 
 }
 
@@ -184,10 +208,17 @@ address {
   background-color: #fff;
 }
 
-.profile_item:hover {
-  color: #ee3643;
+.profile_item:link,
+.profile_item:visited {
+  color: #32425c;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: underline;
+  text-decoration: none;
+
 }
 
+.profile_item:hover,
 .profile_item:focus {
   color: #ee3643;
 }
@@ -229,144 +260,140 @@ address {
 
 
 .site_navigation {
-
-  /*width: 940px;
-     height: 60px;*/
   box-shadow: inset 0 -5px 0 #293449;
   background-color: #32425c;
 }
 
 .site_navigation_list {
   list-style: none;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .site_navigation_item {
-
   width: 121px;
   height: 15px;
   color: #ffffff;
-
   font-size: 17px;
-
   line-height: 17px;
-
 }
 
 .site_navigation_item:hover {
   background-color: #293449;
-
 }
 
 .site_navigation_item:focus {
   background-color: #293449;
-
 }
 
 .site_navigation_item:active {
   opacity: 0.5;
-
 }
 
-/*main*/
+/*-------------------------------------------main-------------------------------*/
 
-
+/*--------------catalog-navigation----*/
 .catalog_navigation {
   background-color: #ffffff;
-
-  list-style: none;
 }
 
 .catalog_navigation_list {
   list-style: none;
 }
 
-.catalog_navigation_item_materials {
-
+.catalog_navigation_item {
   width: 300px;
   height: 123px;
+}
+
+.catalog_navigation_item:nth-child(1) {
   background-color: #ffbf47;
 }
 
-.catalog_navigation_item_instruments {
-
-  width: 300px;
-  height: 123px;
+.catalog_navigation_item:nth-child(2) {
   background-color: #3bbce3;
-
 }
 
-.catalog_navigation_item_equipment {
+.catalog_navigation_item:nth-child(3) {
 
-  width: 300px;
-  height: 123px;
   background-color: #dc91d8;
 }
 
-.headline_catalog_navigation_sale {
-
-
-  width: 300px;
-  height: 123px;
+.catalog_navigation_item:nth-child(4) {
   background-color: #8ed78f;
 }
 
-.catalog_navigation_item_delivery {
-
-  width: 300px;
-  height: 123px;
-  background-color: #ffc047;
-}
-
-/*можно ли добавлять номера в название класса?*/
-.box_button_catalog_navigation1 {
-
-  /*width: 135px;
-height: 38px; нужно ли задавать эти пораметры или высота и ширина получаются за счет отступов?*/
-  background-color: #000000;
-  opacity: 0.1;
-  padding-top: 12px;
-  padding-bottom: 14px;
-  padding-left: 24px;
-  padding-right: 24px;
-
+.catalog_navigation_item:nth-child(5) {
+  background-color: #ffbf47;
 }
 
 .headline_catalog_navigation {
-
-  width: 115px;
-  height: 22px;
   color: #ffffff;
-  font-family: Cuprum;
   font-size: 24px;
   font-weight: 700;
   line-height: 30px;
 }
 
-.box_popular_groups {
 
-  /*width: 940px;
-height: 89px;*/
+
+.new {
+  background-color: #ee3643;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+
+.button_catalog_navigation:link,
+.button_catalog_navigation:visited {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  background-color: #e6e6e6;
+}
+
+.button_catalog_navigation:hover,
+.button_catalog_navigation:focus {
+  background-color: #cccccc;
+}
+
+.button_catalog_navigation:active {
+  background-color: #b2b2b2;
+}
+
+/*--слайдор--*/
+/*-------------------------------ПОУЛЯРНЫЕ ТОВАРЫ-----------------------*/
+.horizontal_сolumn {
+  /*width: 940px;*/
+  height: 89px;
   background-color: #f9f5f0;
 }
 
-.header_popular_groups {
-
-  /*width: 260px;
-height: 21px; */
+.headline_horizontal_сolumn {
   color: #32425c;
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
 }
 
-.button_popular_groups {
-  float: right;
+.button_horizontal_сolumn:link,
+.button_horizontal_сolumn:visited {
   background-color: #ee3643;
   color: #ffffff;
   line-height: 18px;
   text-transform: uppercase;
 }
 
+.button_horizontal_сolumn:hover,
+.button_horizontal_сolumn:focus {
+  background-color: #ca2c37;
+}
+
+.button_horizontal_сolumn:active {
+  background-color: #ba2732;
+}
+
+/*---------------------КАРТОЧКИ ПРОИЗВОДИТЕЛЕЙ----------------------*/
 .box_manufacturers {
   width: 220px;
   height: 145px;
@@ -375,47 +402,35 @@ height: 21px; */
 
 }
 
-.box_manufacturers:hover {
-
-  width: 220px;
-  height: 145px;
-  box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
-  background-color: #ffffff;
-
-}
-
-.box_manufacturers:focus {
-
-  width: 220px;
-  height: 145px;
-  box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
-  background-color: #ffffff;
-
-}
-
+.box_manufacturers:hover,
+.box_manufacturers:focus,
 .box_manufacturers:active {
   width: 220px;
   height: 145px;
-  box-shadow: 0 4px 10px rgba(41, 52, 73, 0.5);
+  box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
   background-color: #ffffff;
-
 }
 
-.brand-manufacturers_list {
-  list-style: none;
-}
-.logo_manufacturer:active{
-	opacity: 0.3;
-
+.manufacturers_list {
+  list-style-type: none;
 }
 
 
+.logo_manufacturer:active {
+  opacity: 0.3;
 
-.box_service_delivery {
+}
+
+/*картинка при наведении становится прозоачной и я задаю стиль ссылке , в которую обернуто изображене, 
+но в нормальном состоянии и при наведении картинка не меняется , нужно ли прописывать все оставшиеся состояния, если да, то что там указывать? */
+
+
+
+.about_purchase {
   background-color: #f4f8f9;
 }
 
-.service_header {
+.service_headline {
 
   font-size: 30px;
   line-height: 30px;
@@ -430,7 +445,9 @@ height: 21px; */
   font-weight: 400;
 }
 
-.shipping_header {
+.shipping_headline {
+  /*---------стили скопированы с макета в авакоде, но выглядт иначе (подобные случаии ниже)*/
+  color: #32425c;
   font-size: 36px;
   line-height: 36px;
   text-transform: uppercase;
@@ -442,7 +459,6 @@ height: 21px; */
   font-size: 13px;
   font-weight: 400;
   line-height: 24px;
-  /*другой шрифт которого не было в папке проекта*/
 }
 
 .headline_list {
@@ -450,42 +466,45 @@ height: 21px; */
 }
 
 .headline_item_current {
-
-  /*width: 78px;
-height: 19px;*/
+  /*<----------------------------------как настроить в разных состояниях*/
   color: #32425c;
   background-color: #ffffff;
+  border: none;
 
   font-size: 21px;
   font-weight: 700;
   line-height: 30px;
+  font-family: Cuprum;
 }
 
-/*как астроить в разных состояниях*/
+
 .headline_item {
+  /*<-----------------визуально отличается от макета (код скопирован)-*/
   color: #ffffff;
-  background-color: #32425c;
+  font-family: Cuprum;
   font-size: 21px;
   font-weight: 700;
   line-height: 30px;
+  background-color: #32425c;
+  border: none;
 }
 
-.headline_item:hover {
-  background-color: #293449;
-
-}
-
+.headline_item:hover,
 .headline_item:focus {
   background-color: #293449;
+
 }
 
-.headline_item:activ {
+.headline_item:active {
   background-color: #ffffff;
-
+  color: #32425c;
 }
 
+/*-------------------контакты и о компании----------------------*/
 .about_company {
+  color: #000000;
   background-color: #ffffff;
+  /*<-------------не лишнее?*/
 }
 
 .headline_about_company {
@@ -499,10 +518,43 @@ height: 19px;*/
 
 }
 
+.transport_companies_item::before {
+  content: "-";
+  width: 25px;
+  height: 2px;
+  color: #ee3643;
+}
+
+/*<-----------------визуально отличается от макета, код (это геометричская фигура или тире? если первое, то как оформить?)-*/
+
 .transport_companies_item {
   font-size: 18px;
   list-style: 20px;
 }
+
+
+/*-----------------popua_map--------------*/
+
+.box_popup_map {
+  width: 940px;
+  height: 447px;
+  box-shadow: 0 0 15px 1px rgba(47, 42, 43, 0.5);
+  background-color: #565656;
+  margin-bottom: 40px;
+}
+
+.popup_map_close {
+  border: none;
+}
+
+.box_lower_popup {
+  /*width: 620px;*/
+  height: 112px;
+  background-color: #f1f1f1;
+}
+
+/*------------------------------FOOTER-------------------------------------------*/
+
 
 .footer_site_info {
   /*width: 1917px;
@@ -510,74 +562,64 @@ height: 300px;*/
   background-color: #32425c;
 }
 
+/*-------------навигация по сайту(футер)-------------*/
 .footer_site_navigation_list {
   list-style: none;
 }
 
-a:-webkit-any-link {
-  color: #f3f7f9;
-}
-
-/*это правило мешало цвету ссылкам в навигации футера*/
-li.footer_site_navigation_item {
+.footer_site_navigation_item:link,
+.footer_site_navigation_item:visited {
   /*
 width: 69px;
 height: 13px;*/
-  color: #f3f7f9 !important;
-  /* не знаю почему , все делала как везде, но именно это правило не хотел читать*/
+  color: #f3f7f9;
   font-size: 18px;
   line-height: 24px;
 }
 
-.footer_site_navigation_item:hover {
-  text-decoration: underline;
-
-}
-
+.footer_site_navigation_item:hover,
 .footer_site_navigation_item:focus {
   text-decoration: underline;
-
 }
 
-.footer_site_navigation_item:activ {
+.footer_site_navigation_item:active {
   color: #fff;
   opacity: 0.5;
 
 }
 
+/*------навигация по каталогу (футер)-------------*/
 .footer_catalog_navigation_list {
   list-style: none;
 }
 
-.footer_catalog_navigation_item {
-  /*
-width: 79px;
-height: 17px;*/
-  color: #ffd180 !important;
+.footer_catalog_navigation_item:link,
+.footer_catalog_navigation_item:visited {
+  color: #ffd180;
   font-size: 18px;
   line-height: 24px;
 }
 
-.footer_catalog_navigation_item:hover {
-  text-decoration: underline;
-
-}
-
+.footer_catalog_navigation_item:hover,
 .footer_catalog_navigation_item:focus {
   text-decoration: underline;
-
 }
 
-.footer_catalog_navigation_item:activ {
+.footer_catalog_navigation_item:active {
   color: #ffd180;
   opacity: 0.5;
-
 }
 
-/* как сбросить стиль? address{
+.address_footer {
+  font-style: normal;
+  color: #f1f5f7;
+  font-family: Cuprum;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
 
-}*/
-.additional-information {
+.additional_information {
   /*
 width: 1917px;
 height: 107px;*/
@@ -585,29 +627,29 @@ height: 107px;*/
 }
 
 .copyright {
-  /* 
-width: 228px;
-height: 33px;*/
   color: #ffffff;
   font-size: 16px;
-  line-height: 18px
+  line-height: 18px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .social_networks {
   list-style: none;
 }
 
-.social-button:hover {
-  background-color: #ee3643;
+.social_button:link,
+.social_button:visited {
+  background-color: #212a3a;
+  color: #fff;
 }
 
+.social_button:hover,
 .social-button:focus {
-
   background-color: #ee3643;
 }
 
 .social-button:active {
-
   background-color: #ee3643;
 }
 
@@ -618,23 +660,21 @@ height: 33px;*/
   line-height: 18px;
 }
 
-.developer_contacts {
-  color: #ffd180
-    /*опять не меняется цвет*/
-    font-size: 16px;
+.developer_contacts:link,
+.developer_contacts:visited {
+  color: #ffd180;
+  font-size: 16px;
   line-height: 18px;
 }
 
-.developer_contacts:hover {
-  text-decoration: underline;
-}
-
+.developer_contacts:hover,
 .developer_contacts:focus {
   text-decoration: underline;
 }
 
 .developer_contacts:active {
   color: #ee3643;
+  text-decoration: none;
 }
 
 .developed {
@@ -643,15 +683,64 @@ height: 33px;*/
   line-height: 18px;
 }
 
-/*main catalog*/
-h1 .inner_page {
-  /* 
-width: 168px;
-height: 23px;*/
+/*---------------------------------------MAIN CATALOG------------------------------------*/
+.personal_box {
+  background-color: #fff;
+  width: 299px;
+  height: 45px;
+}
+
+.personal {
+  list-style: none;
+  /* Style for "Layer 134" */
+  width: 299px;
+  height: 45px;
+}
+
+.personal_profile {
+  color: #000000;
+  font-size: 21px;
+  line-height: 21px;
+}
+
+.output_icon {
+  border: none;
+}
+
+.personal_list {
+  list-style: none;
+  margin-bottom: 0px;
+}
+
+.personal_info:link,
+.personal_info:visited {
+  color: #32425c;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: underline;
+
+}
+
+/*--------------------------------------почему не работает в обычном состоянии? */
+
+.personal_info:hover,
+.personal_info:focus {
+  color: #ee3643;
+  text-decoration: underline;
+}
+
+.personal_info:active {
+  text-decoration: underline;
+  color: #32425c;
+  opacity: 0.3;
+}
+
+h1.inner_page {
   color: #32425c;
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
+  font-style: normal;
 }
 
 /*не работает*/
@@ -659,6 +748,12 @@ height: 23px;*/
   /* 
 width: 940px;
 height: 89px;*/
+  background-color: #f2f6f8;
+}
+
+.horizon_column_catalog {
+  /*width: 940px;*/
+  height: 89px;
   background-color: #f2f6f8;
 }
 
@@ -678,10 +773,7 @@ height: 9px;*/
   text-transform: uppercase;
 }
 
-.header_filter {
-  /* 
-width: 53px;
-height: 9px;*/
+.headline_filter {
   color: #000000;
   font-family: "PT Sans";
   font-size: 13px;
@@ -689,10 +781,17 @@ height: 9px;*/
   line-height: 18px;
 }
 
+/*------------------------------выгляяет не как на макете (код скопирован) */
+
+.filter_by_price {
+  list-style: none;
+}
+
+.ascending {}
+
+.descending {}
+
 .form_header {
-  /* 
-width: 141px;
-height: 14px;*/
   color: #000000;
   font-family: "PT Sans";
   font-size: 17px;
@@ -732,13 +831,17 @@ height: 171px;*/
 }
 
 .button_submit {
-
+  border: none;
   color: #000000;
   font-family: "PT Sans";
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
-  
+  width: 140px;
+  height: 38px;
+  border: 1px solid #e5e5e5;
+  background-color: #ffffff;
+
 }
 
 .box_sorting {
@@ -752,9 +855,9 @@ height: 38px;*/
   list-style: none;
 }
 
-.sorting_item {
-  /*width: 52px;
-height: 11px;**/
+.sorting_item:link,
+.sorting_item:visited {
+  line-height: 18px;
   opacity: 0.3;
   color: #000000;
   font-family: "PT Sans";
@@ -763,15 +866,7 @@ height: 11px;**/
   border-bottom: 1px dotted #ee3643;
 }
 
-.sorting_item:hover {
-  opacity: 0.3;
-  color: #000000;
-  font-family: "PT Sans";
-  font-size: 13px;
-  font-weight: 400;
-  border-bottom: 1px solid #ee3643;
-}
-
+.sorting_item:hover,
 .sorting_item:focus {
   opacity: 0.3;
   color: #000000;
@@ -780,6 +875,7 @@ height: 11px;**/
   font-weight: 400;
   border-bottom: 1px solid #ee3643;
 }
+
 
 .sorting_item:active {
   opacity: 0.3;
@@ -791,7 +887,7 @@ height: 11px;**/
 
 
 
-/*карточки товаров*/
+/*-----------------карточки товаров-----------*/
 
 
 .catalog_list {
@@ -811,23 +907,31 @@ height: 11px;**/
   box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
   background-color: #ffffff;
 }
-/*не знаю как быть с кнопками , которые появляются при наведении на карточку товара (нужно делать какую-то "отсылку"" к другому селектору?*/
 
-.goods_name {
-  /* /
-width: 155px;
-height: 33px;*/
+.perforator_name {
+  text-align: center;
+}
+
+
+.goods_name:link,
+.goods_name:visited,
+.goods_name:hover,
+.goods_name:focus,
+.goods_name:active {
+  font-style: normal;
   color: #000000;
   font-family: "PT Sans";
   font-size: 18px;
   font-weight: 700;
   line-height: 20px;
+
+}
+
+.price {
+  text-align: center;
 }
 
 del {
-  /*
-width: 67px;
-height: 12px;*/
   color: #999999;
   font-family: "PT Sans";
   font-size: 17px;
@@ -835,31 +939,32 @@ height: 12px;*/
   line-height: 18px;
   text-decoration: line-through;
   text-transform: uppercase;
+
 }
 
 .new_price {
-  width: 65px;
-  height: 12px;
   color: #ffffff;
   font-family: "PT Sans";
   font-size: 17px;
   font-weight: 700;
   line-height: 18px;
   text-transform: uppercase;
+  background-color: #ee3643;
 }
 
 .buy_button {
   /*width: 41px;
 height: 10px;*/
   color: #ffffff;
-font-size: 14px;
-line-height: 18px;
+  font-size: 14px;
+  line-height: 18px;
   text-transform: uppercase;
-   width: 135px;
+  width: 135px;
   height: 38px;
   box-shadow: inset 0 -3px 0 #367315;
   background-color: #63a63e;
- display: none;
+  display: none;
+  border: none;
 }
 
 .buy_button:hover {
@@ -876,7 +981,8 @@ height: 10px;*/
   box-shadow: inset 0 -3px 0 #367315;
   background-color: #5fbb2d;
 }
-  /*display: block; опять же где прописывать это своество если кнопки нет, вроде как классу catalog_item*/
+
+/*display: block; опять же где прописывать это своество если кнопки нет, вроде как классу catalog_item*/
 
 .buy_button:focus {
   /*
@@ -965,86 +1071,340 @@ height: 12px;*/
 /*страницы сайта */
 
 
-.pagination_list{
-	list-style: none;
+.pagination_list {
+  list-style: none;
 }
-.pagination_item{
-color: #000000;
-font-family: "PT Sans";
-font-size: 13px;
-font-weight: 400;
-line-height: 18px;
-width: 38px;
-height: 38px;
-border: 1px solid #e5e5e5;
-background-color: #ffffff;
-}
-.pagination_item:hover{
-color: #000000;
-font-family: "PT Sans";
-font-size: 13px;
-font-weight: 400;
-line-height: 18px;
-width: 38px;
-height: 38px;
-border: 1px solid #bdc6ca;
-background-color: #ffffff;
-}
-.pagination_item:focus{
-color: #000000;
-font-family: "PT Sans";
-font-size: 13px;
-font-weight: 400;
-line-height: 18px;
-width: 38px;
-height: 38px;
-border: 1px solid #bdc6ca;
-background-color: #ffffff;
-}
-.pagination_item:activ{
-color: #000000;
-font-family: "PT Sans";
-font-size: 13px;
-font-weight: 400;
-line-height: 18px;
-width: 38px;
-height: 38px;
-border: 1px solid #ee3643;
-background-color: #ffffff;
-}
-.page_now{
 
-width: 38px;
-height: 38px;
-background-color: #ee3643;
-color: #ffffff;
-font-family: "PT Sans";
-font-size: 13px;
-font-weight: 400;
-line-height: 18px;
+.pagination_item:link,
+.pagination_item:visited {
+  color: #000000;
+  font-family: "PT Sans";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #e5e5e5;
+  background-color: #ffffff;
+}
+
+.pagination_item:hover,
+.pagination_item:focus {
+  color: #000000;
+  font-family: "PT Sans";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #bdc6ca;
+  background-color: #ffffff;
+}
+
+.pagination_item:activ {
+  color: #000000;
+  font-family: "PT Sans";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ee3643;
+  background-color: #ffffff;
+}
+
+.page_now {
+  text-align: center;
+  vertical-align: middle;
+  width: 38px;
+  height: 38px;
+  background-color: #ee3643;
+  color: #ffffff;
+  font-family: "PT Sans";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
 
 }
-.punch_box{
-	/* 
+
+.punch_box {
+  /* 
 width: 1286px;
 height: 261px;*/
-background-color: #f2f6f8;
+  background-color: #f2f6f8;
 }
-.header_punch{
 
-font-family: Cuprum;
-font-size: 30px;
+.headline_punch {
 
-line-height: 30px;
-text-transform: uppercase;
+  font-family: Cuprum;
+  font-size: 30px;
+
+  line-height: 30px;
+  text-transform: uppercase;
 }
-.text_punch{
 
-/* везде, во всех параграфах этот шрифт, но его нет в папке...и гугл фонтс
-font-family: "Myriad Pro";
-font-size: 14px;
-font-weight: 400;
-line-height: 24px;
- */
+.text_punch {
+  font-size: 14px;
+  font-family: "PT Sans";
+  line-height: 24px;
+  font-weight: 400;
+}
+
+/*----------------ПОПАП(главная)------------*/
+
+.form_message {
+  width: 620px;
+  height: 430px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.75);
+}
+
+.labl_index {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.input_index:nth-child(1) {
+  width: 220px;
+  height: 38px;
+  border: 2px solid #dee3e4;
+  background-color: #ffffff;
+}
+
+.input_index:nth-child(2) {
+  width: 220px;
+  height: 38px;
+  border: 2px solid #dee3e4;
+  background-color: #ffffff;
+}
+
+.input_index:nth-child(3) {
+  width: 460px;
+  height: 114px;
+  border: 2px solid #dee3e4;
+  background-color: #ffffff;
+}
+
+/*<------------------------------------не понимаю почему не работает*/
+
+.input_index:nth-child(1):hover,
+.input_index:nth-child(2):hover,
+.input_index:nth-child(1):focus,
+.input_index:nth-child(2):focus {
+  border: 2px solid #b5b5b5;
+}
+
+.input_index:nth-child(3):hover,
+.input_index:nth-child(3):focus,
+  {
+  border: 2px solid #b5b5b5;
+}
+
+.input_index:nth-child(1):active,
+.input_index:nth-child(2):active,
+.input_index:nth-child(3):active {
+  border: 2px solid #ee3643;
+}
+
+::-webkit-input-placeholder {
+  color: #999999;
+  font-family: "PT Sans";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.placeholder_index {
+  color: #a9a9a9;
+  font-family: "PT Sans";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
 
 }
+
+/*<-----------------------стилизуется текст , который ввожу сама, а не подсказка*/
+
+
+/*----------------ПОПАП(каталог)------------*/
+.popup_catalog_line {
+  width: 620px;
+  height: 7px;
+  background: #ee3643;
+}
+
+.popup_upper_box {
+  width: 620px;
+  height: 170px;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.popup_catalog {
+  width: 620px;
+  height: 282px;
+  box-shadow: 0 20px 40px rgba(41, 52, 73, 0.75);
+}
+
+/*.punch_upper_box::before{
+  content: "-";
+width: 620px;
+height: 7px;
+background:#ee3643;
+}-----------------------------------------------можно ли было сделать так , у меня не вышла , если да, то вчем ошибка?*/
+
+.popua_catalog_headline {
+  color: #000000;
+  font-family: Cuprum;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-top: 0px;
+}
+
+.popup_close {
+  border: none;
+}
+
+.punch_lower_box {
+  width: 620px;
+  height: 112px;
+  background-color: #f1f1f1;
+}
+
+/*-------------нет на стаилгайде-------*/
+.popup_catalog_checkout:link,
+.popup_catalog_checkout:visited {
+  color: #ffffff;
+  background-color: #ee3643;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.popup_catalog_checkout:hover,
+.popup_catalog_checkout:focus {
+  background-color: #ca2c37;
+
+}
+
+.popup_catalog_checkout:active {
+  background-color: #fff;
+  color: #000;
+}
+
+.punch_lower_box {
+  width: 620px;
+  height: 112px;
+  background-color: #f1f1f1;
+}
+
+.popup_catalog_list {
+  list-style: none;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.popup_catalog_button {
+  border: none;
+  background-color: #fff;
+  color: #000000;
+  font-family: Cuprum;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.popup_catalog_button:hover,
+.popup_catalog_button:focus {
+  background-color: #ee3643;
+  color: #fff;
+}
+
+
+
+
+
+
+
+/*--------------CЕТКИ!------------------
+
+body >*{
+  background-color: #998eae;
+}
+body >*>* {
+  background-color: #1876d2;
+}
+
+
+.main_header {
+ /* Временно для сетки-- *
+ min-height: 285px;
+ width: 169px;
+ background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.box_shopping_bar{
+  width: 100%;
+
+  min-height: 42px;
+  background-color: #293449;
+  margin-bottom: 60px;
+}
+.box_inform_and_navigation{
+  width: 100%;
+  min-height: 278px;
+  background-color:#f3f7f8;
+  margin-bottom: 60px;
+
+}
+.
+.shopping_bar {
+ margin: 0;
+ padding: 0;
+  min-height: 42px;
+  width: 940px;
+}
+
+.inform_bar {
+  margin: 0;
+  padding: 0;
+
+  min-height: 158px;
+  width: 940px;
+ 
+}
+
+.site_navigation {
+  margin: 0;
+  padding: 0;
+  
+
+  min-height: 60px;
+  width: 940px;-----------*/
+}
+
+/*----main----
+ .index-columns{
+display: flex;
+justify-content: space-between;
+width: 945px;
+min-height: 375px;
+ }
+ .about_company{
+
+width: 525px;
+min-height: 375px;
+}
+.contacts{
+width: 300px;
+min-height: 375px;
+}----------*/
