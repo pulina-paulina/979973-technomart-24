@@ -6,11 +6,58 @@ body {
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
+
+
 }
+
+/*
+ смещение в футере  и шапке 
+
+у тегов address просто  огрооомная площадь (content) из-за этого в меню каталога (футер) и в шапке все сьезжает
+
+как сверстать меню каталога главной страницв  на флексах (цветные блоки)
+
+на главнай стронице и странице каталога можно задать карточки таваров одними стилями? ( там разная ширина блоков)
+
+картинка при наведении становится прозоачной и я задаю стиль ссылке , в которую обернуто изображене, 
+но в нормальном состоянии и при наведении картинка не меняется , нужно ли прописывать все оставшиеся состояния, если да, то что там указывать? 
+(карточки производителей/брендов )
+
+line-height:- нужно ли это свойство или выравниваем с помошью отступов и vertical-align?
+
+не проверяла на точноее сооттветствие макету
+
+<hr> не реагирует на стили
+*/
+
+
 
 
 a {
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .button {
@@ -35,16 +82,13 @@ a {
   background-color: #ba2732;
 }
 
+hr {
+  color: #f2f6f8;
+}
 
 /*---------------------------------hader-------------------------------------------*/
 
 
-.box_shopping_bar {
-  /*
-width: 1280px;--------нужно ли прописовать максимальную длинну?*/
-  /*height: 42px;*/
-  background-color: #293449;
-}
 
 .shopping_bar {
   background-color: #293449;
@@ -55,18 +99,26 @@ width: 1280px;--------нужно ли прописовать максималь�
 }
 
 /*--------------------------------------------СТРОКА ПОИСКА----------------------------------------------*/
+
 .search_headline {
+  display: inline-block;
   color: #ffffff;
   font-size: 17px;
-  line-height: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 50px;
 }
 
 
 .search_line {
+  display: inline-block;
+  margin: 0;
+
+
   background-color: #293449;
   color: #000;
   font-size: 17px;
-  line-height: 18px;
+  min-height: 40px;
   border: none;
   outline: none;
 }
@@ -85,19 +137,17 @@ width: 1280px;--------нужно ли прописовать максималь�
   line-height: 18px;
 }
 
-.search_line:focus .search_headline {
+.search_line:focus,
+.search_headline:hover {
   display: none;
 }
 
-/*<----как скрыть лейбл при клике  на поиске?*/
+/*разобратся как спрятать*/
 
 
 .search_line:active {
+  display: none;
   background-color: #ffffff;
-  /*------------------как задать стиль текста для ввода+ не работает белый фон при  введени текста в строку--?*/
-  color: #000;
-  font-size: 17px;
-  line-height: 18px;
 }
 
 .search_button {
@@ -108,33 +158,39 @@ width: 1280px;--------нужно ли прописовать максималь�
 /*--------------------КОРЗИНА-ЗАКЛАДКИ-ОФОРМИТЬЮЗАКАЗ------------------------*/
 .purchase_inform_list {
   list-style: none;
-  margin-bottom: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
-.purchase_inform_item:link,
-.purchase_inform_item:visited {
+.purchase_inform_list a:link,
+.purchase_inform_list a:visited {
   color: #ffffff;
   font-size: 17px;
   line-height: 18px;
   background-color: #293449;
 }
 
-.purchase_inform_item:hover,
-.purchase_inform_item:focus {
+.purchase_inform_list a:hover,
+.purchase_inform_list a:focus {
   background-color: #212a3a;
 }
 
-.purchase_inform_item:active {
+.purchase_inform_list a:active {
   background-color: #161d29;
   opacity: 0.6;
 }
 
 .checkout_button:link,
 .checkout_button:visited {
+
   color: #ffffff;
   font-size: 17px;
-  line-height: 18px;
+
   background-color: #63a63e;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 45px;
+  padding-right: 26px;
 
 }
 
@@ -163,7 +219,7 @@ h1,
   line-height: 23px;
   font-style: italic;
   font-weight: 400;
-  margin-top: 0px;
+  margin: 0px;
 }
 
 address {
@@ -171,21 +227,24 @@ address {
   font-style: normal;
 }
 
-.tel_box {
-  width: 270px;
-  height: 45px;
-  border: 3px solid #ffffff;
-  background-color: #f2f6f8;
-}
 
 .tel_technomart:link,
 .tel_technomart:visited,
 .tel_technomart:hover,
 .tel_technomart:focus .tel_technomart:active {
+
   color: #e9292a;
   font-size: 21px;
   line-height: 21px;
   letter-spacing: 0.42px;
+
+  border: 3px solid #ffffff;
+  background-color: #f2f6f8;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 75px;
+  padding-right: 50px;
+
 }
 
 
@@ -197,85 +256,55 @@ address {
 
 .profile_list {
   list-style: none;
-  margin-bottom: 0px;
+  margin: 0px;
+  padding: 0px;
 
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+  margin-left: auto;
 }
 
-.profile_list_box {
 
-  width: 121px;
-  height: 45px;
+.profile_list a:link,
+.profile_list a:visited {
+
+  color: #000000;
+  font-size: 21px;
+  font-weight: 400;
+
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 25px;
+  padding-left: 50px;
   background-color: #fff;
+  margin-left: 10px;
+  margin-top:
 }
 
-.profile_item:link,
-.profile_item:visited {
-  color: #32425c;
-  font-size: 16px;
-  line-height: 18px;
-  text-decoration: underline;
-  text-decoration: none;
-
-}
-
-.profile_item:hover,
-.profile_item:focus {
+.profile_list a:hover,
+.profile_list a:focus {
   color: #ee3643;
 }
 
-.profile_item:active {
+.profile_list a:active {
   color: #000000;
   opacity: 0.3;
 }
 
-.enter-exit {
-  list-style: none;
-}
 
-.username_box {
-
-  width: 299px;
-  height: 45px;
-  background-color: #ffffff;
-}
-
-.username {
-
-  width: 183px;
-  height: 20px;
-  color: #000000;
-
-  font-size: 21px;
-
-  line-height: 21px;
-}
-
-.username:hovar {
-  color: #000000;
-  opacity: 0.3;
-}
-
-/*не работает(*/
-
-
-
-.site_navigation {
-  box-shadow: inset 0 -5px 0 #293449;
-  background-color: #32425c;
-}
 
 .site_navigation_list {
   list-style: none;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
-.site_navigation_item {
-  width: 121px;
-  height: 15px;
+.site_navigation_list a {
   color: #ffffff;
   font-size: 17px;
-  line-height: 17px;
+  /*line-height: 17px;-----------если задаем vertical-align , то это свойство не нужно?*/
 }
 
 .site_navigation_item:hover {
@@ -290,15 +319,21 @@ address {
   opacity: 0.5;
 }
 
+
 /*-------------------------------------------main-------------------------------*/
 
 /*--------------catalog-navigation----*/
 .catalog_navigation {
-  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .catalog_navigation_list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+
 }
 
 .catalog_navigation_item {
@@ -364,8 +399,8 @@ address {
 /*--слайдор--*/
 /*-------------------------------ПОУЛЯРНЫЕ ТОВАРЫ-----------------------*/
 .horizontal_сolumn {
-  /*width: 940px;*/
-  height: 89px;
+  width: 940px;
+  height: 90px;
   background-color: #f9f5f0;
 }
 
@@ -374,6 +409,11 @@ address {
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
+  margin-right: 375px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding: 0px;
 }
 
 .button_horizontal_сolumn:link,
@@ -382,6 +422,11 @@ address {
   color: #ffffff;
   line-height: 18px;
   text-transform: uppercase;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-right: 25px;
+
+
 }
 
 .button_horizontal_сolumn:hover,
@@ -395,11 +440,12 @@ address {
 
 /*---------------------КАРТОЧКИ ПРОИЗВОДИТЕЛЕЙ----------------------*/
 .box_manufacturers {
+  /* если дообавляю состояние link и visited стили не работают, это нужно?
+     это  ведь ссылки*/
   width: 220px;
   height: 145px;
   border: 1px solid #e5e5e5;
   background-color: #ffffff;
-
 }
 
 .box_manufacturers:hover,
@@ -413,8 +459,11 @@ address {
 
 .manufacturers_list {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
+.manufacturers_item {}
 
 .logo_manufacturer:active {
   opacity: 0.3;
@@ -426,16 +475,38 @@ address {
 
 
 
-.about_purchase {
+.box_about_purchase {
   background-color: #f4f8f9;
+
+  display: flex;
+  width: 100%;
+  min-height: 225px;
+  margin-bottom: 80px;
 }
+
+.about_purchase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 940px;
+  min-height: 455px;
+  /*посчитала до нижнего края серого блока тк не хнаю как быть с гузавиком */
+  margin: 0 auto;
+
+  align-items: flex-start;
+
+}
+
+.service {}
 
 .service_headline {
 
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
+  margin: 0;
 }
+
 
 .service_text {
   color: #000000;
@@ -444,6 +515,7 @@ address {
   line-height: 24px;
   font-weight: 400;
 }
+
 
 .shipping_headline {
   /*---------стили скопированы с макета в авакоде, но выглядт иначе (подобные случаии ниже)*/
@@ -463,6 +535,8 @@ address {
 
 .headline_list {
   list-style: none;
+  padding: 0px;
+  margin: 0px;
 }
 
 .headline_item_current {
@@ -501,20 +575,21 @@ address {
 }
 
 /*-------------------контакты и о компании----------------------*/
-.about_company {
-  color: #000000;
-  background-color: #ffffff;
-  /*<-------------не лишнее?*/
-}
 
 .headline_about_company {
+  margin: 0px;
+  padding: 0px;
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
+
 }
 
 .transport_companies_list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+
 
 }
 
@@ -563,49 +638,68 @@ height: 300px;*/
 }
 
 /*-------------навигация по сайту(футер)-------------*/
-.footer_site_navigation_list {
+.footer_site_nav_list {
   list-style: none;
+  margin: 0px;
+  padding: 0px;
+
+  display: flex;
 }
 
-.footer_site_navigation_item:link,
-.footer_site_navigation_item:visited {
-  /*
-width: 69px;
-height: 13px;*/
+.footer_site_nav_list a:link,
+.footer_site_nav_list a:visited {
   color: #f3f7f9;
   font-size: 18px;
-  line-height: 24px;
+  
+
+  display: block;
+  margin-top: 30px; /*-----------------------------не могу понять почему текст не наместе( исправила значение на свое , в авокоде 42px*/
+  margin-bottom: 25px;
+  margin-right: 60px;
+
 }
 
-.footer_site_navigation_item:hover,
-.footer_site_navigation_item:focus {
+.footer_site_nav_list a:hover,
+.footer_site_nav_list a:focus {
   text-decoration: underline;
 }
 
-.footer_site_navigation_item:active {
+.footer_site_nav_list a:active {
   color: #fff;
   opacity: 0.5;
-
 }
 
 /*------навигация по каталогу (футер)-------------*/
-.footer_catalog_navigation_list {
+
+
+.footer_catalog_nav_list {
   list-style: none;
+  margin: 0;
+  padding:0;
+
+  display: flex;
+  justify-content: flex-end;
+/*не хочет становится на одну строку с адрессом ( меняю display на inline-block - ничего 
+меняла в html разметку (добавляла  дивы - ничего не вышло) */
 }
 
-.footer_catalog_navigation_item:link,
-.footer_catalog_navigation_item:visited {
+.footer_catalog_nav_list a:link,
+.footer_catalog_nav_list a:visited {
   color: #ffd180;
   font-size: 18px;
-  line-height: 24px;
+
+  display: block;
+  margin-right: 60px;
+   margin-bottom: 75px;
+ 
 }
 
-.footer_catalog_navigation_item:hover,
-.footer_catalog_navigation_item:focus {
+.footer_catalog_nav_list a:hover,
+.footer_catalog_nav_list a:focus {
   text-decoration: underline;
 }
 
-.footer_catalog_navigation_item:active {
+.footer_catalog_nav_list a:active {
   color: #ffd180;
   opacity: 0.5;
 }
@@ -613,10 +707,14 @@ height: 13px;*/
 .address_footer {
   font-style: normal;
   color: #f1f5f7;
-  font-family: Cuprum;
   font-size: 18px;
-  font-weight: 400;
   line-height: 24px;
+  
+
+  margin-right: 90px;
+  display: inline-block;
+
+  
 }
 
 .additional_information {
@@ -636,6 +734,8 @@ height: 107px;*/
 
 .social_networks {
   list-style: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 .social_button:link,
@@ -692,9 +792,10 @@ height: 107px;*/
 
 .personal {
   list-style: none;
-  /* Style for "Layer 134" */
   width: 299px;
   height: 45px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .personal_profile {
@@ -709,27 +810,30 @@ height: 107px;*/
 
 .personal_list {
   list-style: none;
-  margin-bottom: 0px;
+  margin: 0px;
+  padding: 0px;
+
+  display: flex;
+  min-height: 15px;
+  width: 210px;
+  justify-content:space-between;
 }
 
-.personal_info:link,
-.personal_info:visited {
-  color: #32425c;
+.personal_item a:link,
+.personal_item a:visited {
+  color: #32425c; 
   font-size: 16px;
   line-height: 18px;
-  text-decoration: underline;
-
+  text-decoration: underline; 
 }
 
-/*--------------------------------------почему не работает в обычном состоянии? */
-
-.personal_info:hover,
-.personal_info:focus {
+.personal_item a:hover,
+.personal_item a:focus {
   color: #ee3643;
   text-decoration: underline;
 }
 
-.personal_info:active {
+.personal_item a:active {
   text-decoration: underline;
   color: #32425c;
   opacity: 0.3;
@@ -741,36 +845,76 @@ h1.inner_page {
   line-height: 30px;
   text-transform: uppercase;
   font-style: normal;
+  padding-top: 30px;
+  padding-bottom: 35px;
+  padding-left: 30px;
+  background-color: #f2f6f8;
+  width: 940px;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
-/*не работает*/
-.horizon_column {
-  /* 
-width: 940px;
-height: 89px;*/
-  background-color: #f2f6f8;
-}
 
-.horizon_column_catalog {
-  /*width: 940px;*/
-  height: 89px;
-  background-color: #f2f6f8;
-}
+
+
 
 .breadcrumbs {
   list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 940px;
+
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+ 
 }
 
-.breadcrumbs_item {
-  /*
-width: 79px;
-height: 9px;*/
+.breadcrumbs a {
+
   color: #000000;
   font-family: "PT Sans";
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
   text-transform: uppercase;
+}
+.breadcrumbs_current{
+  color: #000000;
+  font-family: "PT Sans";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+.breadcrumbs-current::after {
+  display: none;
+}
+.breadcrumbs_item {
+  position: relative;
+
+  margin-right: 42px;
+}
+
+.breadcrumbs_item::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: -25px;
+
+
+
+/*правильно сделан значок? (не доконца поняла как расчитывать координаты)*/
+width: 8px;
+height: 8px;
+border-right: 1px solid #c5c9d1;
+border-top: 1px solid #c5c9d1;
+transform: rotate(45deg);
+  background-color: #fff;
+}
+.breadcrumbs_item:last-child {
+  margin-right: 0;
 }
 
 .headline_filter {
@@ -791,44 +935,41 @@ height: 9px;*/
 
 .descending {}
 
-.form_header {
+legend {
   color: #000000;
   font-family: "PT Sans";
   font-size: 17px;
   font-weight: 700;
   line-height: 30px;
   text-transform: uppercase;
+  margin-bottom: 25px;
 }
-
-.manufacturers_checkbox_list {
-  list-style: none;
+.filters fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 25px;
 }
+.filters fieldset:last-child {
+  margin-bottom: 80px;
+} /*не работает*/
 
-.manufacturers_checkbox_item {
-  /*
-width: 81px;
-height: 171px;*/
-  color: #000000;
+
+.filters label {
+ color: #000000;
   font-family: "PT Sans";
   font-size: 15px;
   font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
+
 }
+
 
 .supply_radio_list {
   list-style: none;
 }
 
-.supply_radio_item {
-  color: #000000;
-  font-family: "PT Sans";
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 20px;
-  text-transform: uppercase;
-
-}
 
 .button_submit {
   border: none;
@@ -890,15 +1031,16 @@ height: 38px;*/
 /*-----------------карточки товаров-----------*/
 
 
-.catalog_list {
-  list-style: none;
-}
-
 .catalog_item {
   width: 220px;
   height: 318px;
   border: 1px solid #e5e5e5;
   background-color: #ffffff;
+   margin-bottom: 20px;
+   margin-right: 20px;
+}
+.catalog_item:nth-child(3n) {
+  margin-right: 0;
 }
 
 .catalog_item:hover {
@@ -1073,68 +1215,85 @@ height: 12px;*/
 
 .pagination_list {
   list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 60px;
+
+  display: flex;
+width: 285px;
+min-height: 40px;
+  justify-content: space-between;
+}
+.pagination-item:last-child {
+  margin-right: 0;
 }
 
-.pagination_item:link,
-.pagination_item:visited {
+.pagination_item a:link,
+.pagination_item a:visited {
   color: #000000;
   font-family: "PT Sans";
   font-size: 13px;
   font-weight: 400;
-  line-height: 18px;
-  width: 38px;
-  height: 38px;
+
+
   border: 1px solid #e5e5e5;
+  border-radius:5px; /*в авокоде параметр не нашла*/
   background-color: #ffffff;
+  
+  display: block;
+  padding-top:14px;
+  padding-bottom:15px;
+  padding-left:16px;
+  padding-right: 16px;
 }
 
-.pagination_item:hover,
-.pagination_item:focus {
-  color: #000000;
-  font-family: "PT Sans";
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 18px;
-  width: 38px;
-  height: 38px;
+.pagination_list a:hover,
+.pagination_list a:focus {
+  
   border: 1px solid #bdc6ca;
   background-color: #ffffff;
 }
 
-.pagination_item:activ {
-  color: #000000;
-  font-family: "PT Sans";
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 18px;
-  width: 38px;
-  height: 38px;
+.pagination_list a:activ {
   border: 1px solid #ee3643;
   background-color: #ffffff;
 }
 
-.page_now {
-  text-align: center;
-  vertical-align: middle;
-  width: 38px;
-  height: 38px;
+.pagination_item_current {
   background-color: #ee3643;
   color: #ffffff;
   font-family: "PT Sans";
   font-size: 13px;
   font-weight: 400;
-  line-height: 18px;
+
+  border-radius:5px;
+
+  padding-top:14px;
+  padding-bottom:15px;
+  padding-left:16px;
+  padding-right: 16px;
+  
 
 }
 
-.punch_box {
-  /* 
-width: 1286px;
-height: 261px;*/
+.punch_container {
+  display: flex;
+width: 100%;
+min-height: 260px;
   background-color: #f2f6f8;
+  padding-top: 65px;
+}
+.punch_box{
+  margin:0 auto;
+  padding: 0;
+  min-height:120px;
+  width: 940px; 
 }
 
 .headline_punch {
+  padding: 0;
+  margin: 0;
 
   font-family: Cuprum;
   font-size: 30px;
@@ -1208,6 +1367,7 @@ height: 261px;*/
 }
 
 ::-webkit-input-placeholder {
+  /*нашла шаблон в интернете , обьяснишь? */
   color: #999999;
   font-family: "PT Sans";
   font-size: 13px;
@@ -1304,8 +1464,7 @@ background:#ee3643;
 
 .popup_catalog_list {
   list-style: none;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  margin: 0px;
 }
 
 .popup_catalog_button {
@@ -1326,85 +1485,296 @@ background:#ee3643;
 }
 
 
-
-
-
-
-
-/*--------------CЕТКИ!------------------
-
-body >*{
-  background-color: #998eae;
-}
-body >*>* {
-  background-color: #1876d2;
+ul {
+  text-decoration:
+    line-height:;
 }
 
 
-.main_header {
- /* Временно для сетки-- *
- min-height: 285px;
- width: 169px;
- background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-}
 
-.box_shopping_bar{
-  width: 100%;
 
-  min-height: 42px;
-  background-color: #293449;
-  margin-bottom: 60px;
-}
-.box_inform_and_navigation{
-  width: 100%;
-  min-height: 278px;
-  background-color:#f3f7f8;
-  margin-bottom: 60px;
+/*----------------------------------------CЕТКИ!------------------*/
 
-}
-.
+
+/*----------header--------------*/
+
 .shopping_bar {
- margin: 0;
- padding: 0;
-  min-height: 42px;
-  width: 940px;
-}
-
-.inform_bar {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 
-  min-height: 158px;
+  display: flex;
   width: 940px;
- 
+  min-height: 45px;
+  margin-bottom:50px;
+}
+
+.purchase_inform_list{
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.purchase_inform_list a{
+ display: block;
+ padding-top: 14px;
+ padding-bottom: 14px;
+ padding-left: 45px;
+ padding-right: 26px
+}
+h1{
+  margin-left: 50px;
+  margin-top: 50px;
+  margin-bottom: 45px;
+}
+.inform_bar {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  width: 940px;
 }
 
 .site_navigation {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  
+  width: 940px;
+  margin-bottom: 60px;
 
+}
+
+.box_shopping_bar {
+  width: 100%;
+  min-height: 45px; /*почему шире?*/
+  background-color: #293449;
+}
+
+.box_inform_and_navigation {
+  width: 100%;
+  margin-bottom: 60px;
+  min-height: 278px;
+  background-color: #f3f7f8;
+}
+
+/*---------------------*/
+.site_navigation_list{
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: inset 0 -5px 0 #293449;
+  background-color: #32425c;
   min-height: 60px;
-  width: 940px;-----------*/
 }
 
-/*----main----
- .index-columns{
-display: flex;
-justify-content: space-between;
-width: 945px;
-min-height: 375px;
- }
- .about_company{
-
-width: 525px;
-min-height: 375px;
+.site_navigation_list a {
+  display: block;
+  vertical-align: middle;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:20px;
+  padding-bottom:25px ;
 }
-.contacts{
-width: 300px;
-min-height: 375px;
-}----------*/
+.site_navigation_list a:first-child {
+  padding-left:50px;
+  padding-right:35px;
+  padding-top:20px;
+  padding-bottom:25px ;
+}
+
+.site_navigation_list a:last-child {
+  padding-left:30px;
+  padding-right:55px;
+  padding-top:20px;
+  padding-bottom:25px ;
+}
+
+.site_navigation_list a:nth-child(3){
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:20px ;
+  padding-bottom:25px ;
+}
+/*----------main--------------*/
+
+.catalog_navigation {
+  display: flex;
+  min-height: 410px;
+  width: 940px;
+}
+
+.o {
+  display: flex;
+  justify-content: space-between;
+  min-height: 143px;
+   width: 940px;
+}
+
+.slider {
+  background-color: #f3f7f8;
+  width: 620px;
+  height: 266px;
+}
+
+/*слайдор*/
+
+.horizontal_сolumn {
+  display: flex;
+  min-height: 90px;
+  width: 940px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+}
+
+.catalog_list {
+  /*можно ли сверстать каталог на  главной странице и на странице каталога одним правилом? */
+  width: 940px; /*задавала ширину для списка католога на  главной странице ( на странице каталога он 700px , но если задам эту ширину помещается
+                только две карточки тавара , почему так?*/
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.manufacturers_list {
+
+  display: flex;
+  justify-content:space-between;
+  min-height: 260px;
+  width: 940px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.before_footer {
+  display: flex;
+
+  min-height: 380px;
+  width: 940px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.about_company {
+  width: 520px;
+}
+
+
+.main_footer {
+ margin-top: 85px; 
+}
+
+.footer_site_info {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  min-height: 110px;
+  background-color: #32425c;
+}
+
+.additional_information {
+  display: flex;
+  background-color: #32425c;
+  min-height: 110px;
+}
+
+.logo_footer{
+
+margin-right: 170px;
+}
+
+
+
+.top_site_info {
+  display: flex;
+  min-height: 70px;
+  width: 940px;
+  margin: 0 auto;
+}
+
+.bottom_site_info {
+  display: flex;
+  flex-direction: column-reverse;
+
+  min-height: 40px;
+  width: 940px;
+  margin: 0 auto;
+}
+
+
+
+.box_additional_info {
+  display: flex;
+  width: 100%;
+  min-height: 110px;
+ background-color: #293449;
+}
+
+ .additional_info {
+  display: flex;
+  width: 940px;
+  min-height: 45px;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+/*почему отступ не уходит после margin:0;  ??
+отступ работает только у контейнера .footer_social, по этому задавла margin через него
+отмтупор много и они дублируются из-за того что пробовала по разному  */
+.footer_contacts {
+  margin: 0px;
+  margin-left: 0px;
+  margin-right: 160px;
+  min-height: 35px;
+  width: 230px;
+}
+
+.footer_social {
+  min-height: 45px;
+  width: 125px;
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+
+.footer_copyright {
+  display: flex; 
+  justify-content: space-between;
+  margin: 0px;
+  margin-left: auto;
+  min-height: 35px;
+  width: 255px;
+  
+}
+
+.copyright{
+  margin-top: 40px;
+  margin-bottom:35px;
+  margin-right:120px;
+}
+  
+  /*---------сетеи фильтров-----------*/
+  .filters{
+    min-height: 745px;
+    width: 220px;
+  }
+
+  .catalog{
+
+width: 700px;
+height: 990px;
+}
+
+.catalog_list {
+  display: flex;
+  flex-wrap: wrap;
+  
+  list-style: none;
+  margin: 0 ;
+  padding: 0;
+  margin-bottom: 50px;
+} 
+ 
+.catalog_columns {
+  display: flex;
+  justify-content: space-between;
+  width: 945px;
+ min-height: 1050px;
+  margin:0 auto;
+}
+.pagination_list{
+
+}
