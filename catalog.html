@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>technomart-index</title>
+  <title>technomart-catalog</title>
   <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon16.png">
@@ -39,30 +39,30 @@
         </h1>
         <address>
           <div class="tel_box"><a href="tel:+7(812)555-05-555" class="tel_technomart">+7(812)555-05-555</a></div>
-          <div class="technomart_address">г.Санкт-Петербург.у. Б.Конюшенная,д.19/8</div>
+          <div class="street">г.Санкт-Петербург.у. Б.Конюшенная,д.19/8</div>
         </address>
         <div class="personal_box">
           <ul class="personal">
             <li><a href="#" class="personal_profile">Равшан Джамшутович</a></li>
-            <li><a class="output_icon">Выход</a></li>
+            <li><a class="visually_hidden">В</a></li>
           </ul>
           <ul class="personal_list">
             <li class="personal_item"><a href="#">Мои заказы</a></li>
             <li class="personal_item"><a href="#">Личный кабинет</a></li>
           </ul>
+        </div>
       </section>
-    </div>
-    <nav class="site_navigation">
-      <ul class="site_navigation_list">
-        <li><a href="index.html" class="site_navigation_item">Главная</a></li>
-        <li><a href="#" class="site_navigation_item">Компания</a></li>
-        <li><a href="#" class="site_navigation_item">Каталог</a></li>
-        <li><a href="#" class="site_navigation_item">Новости</a></li>
-        <li><a href="#" class="site_navigation_item">Спецпредложения</a></li>
-        <li><a href="#" class="site_navigation_item">Доставка</a></li>
-        <li><a href="#" class="site_navigation_item">Контакты</a></li>
-      </ul>
-    </nav>
+      <nav class="site_navigation">
+        <ul class="site_navigation_list">
+          <li><a href="index.html" class="site_navigation_item">Главная</a></li>
+          <li><a href="#" class="site_navigation_item">Компания</a></li>
+          <li><a href="#" class="site_navigation_item">Каталог</a></li>
+          <li><a href="#" class="site_navigation_item">Новости</a></li>
+          <li><a href="#" class="site_navigation_item">Спецпредложения</a></li>
+          <li><a href="#" class="site_navigation_item">Доставка</a></li>
+          <li><a href="#" class="site_navigation_item">Контакты</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
   <main>
@@ -81,26 +81,41 @@
           <div></div>
           <fieldset>
             <legend>Производители:</legend>
-            <!--нужно ли оформлять списком , где li это input+label-->
-            <!--в демонстрациях не показывалось как сбросить значки фильтров -->
-            <input type="checkbox" name="filter_by_manufacturers" id="checkbox_BOSCH" value="BOSCH" checked>
-            <label for="checkbox_BOSCH">BOSCH</label><br>
-            <input type="checkbox" name="filter_by_manufacturers" id="checkbox_Интерскол" value="Интерскол">
-            <label for="checkbox_Интерскол">Интерскол</label><br>
-            <input type="checkbox" name="filter_by_manufacturers" id="checkbox_Makita" value="Makita" checked>
-            <label for="checkbox_Makitaл">Makita</label><br>
-            <input type="checkbox" name="filter_by_manufacturers" id="checkbox_Dewalt" value="Dewalt">
-            <label for="checkbox_Dewalt">Dewalt</label><br>
-            <input type="checkbox" name="filter_by_manufacturers" id="checkbox_Hitachi" value="Hitachi">
-            <label for="checkbox_Hitach">Hitach</label><br>
+            <ul>
+              <li class="filters_manufacturers">
+                <input type="checkbox" name="filter_by_manufacturers" id="checkbox_BOSCH" value="BOSCH" class="visually_hidden input_checkbox" checked>
+                <label for="checkbox_BOSCH">BOSCH</label><br>
+              </li>
+              <li class="filters_manufacturers">
+                <input type="checkbox" name="filter_by_manufacturers" id="checkbox_Интерскол" value="Интерскол" class="visually_hidden input_checkbox">
+                <label for="checkbox_Интерскол">Интерскол</label><br>
+              </li>
+              <li class="filters_manufacturers">
+                <input type="checkbox" name="filter_by_manufacturers" id="checkbox_Makita" value="Makita" class="visually_hidden input_checkbox" checked>
+                <label for="checkbox_Makitaл">Makita</label><br>
+              </li>
+              <li class="filters_manufacturers">
+                <input type="checkbox" name="filter_by_manufacturers" id="checkbox_Dewalt" value="Dewalt" class="visually_hidden input_checkbox">
+                <label for="checkbox_Dewalt">Dewalt</label><br>
+              </li>
+              <li class="filters_manufacturers">
+                <input type="checkbox" name="filter_by_manufacturers" id="checkbox_Hitachi" value="Hitachi" class="visually_hidden input_checkbox">
+                <label for="checkbox_Hitach">Hitach</label><br>
+              </li>
+            </ul>
           </fieldset>
           <hr>
           <fieldset>
             <legend>Питание:</legend>
-            <input type="radio" value="rechargeable" id="supply_rechargeable" name="filter_by_supply" checked>
-            <label for="supply_rechargeable">Аккумуляторные</label><br>
-            <input type="radio" value="networked" id="supply_networked" name="filter_by_supply">
-            <label for="supply_networked">Сетевые</label>
+            <ul>
+              <li class="filters_supply">
+                <input type="radio" value="rechargeable" id="supply_rechargeable" name="filter_by_supply" class="visually_hidden input_radio" checked>
+                <label for="supply_rechargeable">Аккумуляторные</label><br>
+              </li>
+              <li class="filters_supply">
+                <input type="radio" value="networked" id="supply_networked" name="filter_by_supply" class="visually_hidden input_radio">
+                <label for="supply_networked">Сетевые</label>
+              </li>
           </fieldset>
           <input type="submit" value="Показать" class="button_submit">
         </form>
@@ -232,7 +247,7 @@
       </section>
     </div>
     <ul class="pagination_list">
-      <li class="pagination_item_current">1</li>
+      <li class=" pagination_item pagination_item_current">1</li>
       <li class="pagination_item"><a href="#">2</a></li>
       <li class="pagination_item"><a href="#">3</a></li>
       <li class="pagination_item"><a href="#">следующая</a></li>

@@ -24,8 +24,10 @@
           <input type="submit" name="serch_submit" value="найти" class="serch_button">
         </form>
         <ul class="purchase_inform_list">
-          <li class="purchase_inform_item"><a href="#">Закладки:0</a></li>
-          <li class="purchase_inform_item"><a href="#">Корзина:0</a></li>
+          <li><a href="#" class="purchase_inform_item">Закладки:0</a></li>
+          <!--class="purchase_inform_item" можно ли задать такое имя классу не li,
+                                                                             а ссылке? ( если есть такая необходимость)-->
+          <li><a href="#" class="purchase_inform_item">Корзина:0</a></li>
           <li><a href="#" class="checkout_button">Оформить заказ</a></li>
         </ul>
       </section>
@@ -38,12 +40,12 @@
           и инструментов для ремонта<br>
         </h1>
         <address>
-          <div class="tel_box"><a href="tel:+7(812)555-05-555" class="tel_technomart">+7(812)555-05-555</a></div>
-          <div class="technomart_address">г.Санкт-Петербург.у. Б.Конюшенная,д.19/8</div>
+          <a href="tel:+7(812)555-05-555" class="tel_technomart">+7(812)555-05-555</a>
+          <div class="street">г.Санкт-Петербург.у. Б.Конюшенная,д.19/8</div>
         </address>
         <ul class="profile_list">
           <li class="profile_item">
-            <a href="#" class="profile_item">Войти</a>
+            <a href="#">Войти</a>
           </li>
           <li class="profile_item">
             <a href="#">Регистрация</a>
@@ -67,26 +69,26 @@
       <ul class="catalog_navigation_list">
         <div class="o">
           <li class="catalog_navigation_item">
-            <h3 class="headline_catalog_navigation">Материалы</h3>
+            <h3>Материалы</h3>
             <a href="#" class="button_catalog_navigation">на любой вкус</a>
             <span class="new">new</span>
           </li>
           <li class="catalog_navigation_item">
-            <h3 class="headline_catalog_navigation">Инструмент</h3>
-            <a href="#" class="button_catalog_navigation">на все случаи</a>
+            <h3>Инструмент</h3>
+            <a href="#">на все случаи</a>
           </li>
           <li class="catalog_navigation_item">
-            <h3 class="headline_catalog_navigation">Техника</h3>
-            <a href="#" class="button_catalog_navigation">для стройки</a>
+            <h3>Техника</h3>
+            <a href="#">для стройки</a>
           </li>
         </div>
         <li class="catalog_navigation_item">
-          <h3 class="headline_catalog_navigation">Скидки 50%</h3>
-          <a href="#" class="button_catalog_navigation">на 350 товаров</a>
+          <h3>Скидки 50%</h3>
+          <a href="#">на 350 товаров</a>
         </li>
         <li class="catalog_navigation_item">
           <h3 class="headline_catalog_navigation">Доставка</h3>
-          <a href="#" class="button_catalog_navigation">Бесплатно</a>
+          <a href="#">Бесплатно</a>
         </li>
       </ul>
       <div class="slider">
@@ -95,11 +97,11 @@
     </section>
     <section class="popular_goods">
       <div class="horizontal_сolumn">
-        <h2 class="headline_horizontal_сolumn">Популярные товары:</h2>
-        <a href="#" class="button_horizontal_сolumn">Все популярные товары</a>
+        <h2>Популярные товары:</h2>
+        <a href="#">Все популярные товары</a>
       </div>
-      <div class="catalog">
-        <ul class="catalog_list">
+      <div class="catalog_index">
+        <ul class="catalog_list_index">
           <li class="catalog_item">
             <h3 class="perforator_name"><a href="#" class="goods_name">Перфоратор BOSCH BFG 9000</a></h3>
             <p><a href="#"><img src="img/Perforator_1.jpg" alt="Перфоратор BOSCH BFG 9000" width="218px" height="170px"></a></p>
@@ -138,10 +140,12 @@
           </li>
         </ul>
       </div>
+    </section>
+    <section class="popular_manufacturers">
       <div class="horizontal_box">
         <div class="horizontal_сolumn">
-          <h2 class="headline_horizontal_сolumn">Популярные производители:</h2>
-          <a href="#" class="button_horizontal_сolumn">Все производители</a>
+          <h2>Популярные производители:</h2>
+          <a href="#">Все производители</a>
         </div>
         <ul class="manufacturers_list">
           <li class="manufacturers_item">
@@ -209,12 +213,12 @@
             Ведь мы не плохо заработаем,<br>
             поднимая его на ваш этаж!
           </p>
-        </div>
+        </div> vv
       </div>
     </section>
     <div class="before_footer">
       <section class="about_company">
-        <h2 class="headline_about_company">Компания "Техномарт"</h2>
+        <h2>Компания "Техномарт"</h2>
         <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и<br>
           строительства не оставит равнодушными любителей сэкономить на гастрабайтерах</p>
         <p>Мы можем доставить ваш товар в самые отдаленные точки России!<br>
@@ -227,11 +231,11 @@
         <a href="#" class="button">Подробнее о компании</a>
       </section>
       <section class="contacts">
-        <h2 class="headline_about_company">Контакты</h2>
+        <h2>Контакты</h2>
         <p>Вы можете забрать тавар сами,<br>
           заехав в наш офис:</p>
-        <img src="img/map_index.jpg" alt="map" width="300px" height="158px"><br>
-        <a href="#" class="button massage">Заблудились?Напишите нам!</a>
+        <img src="img/map_index.jpg" alt="map" width="300px" height="158px" class="min_map"><br>
+        <a href="#" class="button">Заблудились?Напишите нам!</a>
       </section>
     </div>
     <div class="box_popup_map">
@@ -240,9 +244,9 @@
     </div>
     <section class="form_message">
       <form method="post" name="write_to_us" action="URL">
-        <label for="Your_name" class="labl_index">Ваше имя:</label><br>
+        <label for="Your_name" class="label_index">Ваше имя:</label><br>
         <input type="text" id="Your_name" placeholder="Имя Фамилия" class="input_index"><br>
-        <label for="Your_e-mail" class="labl_index">Ваш e-mail:</label><br>
+        <label for="Your_e-mail" class="label_index">Ваш e-mail:</label><br>
         <input type="e-mail" id="Your_e-mail" placeholder="email@exampl.com" class="input_index"><br>
         <label for="message" class="labl_index">Текст письма:</label><br>
         <textarea rows="10" cols="30" id="message" placeholder="В свободной фрме" class="input_index"></textarea><br>

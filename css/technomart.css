@@ -4,33 +4,40 @@ body {
 
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 14px;
-  line-height: 18px;
+  
   font-weight: 400;
 
 
 }
 
 /*
- смещение в футере  и шапке 
+ ---смещение в футере  и шапке
 
-у тегов address просто  огрооомная площадь (content) из-за этого в меню каталога (футер) и в шапке все сьезжает
+---у тегов address просто  огрооомная площадь (content) из-за этого в меню каталога (футер) и в шапке все сьезжает
 
-как сверстать меню каталога главной страницв  на флексах (цветные блоки)
+---как сверстать меню каталога главной страницв  на флексах (построить уголок из цветных блоков) + таже ситуация в фильтрах и сортировке 
 
-на главнай стронице и странице каталога можно задать карточки таваров одними стилями? ( там разная ширина блоков)
+--- можно ли задать карточки таваров  с помощью одинаковых классов на всех страницах? ( там разная ширина блоков)
+    задала разными классами 
 
-картинка при наведении становится прозоачной и я задаю стиль ссылке , в которую обернуто изображене, 
-но в нормальном состоянии и при наведении картинка не меняется , нужно ли прописывать все оставшиеся состояния, если да, то что там указывать? 
-(карточки производителей/брендов )
+---логотипы на карточках производителей при клике становятся прозрачными (задаю прозрачность <a> оборчивающему) 
+   как задаю :livk и :visited; все "валится" (в демке не на всех ссылках есть эти псевдоклассы, напимер в нумерации страничек)
 
-line-height:- нужно ли это свойство или выравниваем с помошью отступов и vertical-align?
+--- разабраться почему нумерация страничек не соответствует макету (блоки вытягиваются и не оаботает стиль для текста)
++ узнать как работают нажатые кнопки (мы их просто стилизуем как на макете , в реальных проектах тоже так?)
 
-не проверяла на точноее сооттветствие макету
+---line-height:- нужно ли это свойство или выравниваем с помошью отступов и vertical-align? когда что применять?
 
-<hr> не реагирует на стили
+---когда в корзине не нулевое значение фон меняется? если я правильно поняла , то как это сверстать?
+
+---(не проверяла на точноее сооттветствие макету, не совсем поняла как это делать) копирывала код из программы
+
+---почему не стилицуется текст в кнопке фильтра (submit)
+
+
+
+
 */
-
-
 
 
 a {
@@ -42,7 +49,7 @@ img {
   height: auto;
 }
 
-.visually-hidden:not(:focus):not(:active),
+.visually_hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
   position: absolute;
@@ -84,9 +91,11 @@ input[type="radio"].visually-hidden {
 
 hr {
   color: #f2f6f8;
+  margin: 0;
+  padding: 0;
 }
 
-/*---------------------------------hader-------------------------------------------*/
+/*----------------------------HEADER-------------------------------------*/
 
 
 
@@ -98,27 +107,55 @@ hr {
   background-color: #212a3a;
 }
 
-/*--------------------------------------------СТРОКА ПОИСКА----------------------------------------------*/
+/*----------строка поиска---------------*/
+
+.search_headline::before {
+  content: "";
+  
+  position: absolute;
+  top: 12px;
+  left: 17px;
+
+  width: 17px;
+  height: 17px;
+  opacity: 0.3;
+  
+  background-image: url("svg/icon-search.svg"); /*не находит*/
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.search_headline:hover::before,
+.search_headline:focus::before{
+  opacity: 1;
+}
+
+.searcl_headline:active::before {
+#ee3643
+}
 
 .search_headline {
   display: inline-block;
+
   color: #ffffff;
   font-size: 17px;
+
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 50px;
-}
 
+  position: relative;
+}
 
 .search_line {
   display: inline-block;
   margin: 0;
-
+  min-height: 40px;
 
   background-color: #293449;
   color: #000;
   font-size: 17px;
-  min-height: 40px;
+
   border: none;
   outline: none;
 }
@@ -139,73 +176,86 @@ hr {
 
 .search_line:focus,
 .search_headline:hover {
-  display: none;
-}
+  }
 
 /*разобратся как спрятать*/
 
 
 .search_line:active {
-  display: none;
   background-color: #ffffff;
 }
 
-.search_button {
-  border: none;
-}
+/*------------shopping_bar (продолжение верхней строки шапки)---------------*/
 
-
-/*--------------------КОРЗИНА-ЗАКЛАДКИ-ОФОРМИТЬЮЗАКАЗ------------------------*/
 .purchase_inform_list {
   list-style: none;
   margin: 0px;
   padding: 0px;
 }
 
-.purchase_inform_list a:link,
-.purchase_inform_list a:visited {
+.purchase_inform_list .purchase_inform_item:link,
+.purchase_inform_list .purchase_inform_item:visited {
   color: #ffffff;
   font-size: 17px;
   line-height: 18px;
   background-color: #293449;
+
+  position: relative;
 }
 
-.purchase_inform_list a:hover,
-.purchase_inform_list a:focus {
+.purchase_inform_list .purchase_inform_item:hover,
+.purchase_inform_list .purchase_inform_item:focus {
+  
   background-color: #212a3a;
 }
 
-.purchase_inform_list a:active {
+.purchase_inform_list .purchase_inform_item:active {
   background-color: #161d29;
   opacity: 0.6;
 }
 
+.purchase_inform_list .purchase_inform_item::before{
+  content: "";
+
+  position: absolute;
+  top: 12px;
+  left: 17px;
+
+width: 14px;
+height: 16px;
+opacity: 0.3;
+
+background-color: #ffffff;
+}
+
 .checkout_button:link,
 .checkout_button:visited {
+  width: 150px;
 
   color: #ffffff;
   font-size: 17px;
+  line-height: 18px;
+  text-align: center;
 
   background-color: #63a63e;
   padding-top: 14px;
   padding-bottom: 14px;
-  padding-left: 45px;
-  padding-right: 26px;
-
+  padding-left: 20px;
+  padding-right: 22px;
 }
 
 .checkout_button:hover,
 .checkout_button:focus {
-  background-color: #5fbb2d;
+ background-color: #5fbb2d;
 }
 
 .checkout_button:active {
-  opacity: 0.5;
   background-color: #518534;
+  opacity: 0.5;
 }
 
 
-/*-----------------------------------------inform_bar-----------*/
+/*---------inform_bar(средняя строка шапки)-----------*/
 
 
 .inform_bar {
@@ -225,13 +275,16 @@ h1,
 address {
   text-decoration: none;
   font-style: normal;
+  margin-top: 60px;
+  margin-left: 70px
 }
 
 
 .tel_technomart:link,
 .tel_technomart:visited,
 .tel_technomart:hover,
-.tel_technomart:focus .tel_technomart:active {
+.tel_technomart:focus
+.tel_technomart:active {
 
   color: #e9292a;
   font-size: 21px;
@@ -245,13 +298,26 @@ address {
   padding-left: 75px;
   padding-right: 50px;
 
+  position: relative;
+}
+.tel_technomart:link::before{
+position: absolute;
+content: "";
+top: 13px;
+left: 15px;
+
+width:20px;
+height: 20px;
+background: #fff;
 }
 
 
-.technomart_address {
+.street {
   color: #32425c;
   font-size: 14px;
   line-height: 24px;
+  margin-top: 20px;
+  margin-left:10px;
 }
 
 .profile_list {
@@ -277,10 +343,12 @@ address {
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 25px;
-  padding-left: 50px;
+  padding-left: 25px;
   background-color: #fff;
+  margin-top: 45px;
   margin-left: 10px;
-  margin-top:
+
+  position: relative;
 }
 
 .profile_list a:hover,
@@ -292,8 +360,20 @@ address {
   color: #000000;
   opacity: 0.3;
 }
+.profile_list a:first-child{
+  padding-left: 45px;
+}
 
+.profile_list a:first-child::before{
+  position: absolute;
+  content: "";
+  top: 14px;
+  left:15px;
 
+width: 20px;
+height: 17px;
+background-color: #ccc;
+}
 
 .site_navigation_list {
   list-style: none;
@@ -304,7 +384,6 @@ address {
 .site_navigation_list a {
   color: #ffffff;
   font-size: 17px;
-  /*line-height: 17px;-----------если задаем vertical-align , то это свойство не нужно?*/
 }
 
 .site_navigation_item:hover {
@@ -320,9 +399,10 @@ address {
 }
 
 
-/*-------------------------------------------main-------------------------------*/
+/*-------------------------MAIN-------------------------------*/
 
-/*--------------catalog-navigation----*/
+/*------catalog-navigation----*/
+
 .catalog_navigation {
   margin: 0 auto;
   padding: 0;
@@ -333,43 +413,100 @@ address {
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
-
 }
 
 .catalog_navigation_item {
   width: 300px;
   height: 123px;
+
+  position: relative;
 }
 
 .catalog_navigation_item:nth-child(1) {
   background-color: #ffbf47;
 }
+.catalog_navigation_item:nth-child(1)::before{
+position: absolute;
+content: "";
+top:30px;
+left: 210px;
+
+width: 44px;
+height: 65px;
+background: #fff;
+}
 
 .catalog_navigation_item:nth-child(2) {
   background-color: #3bbce3;
 }
+.catalog_navigation_item:nth-child(2)::before{
+position: absolute;
+content: "";
+top:30px;
+left: 200px;
 
-.catalog_navigation_item:nth-child(3) {
-
-  background-color: #dc91d8;
+width: 75px;
+height: 61px;
+background: #fff;
 }
 
+.catalog_navigation_item:nth-child(3) {
+  background-color: #dc91d8;
+}
+.catalog_navigation_item:nth-child(3)::before{
+position: absolute;
+content: "";
+top:30px;
+left: 190px;
+
+width: 78px;
+height: 62px;
+background: #fff;
+}
+ /*читает как второй элемент списка*/
 .catalog_navigation_item:nth-child(4) {
   background-color: #8ed78f;
+}
+.catalog_navigation_item:nth-child(4)::before{
+position: absolute;
+content: "";
+top:25px;
+left: 195px;
+
+width: 60px;
+height: 72px;
+background: #fff;
 }
 
 .catalog_navigation_item:nth-child(5) {
   background-color: #ffbf47;
 }
+.catalog_navigation_item:nth-child(5)::before{
+position: absolute;
+content: "";
+top:31px;
+left: 190px;
 
-.headline_catalog_navigation {
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 30px;
+width: 80px;
+height: 63px;
+background: #fff;
 }
 
 
+
+.catalog_navigation h3 {
+  margin: 0;
+  padding: 0;
+
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  
+  position: absolute;
+  top:25px;
+  left: 24px;
+}
 
 .new {
   background-color: #ee3643;
@@ -378,22 +515,31 @@ address {
 }
 
 
-.button_catalog_navigation:link,
-.button_catalog_navigation:visited {
+.catalog_navigation a:link,
+.catalog_navigation a:visited {
   color: #ffffff;
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
-  background-color: #e6e6e6;
+
+padding: 13px 25px; /*каждой сылке задать свои отступы?*/
+background-color: #000000;/*прозрачность не должна влиять на цвет текста, возможно? или лучше уже в div завернуть ссылку 
+                            но тода переход на другую страничку будет только при нажатии на текст. Что делать?*/
+opacity: 0.1;
+
+ position: absolute;
+ top: 63px;
+ left: 25px;
+
 }
 
-.button_catalog_navigation:hover,
-.button_catalog_navigation:focus {
-  background-color: #cccccc;
+.catalog_navigation a:hover,
+.catalog_navigation a:focus {
+  opacity: 0.2;
 }
 
-.button_catalog_navigation:active {
-  background-color: #b2b2b2;
+.catalog_navigation a:active {
+ opacity: 0.3;
 }
 
 /*--слайдор--*/
@@ -402,50 +548,57 @@ address {
   width: 940px;
   height: 90px;
   background-color: #f9f5f0;
+
+  position: relative;
 }
 
-.headline_horizontal_сolumn {
+.horizontal_сolumn h2 {
   color: #32425c;
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
-  margin-right: 375px;
+
+  margin-right: 373px;
   margin-left: 30px;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-bottom: 35px;
+  margin-top: 33px;
   padding: 0px;
 }
 
-.button_horizontal_сolumn:link,
-.button_horizontal_сolumn:visited {
+.horizontal_сolumn a:link,
+.horizontal_сolumn a:visited {
   background-color: #ee3643;
+  border-radius: 5px;
+
   color: #ffffff;
   line-height: 18px;
   text-transform: uppercase;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  margin-right: 25px;
+  
+position: absolute;
+top: 25px;
+right: 25px;
 
-
+padding:15px 55px;
+margin: 0;
 }
 
-.button_horizontal_сolumn:hover,
-.button_horizontal_сolumn:focus {
+.horizontal_сolumn a:hover,
+.horizontal_сolumn a:focus {
   background-color: #ca2c37;
 }
 
-.button_horizontal_сolumn:active {
+.horizontal_сolumn a:active {
   background-color: #ba2732;
 }
 
 /*---------------------КАРТОЧКИ ПРОИЗВОДИТЕЛЕЙ----------------------*/
-.box_manufacturers {
-  /* если дообавляю состояние link и visited стили не работают, это нужно?
-     это  ведь ссылки*/
+.box_manufacturers /*:link,
+.box_manufacturers:visited*/ {
   width: 220px;
   height: 145px;
   border: 1px solid #e5e5e5;
   background-color: #ffffff;
+  margin-bottom: 20px;
 }
 
 .box_manufacturers:hover,
@@ -463,7 +616,7 @@ address {
   padding: 0;
 }
 
-.manufacturers_item {}
+
 
 .logo_manufacturer:active {
   opacity: 0.3;
@@ -576,21 +729,22 @@ address {
 
 /*-------------------контакты и о компании----------------------*/
 
-.headline_about_company {
+.before_footer h2{
   margin: 0px;
   padding: 0px;
+  margin-bottom: 30px;
+
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
-
 }
 
 .transport_companies_list {
   list-style: none;
   margin: 0;
   padding: 0;
-
-
+  margin-bottom: 55px;
+  margin-top: 25px;
 }
 
 .transport_companies_item::before {
@@ -600,13 +754,54 @@ address {
   color: #ee3643;
 }
 
-/*<-----------------визуально отличается от макета, код (это геометричская фигура или тире? если первое, то как оформить?)-*/
 
 .transport_companies_item {
   font-size: 18px;
   list-style: 20px;
+  margin-bottom: 15px;
+
+}
+.about_company a{
+  padding: 13px 40px;
+  border-radius: 5px;
 }
 
+.before_footer h2{
+  font-size: 30px;
+  line-height: 30px;
+  margin-bottom: 30px;
+
+
+}
+.contacts a{
+  padding-left: 63px;
+  padding-right: 60px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+
+  border-radius: 5px;
+}
+
+.before_footer p {
+  font-family: "PT Sans";
+  font-size: 13px;
+  line-height: 24px; 
+
+  padding: 0px;
+  margin: 0px;
+}
+
+.about_company p:nth-child(2){
+  margin-bottom: 20px;
+}
+
+.contacts p{
+  margin-bottom: 30px;
+}
+
+.min_map{
+  margin-bottom: 40px;
+}
 
 /*-----------------popua_map--------------*/
 
@@ -784,34 +979,53 @@ height: 107px;*/
 }
 
 /*---------------------------------------MAIN CATALOG------------------------------------*/
-.personal_box {
-  background-color: #fff;
-  width: 299px;
-  height: 45px;
+.personal{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+.personal_box{
+  margin-top: 60px;
+/*margin-left: 100px; сжимается*/
 }
 
-.personal {
-  list-style: none;
-  width: 299px;
-  height: 45px;
-  margin: 0px;
-  padding: 0px;
-}
 
 .personal_profile {
-  color: #000000;
   font-size: 21px;
-  line-height: 21px;
+  color: #000;
+
+  background-color: #fff;
+
+  padding-top: 13px;
+  padding-bottom:13px;
+padding-left: 45px;
+  padding-right: 40px;
+
+  margin-right: 45px;
+ margin-top: 60px;
+/*margin-left: 100px;*/
+
+  position: relative;
 }
 
-.output_icon {
-  border: none;
+.personal_profile ::before{
+  position: absolute;
+  content: "";
+  top: 15px;
+  left: 13px;
+
+width: 20px;
+height: 18px;
+background-color: #c5c5c5;
 }
 
 .personal_list {
   list-style: none;
   margin: 0px;
   padding: 0px;
+
+  margin-left: 17px;
 
   display: flex;
   min-height: 15px;
@@ -825,6 +1039,15 @@ height: 107px;*/
   font-size: 16px;
   line-height: 18px;
   text-decoration: underline; 
+
+  position: relative;
+}
+.personal_item a:first-child::after{
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 5px;
+  background-color: #32425c;
 }
 
 .personal_item a:hover,
@@ -927,6 +1150,31 @@ transform: rotate(45deg);
 
 /*------------------------------выгляяет не как на макете (код скопирован) */
 
+
+.filters{
+width: 220px;
+}
+
+.filters ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ .filters_manufacturers{
+  margin-bottom: 20px;
+  padding-left: 30px;
+ }
+
+ .filters_supply{
+  margin-bottom: 20px;
+  padding-left: 30px;
+ }
+
+  .filters_supply:last-child{
+  margin-bottom: 75px;
+}
+
 .filter_by_price {
   list-style: none;
 }
@@ -944,15 +1192,12 @@ legend {
   text-transform: uppercase;
   margin-bottom: 25px;
 }
+
 .filters fieldset {
   border: none;
   padding: 0;
   margin: 0;
-  margin-bottom: 25px;
 }
-.filters fieldset:last-child {
-  margin-bottom: 80px;
-} /*не работает*/
 
 
 .filters label {
@@ -963,24 +1208,87 @@ legend {
   line-height: 20px;
   text-transform: uppercase;
 
+  position: relative;
+
+  display: block;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.input_checkbox + label::before {
+  
+  position: absolute;
+  content: "";
+  top:-2px;
+  left:-30px;
+
+  width: 20px;
+  height: 20px;
+
+  border: 2px solid #c5c5c5;
+  border-radius: 2px;
+}
+ .input_checkbox:checked + label::after {
+  position: absolute;
+  content: "";
+  top: -3px;
+  left: -27px;
+
+  width: 23px;
+  height: 17px;
+  
+  background-color: #c5c5c5;
+  /*background-image: url("svg/cross.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;*/
 }
 
 
 .supply_radio_list {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+.input_radio + label::before {
+  position: absolute;
+  content: "";
+  top: -5px;
+  left: -35px;
+
+  width: 25px;
+  height: 25px;
+  
+  border: 2px solid #c5c5c5;
+  border-radius: 50%;
+}
+
+.input_radio:checked + label::after {
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: -25px;
+
+  width: 10px;
+  height: 10px;
+
+  background-color: #c5c5c5;
+  border-radius: 50%;
+}
 
 .button_submit {
-  border: none;
+
   color: #000000;
   font-family: "PT Sans";
   font-size: 13px;
-  font-weight: 400;
   line-height: 18px;
-  width: 140px;
-  height: 38px;
+  font-weight: 400;
+ 
+ padding: 15px 39px;
+
   border: 1px solid #e5e5e5;
+  border-radius: 3px;
   background-color: #ffffff;
 
 }
@@ -1217,15 +1525,20 @@ height: 12px;*/
   list-style: none;
   padding: 0;
   margin: 0 auto;
+
   margin-top: 30px;
   margin-bottom: 60px;
 
   display: flex;
-width: 285px;
-min-height: 40px;
-  justify-content: space-between;
+  width: 285px;
+  min-height: 10px;
+  
 }
-.pagination-item:last-child {
+
+.pagination_item{
+   margin-right: 10px;
+}
+.pagination_item:last-child {
   margin-right: 0;
 }
 
@@ -1238,26 +1551,26 @@ min-height: 40px;
 
 
   border: 1px solid #e5e5e5;
-  border-radius:5px; /*в авокоде параметр не нашла*/
+  border-radius:5px; 
   background-color: #ffffff;
   
   display: block;
-  padding-top:14px;
-  padding-bottom:15px;
+  padding-top:13px;
+  padding-bottom:14px;
   padding-left:16px;
   padding-right: 16px;
 }
+
+
 
 .pagination_list a:hover,
 .pagination_list a:focus {
   
   border: 1px solid #bdc6ca;
-  background-color: #ffffff;
 }
 
-.pagination_list a:activ {
+.pagination_list a:active {
   border: 1px solid #ee3643;
-  background-color: #ffffff;
 }
 
 .pagination_item_current {
@@ -1317,7 +1630,7 @@ min-height: 260px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.75);
 }
 
-.labl_index {
+.label_index {
   color: #000000;
   font-size: 18px;
   font-weight: 400;
@@ -1485,11 +1798,6 @@ background:#ee3643;
 }
 
 
-ul {
-  text-decoration:
-    line-height:;
-}
-
 
 
 
@@ -1497,7 +1805,7 @@ ul {
 
 
 /*----------header--------------*/
-
+ 
 .shopping_bar {
   margin: 0 auto;
   padding: 0;
@@ -1505,7 +1813,6 @@ ul {
   display: flex;
   width: 940px;
   min-height: 45px;
-  margin-bottom:50px;
 }
 
 .purchase_inform_list{
@@ -1520,6 +1827,7 @@ ul {
  padding-left: 45px;
  padding-right: 26px
 }
+
 h1{
   margin-left: 50px;
   margin-top: 50px;
@@ -1548,7 +1856,6 @@ h1{
 
 .box_inform_and_navigation {
   width: 100%;
-  margin-bottom: 60px;
   min-height: 278px;
   background-color: #f3f7f8;
 }
@@ -1619,8 +1926,21 @@ h1{
   width: 940px;
   margin: 0 auto;
   margin-bottom: 20px;
-
 }
+
+
+.catalog_list_index{
+  list-style: none;
+  padding: 0;
+
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 940px;
+  min-height: 320px;
+}
+/*через last-child тоже не сработал*/
+
 
 .catalog_list {
   /*можно ли сверстать каталог на  главной странице и на странице каталога одним правилом? */
@@ -1648,11 +1968,12 @@ h1{
   justify-content: space-between;
   margin: 0 auto;
 }
+  
 
 .about_company {
   width: 520px;
 }
-
+стос
 
 .main_footer {
  margin-top: 85px; 
@@ -1746,12 +2067,8 @@ margin-right: 170px;
   margin-right:120px;
 }
   
-  /*---------сетеи фильтров-----------*/
-  .filters{
-    min-height: 745px;
-    width: 220px;
-  }
 
+  
   .catalog{
 
 width: 700px;
