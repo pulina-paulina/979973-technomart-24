@@ -24,8 +24,8 @@
           <input type="submit" name="serch_submit" value="найти" class="serch_button">
         </form>
         <ul class="purchase_inform_list">
-          <li><a href="#" class="purchase_inform_item">Закладки:0</a></li>
-          <li><a href="#" class="purchase_inform_item">Корзина:10</a></li>
+          <li><a href="#" class="purchase_inform_item bookmark">Закладки:0</a></li>
+          <li><a href="#" class="purchase_inform_item basket_current">Корзина:10</a></li>
           <li><a href="#" class="checkout_button">Оформить заказ</a></li>
         </ul>
       </section>
@@ -44,7 +44,7 @@
         <div class="personal_box">
           <ul class="personal">
             <li><a href="#" class="personal_profile">Равшан Джамшутович</a></li>
-            <li><a class="visually_hidden">В</a></li>
+            <li><a class="visually_hidden">Выход</a></li>
           </ul>
           <ul class="personal_list">
             <li class="personal_item"><a href="#">Мои заказы</a></li>
@@ -65,21 +65,35 @@
       </nav>
     </div>
   </header>
-  <main>
+  <main class="main_catalog_page">
     <h1 class="inner_page">Перфораторы</h1>
     <ul class="breadcrumbs">
-      <li class="breadcrumbs_item"><a href="index.html"><span class="visually-hidden">Главная</span></a></li>
+      <li class="breadcrumbs_item"><a href="index.html"><span class=" home_page">Главная</span></a></li>
       <li class="breadcrumbs_item"><a href="catalog.html">Каталог</a></li>
       <li class="breadcrumbs_item"><a href="#">Инструменты</a></li>
       <li class="breadcrumbs_current">Перфораторы</li>
     </ul>
-    <div class="catalog_columns">
-      <section class="filters">
-        <h2 class="visually_hidden">Фильтр</h2>
+    <div class="perforators_page">
+      
+            <section class="filters">
+        <h2 class="headline_filters">Фильтр:</h2>
         <form method="get" action="URL" name="catalog_filter">
-          <legend>цена:</legend>
-          <div></div>
-          <fieldset>
+          <fieldset class="filters_item">
+            <legend>цена:</legend>
+            <div class="range_filter">
+              <div class="range_controls">
+                <div class="scale">
+                  <div class="bar"></div>
+                </div>
+                <div class="toggle toggle_min"></div>
+                <div class="toggle toggle_max"></div>
+              </div>
+              <div class="price_controls">
+                <input name="min_price" type="text" value="0" class="min_price"></label>
+                <input name="max_price" type="text" value="30000" class="max_price"></label>
+              </div>
+          </fieldset>
+          <fieldset class="filters_item">
             <legend>Производители:</legend>
             <ul>
               <li class="filters_manufacturers">
@@ -105,7 +119,7 @@
             </ul>
           </fieldset>
           <hr>
-          <fieldset>
+          <fieldset class="filters_item">
             <legend>Питание:</legend>
             <ul>
               <li class="filters_supply">
@@ -119,36 +133,48 @@
           </fieldset>
           <input type="submit" value="Показать" class="button_submit">
         </form>
-        <div class="box_sorting">
-          <h2 class="headline_filter">Сортировка:</h2>
+      </section>
+
+<div class="sorting">
+        
+          <h2 class="headline_sorting">Сортировка:</h2>
           <ul class="sorting_list">
             <li> <a href="#" class="sorting_item">по цене</a></li>
             <li> <a href="#" class="sorting_item">по типу</a></li>
-            <li> <a href="#" class="sorting_item">по функционалу</a></li>
+            <li> <a href="#" class="sorting_item sorting_current">по функционалу</a></li>
           </ul>
-        </div>
-        <ul class="filter_by_price">
-          <li class="ascending"><a href="#" class="ascending">по возростанию</a></li>
-          <li class="descending"><a href="#" class="descending">по убыванию</a></li>
+       
+        <ul class="price_direction">
+          <li class="price_direction_item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 0L0 10h11z"/>
+              <a href="#" class="price_up price_direction_current">по возростанию</a>
+          </li>
+
+          <li class="price_direction_item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 10L0 0h11"/>
+              <a href="#" class="price_down">по убыванию</a>
+            </svg>
+          </li>
         </ul>
-      </section>
+      </div>
+
       <section class="catalog">
         <h2 class="visually_hidden">Список перфораторов</h2>
         <ul class="catalog_list">
           <li class="catalog_item">
-            <h3 class="perforator_name"><a href="catalog-lits.html" class="goods_name">Перфоратор BOSCH BFG 3000</a></h3>
-            <p>
-              <a href="catalog-item.html"><img src="img/Perforator_1.jpg" alt="Перфоратор BOSCH BFG 3000" width="218px" height="170px"></a>
-            </p>
-            <button class="buy_button">Купить</button>
-            <button class="bookmark_button">В закладки</button>
+            <h3 class="perforator_name">Перфоратор BOSCH BFG 3000</h3>
+            <div class="image"><img src="img/Perforator_1.jpg" alt="Перфоратор BOSCH BFG 3000" width="218px" height="170px"></div>
+            <div class="actions">
+              <a class="buy">Купить</button>
+                <a class="bookmark">Закладки</button>
+            </div>
             <p class="price">
-              <del>22500 Р.</del><br>
-              <span class="new_price" href="#"> 15500 Р.</span>.
+              <div class="discount">22500 Р.<div class="discount"><br>
+                  <span class="new_price" href="#"> 15500 Р.</span>.
             </p>
           </li>
           <li class="catalog_item">
-            <h3 class="perforator_name"><a href="catalog-lits.html" class="goods_name">Перфоратор BOSCH BFG 6000</a></h3>
+            <h3 class="perforator_name">Перфоратор BOSCH BFG 6000</h3>
             <p>
               <a href="catalog-item.html"><img src="img/Perforator_2.jpg" alt="Перфоратор BOSCH BFG 6000" width="218px" height="170px"></a>
             </p>
@@ -188,7 +214,7 @@
             <p>
               <a href="#"><img src="img/Perforator_2.jpg" alt="Перфоратор BOSCH BFG 6000" width="218px" height="170px"></a>
             </p>
-            <span class="new">new</span>
+            <div class="flag flag_new">новинка</div>
             <button class="buy_button">Купить</button>
             <button class="bookmark_button">В закладки</button>
             <p class="price">
@@ -262,15 +288,14 @@
       </div>
     </div>
     <section class="popup_catalog">
-      <div class="popup_catalog_line"></div>
-      <div class="popup_upper_box">
+        <div class="popup_upper_box">
         <h2 class="popua_catalog_headline">Товар добавлен в корзину!</h2>
         <button class="popup_close">Закрыть</button>
       </div>
       <div class="punch_lower_box">
         <ul class="popup_catalog_list">
-          <li><a href="#" class="popup_catalog_checkout">Оформить заказ</a></li>
-          <li><button class="popup_catalog_button">Продолжить покупки</button></li>
+          <li><a href="#" class="button popup_catalog_button">Оформить заказ</a></li>
+          <li><button class="button popup_catalog_button">Продолжить покупки</button></li>
         </ul>
     </section>
   </main>

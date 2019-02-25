@@ -4,18 +4,16 @@ body {
 
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 14px;
-  
+
   font-weight: 400;
 
 
 }
 
 /*
- ---смещение в футере  и шапке
+ ---смещение в футере  и шапке  (логотип должен выходить за верхнюю строку шапки ( его ширена 47px, а ширина строки 42)
+ ----- подпись "Поиск:" - в строке поиска это лейбл или плейсхолдер ? оформила как второе ( тк тогда страка не выпадает))
 
----у тегов address просто  огрооомная площадь (content) из-за этого в меню каталога (футер) и в шапке все сьезжает
-
----как сверстать меню каталога главной страницв  на флексах (построить уголок из цветных блоков) + таже ситуация в фильтрах и сортировке 
 
 --- можно ли задать карточки таваров  с помощью одинаковых классов на всех страницах? ( там разная ширина блоков)
     задала разными классами 
@@ -24,20 +22,24 @@ body {
    как задаю :livk и :visited; все "валится" (в демке не на всех ссылках есть эти псевдоклассы, напимер в нумерации страничек)
 
 --- разабраться почему нумерация страничек не соответствует макету (блоки вытягиваются и не оаботает стиль для текста)
-+ узнать как работают нажатые кнопки (мы их просто стилизуем как на макете , в реальных проектах тоже так?)
++ узнать как работают нажатые кнопки (мы их просто стилизуем как на макете , в реальных проектахтоже так?)
 
 ---line-height:- нужно ли это свойство или выравниваем с помошью отступов и vertical-align? когда что применять?
 
----когда в корзине не нулевое значение фон меняется? если я правильно поняла , то как это сверстать?
-
----(не проверяла на точноее сооттветствие макету, не совсем поняла как это делать) копирывала код из программы
-
----почему не стилицуется текст в кнопке фильтра (submit)
 
 
 
+--- .personal_profile a (равшан джамшутович) тоже широкий блок (шире текста) из-за этого зпдавая отступы все зжимается
 
-*/
+
+--- .catalog_navigation_item прозрачность не должна влиять на цвет текста, возможно? или лучше уже в div завернуть ссылку 
+                            но тода переход на другую страничку будет только при нажатии на текст. Что делать?
+
+
+
+                            ------------------------как лучше сверстать кнопки?*/
+                            /*----------переключатили     ДОСТАВКА.ГАРАНТИЯ И ТП)   
+                            /-Спросить про стлайдеры ( и переключатеи ) */
 
 
 a {
@@ -75,6 +77,10 @@ input[type="radio"].visually-hidden {
   vertical-align: middle;
   text-transform: uppercase;
   border: none;
+
+  display: inline-block;
+  padding: 14px 45px;
+  border-radius: 5px;
 }
 
 .button:hover {
@@ -101,6 +107,8 @@ hr {
 
 .shopping_bar {
   background-color: #293449;
+
+  position: relative;
 }
 
 .shopping_bar:hover {
@@ -108,31 +116,6 @@ hr {
 }
 
 /*----------строка поиска---------------*/
-
-.search_headline::before {
-  content: "";
-  
-  position: absolute;
-  top: 12px;
-  left: 17px;
-
-  width: 17px;
-  height: 17px;
-  opacity: 0.3;
-  
-  background-image: url("svg/icon-search.svg"); /*не находит*/
-  background-repeat: no-repeat;
-  background-position: 0 0;
-}
-
-.search_headline:hover::before,
-.search_headline:focus::before{
-  opacity: 1;
-}
-
-.searcl_headline:active::before {
-#ee3643
-}
 
 .search_headline {
   display: inline-block;
@@ -142,7 +125,6 @@ hr {
 
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 50px;
 
   position: relative;
 }
@@ -150,6 +132,7 @@ hr {
 .search_line {
   display: inline-block;
   margin: 0;
+  padding: 0;
   min-height: 40px;
 
   background-color: #293449;
@@ -161,11 +144,14 @@ hr {
 }
 
 .search_line:hover,
-  {
+.search_line:focus{
   background-color: #212a3a;
 }
 
-.search_line:focus {
+.search_line:active {
+  background-color: #ffffff;
+
+  /*стиль текста в строке*/
   background-color: #ffffff;
   color: #000000;
   font-family: Cuprum;
@@ -174,17 +160,9 @@ hr {
   line-height: 18px;
 }
 
-.search_line:focus,
-.search_headline:hover {
-  }
-
-/*разобратся как спрятать*/
-
-
-.search_line:active {
-  background-color: #ffffff;
+.serch_button{
+  margin-left: 16px;
 }
-
 /*------------shopping_bar (продолжение верхней строки шапки)---------------*/
 
 .purchase_inform_list {
@@ -193,8 +171,9 @@ hr {
   padding: 0px;
 }
 
-.purchase_inform_list .purchase_inform_item:link,
-.purchase_inform_list .purchase_inform_item:visited {
+
+.purchase_inform_item:link,
+.purchase_inform_item:visited {
   color: #ffffff;
   font-size: 17px;
   line-height: 18px;
@@ -203,9 +182,9 @@ hr {
   position: relative;
 }
 
-.purchase_inform_list .purchase_inform_item:hover,
-.purchase_inform_list .purchase_inform_item:focus {
-  
+.purchase_inform_item:hover,
+.purchase_inform_item:focus {
+
   background-color: #212a3a;
 }
 
@@ -214,18 +193,37 @@ hr {
   opacity: 0.6;
 }
 
-.purchase_inform_list .purchase_inform_item::before{
+.purchase_inform_list .basket_current{
+  background-color: #ee3643;
+} 
+
+.bookmark::before {
   content: "";
 
   position: absolute;
-  top: 12px;
+  top: 14px;
   left: 17px;
 
-width: 14px;
-height: 16px;
-opacity: 0.3;
+  width: 14px;
+  height: 16px;
+  opacity: 0.3;
 
-background-color: #ffffff;
+background-image: url(../svg/icon-bookmark.svg);
+}
+.basket::before{
+  position: absolute;
+  content: "";
+  top: 14px;
+  left: 17px;
+  opacity: 0.3;
+  background-image: url(../svg/icon-cart.svg);
+
+}
+
+.purchase_inform_item:hover::before,
+.purchase_inform_item:focus::before
+{
+  opacity: 1;
 }
 
 .checkout_button:link,
@@ -246,7 +244,7 @@ background-color: #ffffff;
 
 .checkout_button:hover,
 .checkout_button:focus {
- background-color: #5fbb2d;
+  background-color: #5fbb2d;
 }
 
 .checkout_button:active {
@@ -283,7 +281,7 @@ address {
 .tel_technomart:link,
 .tel_technomart:visited,
 .tel_technomart:hover,
-.tel_technomart:focus
+.tel_technomart:focus 
 .tel_technomart:active {
 
   color: #e9292a;
@@ -300,16 +298,18 @@ address {
 
   position: relative;
 }
-.tel_technomart:link::before{
-position: absolute;
-content: "";
-top: 13px;
-left: 15px;
 
-width:20px;
-height: 20px;
-background: #fff;
-}
+.tel_technomart:link::before {
+  position: absolute;
+  content: "";
+  top: 13px;
+  left: 15px;
+
+  width: 20px;
+  height: 20px;
+ 
+ background-image:  url(../svg/icon-phone.svg);
+  }
 
 
 .street {
@@ -317,7 +317,7 @@ background: #fff;
   font-size: 14px;
   line-height: 24px;
   margin-top: 20px;
-  margin-left:10px;
+  margin-left: 10px;
 }
 
 .profile_list {
@@ -360,41 +360,68 @@ background: #fff;
   color: #000000;
   opacity: 0.3;
 }
-.profile_list a:first-child{
+
+.profile_list a:first-child {
   padding-left: 45px;
 }
 
-.profile_list a:first-child::before{
+.profile_list a:first-child::before {
   position: absolute;
   content: "";
   top: 14px;
-  left:15px;
+  left: 15px;
 
-width: 20px;
-height: 17px;
-background-color: #ccc;
+  width: 20px;
+  height: 17px;
+  background-color: #ccc;
 }
 
 .site_navigation_list {
   list-style: none;
   margin: 0px;
   padding: 0px;
+
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 60px;
+
+  box-shadow: inset 0 -5px 0 #293449;
+  background-color: #32425c;
+
 }
 
 .site_navigation_list a {
   color: #ffffff;
   font-size: 17px;
+  vertical-align: middle;
+
+  padding: 30px 24px;
+  display: block;
 }
 
-.site_navigation_item:hover {
+.first_item {
+  padding-left: 52px;
+
+}
+
+.last_item {
+  padding-right: 55px;
+}
+
+/*не знала как задать перывый и полледую ссылку в списке */
+.site_navigation_list li:first-child a{
+  padding-left: 52px;
+}
+.site_navigation_list li:last-child a{
+   padding-right: 55px;
+}  
+
+.site_navigation_list a:hover,
+.site_navigation_list a:focus {
   background-color: #293449;
 }
 
-.site_navigation_item:focus {
-  background-color: #293449;
-}
-
-.site_navigation_item:active {
+.site_navigation_list a:active {
   opacity: 0.5;
 }
 
@@ -406,90 +433,129 @@ background-color: #ccc;
 .catalog_navigation {
   margin: 0 auto;
   padding: 0;
+  width: 940px;
+  height: 400px;
+
+  margin-bottom: 20px;
 }
 
 .catalog_navigation_list {
   list-style: none;
   margin: 0;
   padding: 0;
+
+ 
+  display: flex;
+  flex-wrap: wrap; 
+
+  position: relative;
+  
+
+}
+.top_line{
+  display: flex;
+  justify-content: space-between;
+  width: 940px;
   margin-bottom: 20px;
+}
+.bottom_line{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+ 
+width: 300px;
+height: 265px;
+ position: absolute;
+ right: 0;
+ top: 143px
+
 }
 
 .catalog_navigation_item {
   width: 300px;
   height: 123px;
 
+  margin: 0;
   position: relative;
 }
-
 .catalog_navigation_item:nth-child(1) {
   background-color: #ffbf47;
 }
-.catalog_navigation_item:nth-child(1)::before{
-position: absolute;
-content: "";
-top:30px;
-left: 210px;
 
-width: 44px;
-height: 65px;
-background: #fff;
+.catalog_navigation_item:nth-child(1)::before {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 210px;
+
+  width: 44px;
+  height: 65px;
+  background: #fff;
 }
 
 .catalog_navigation_item:nth-child(2) {
   background-color: #3bbce3;
 }
-.catalog_navigation_item:nth-child(2)::before{
-position: absolute;
-content: "";
-top:30px;
-left: 200px;
 
-width: 75px;
-height: 61px;
-background: #fff;
+.catalog_navigation_item:nth-child(2)::before {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 200px;
+
+  width: 75px;
+  height: 61px;
+  background: #fff;
 }
 
 .catalog_navigation_item:nth-child(3) {
   background-color: #dc91d8;
 }
-.catalog_navigation_item:nth-child(3)::before{
-position: absolute;
-content: "";
-top:30px;
-left: 190px;
 
-width: 78px;
-height: 62px;
-background: #fff;
+.catalog_navigation_item:nth-child(3)::before {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 190px;
+
+  width: 78px;
+  height: 62px;
+  background: #fff;
 }
- /*читает как второй элемент списка*/
-.catalog_navigation_item:nth-child(4) {
+
+
+.bottom_line .catalog_navigation_item:nth-child(1) {
   background-color: #8ed78f;
 }
-.catalog_navigation_item:nth-child(4)::before{
-position: absolute;
-content: "";
-top:25px;
-left: 195px;
 
+.bottom_line .catalog_navigation_item:nth-child(1)::before {
+  position: absolute;
+  content: "";
+  top: 25px;
+  left: 200px;
+
+ 
 width: 60px;
-height: 72px;
-background: #fff;
+height: 70px;
+background-image:url(../svg/icon-4.svg);
+}
+ /*не работает иконка*/  
+
+.bottom_line .catalog_navigation_item:nth-child(2) {
+  background-color: #ffc047;
 }
 
-.catalog_navigation_item:nth-child(5) {
-  background-color: #ffbf47;
-}
-.catalog_navigation_item:nth-child(5)::before{
-position: absolute;
-content: "";
-top:31px;
-left: 190px;
 
-width: 80px;
-height: 63px;
-background: #fff;
+
+.bottom_line .catalog_navigation_item:nth-child(2)::before {
+  position: absolute;
+  content: "";
+  top: 31px;
+  left: 190px;
+
+  width: 80px;
+  height: 63px;
+  background-image:   url(../svg/icon-5.svg);
 }
 
 
@@ -502,9 +568,9 @@ background: #fff;
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
-  
+
   position: absolute;
-  top:25px;
+  top: 25px;
   left: 24px;
 }
 
@@ -515,38 +581,41 @@ background: #fff;
 }
 
 
-.catalog_navigation a:link,
-.catalog_navigation a:visited {
+.catalog_navigation_list a:link,
+.catalog_navigation_list a:visited {
   color: #ffffff;
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
 
-padding: 13px 25px; /*каждой сылке задать свои отступы?*/
-background-color: #000000;/*прозрачность не должна влиять на цвет текста, возможно? или лучше уже в div завернуть ссылку 
+  padding: 13px 25px;
+  background-color: #000000;
+  /*прозрачность не должна влиять на цвет текста, возможно? или лучше уже в div завернуть ссылку 
                             но тода переход на другую страничку будет только при нажатии на текст. Что делать?*/
-opacity: 0.1;
+  opacity: 0.1;
 
- position: absolute;
- top: 63px;
- left: 25px;
+  position: absolute;
+  top: 63px;
+  left: 25px;
 
 }
 
-.catalog_navigation a:hover,
-.catalog_navigation a:focus {
+.catalog_navigation_list a:hover,
+.catalog_navigation_list a:focus {
   opacity: 0.2;
 }
 
-.catalog_navigation a:active {
- opacity: 0.3;
+.catalog_navigation_list a:active {
+  opacity: 0.3;
 }
 
-/*--слайдор--*/
+.catalog_navigation_list a:nth-child()
+
 /*-------------------------------ПОУЛЯРНЫЕ ТОВАРЫ-----------------------*/
 .horizontal_сolumn {
   width: 940px;
   height: 90px;
+
   background-color: #f9f5f0;
 
   position: relative;
@@ -573,13 +642,13 @@ opacity: 0.1;
   color: #ffffff;
   line-height: 18px;
   text-transform: uppercase;
-  
-position: absolute;
-top: 25px;
-right: 25px;
 
-padding:15px 55px;
-margin: 0;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+
+  padding: 15px 55px;
+  margin: 0;
 }
 
 .horizontal_сolumn a:hover,
@@ -592,13 +661,18 @@ margin: 0;
 }
 
 /*---------------------КАРТОЧКИ ПРОИЗВОДИТЕЛЕЙ----------------------*/
-.box_manufacturers /*:link,
-.box_manufacturers:visited*/ {
+.box_manufacturers
+
+/*:link,
+.box_manufacturers:visited*/
+  {
   width: 220px;
   height: 145px;
   border: 1px solid #e5e5e5;
   background-color: #ffffff;
   margin-bottom: 20px;
+
+  position: relative;
 }
 
 .box_manufacturers:hover,
@@ -616,15 +690,59 @@ margin: 0;
   padding: 0;
 }
 
-
-
-.logo_manufacturer:active {
+.manufacturers_list a:active {
   opacity: 0.3;
-
 }
 
-/*картинка при наведении становится прозоачной и я задаю стиль ссылке , в которую обернуто изображене, 
-но в нормальном состоянии и при наведении картинка не меняется , нужно ли прописывать все оставшиеся состояния, если да, то что там указывать? */
+.manufacturers_list>img:nth-child:nth-child(1) {
+  position: absolute;
+  top: 53px;
+  left: 43px;
+}
+
+.logo_manufacturer li:nth-child(2) {
+  position: absolute;
+  top: 53px;
+  left: 43px;
+}
+
+.manufacturers_list>img:nth-child(3) {
+  position: absolute;
+  top: 48px;
+  left: 37px;
+}
+
+.manufacturers_list>img:nth-child(4) {
+  position: absolute;
+  top: 9px;
+  left: 21px;
+}
+
+.manufacturers_list>img:nth-child(5) {
+  position: absolute;
+  top: 58px;
+  left: 28px;
+}
+
+.manufacturers_list>img:nth-child(6) {
+  position: absolute;
+  top: 35px;
+  left: 48px;
+}
+
+.manufacturers_list>img:nth-child(7) {
+  position: absolute;
+  top: 23px;
+  left: 35px;
+}
+
+.manufacturers_list>img:nth-child(8) {
+  position: absolute;
+  top: 34px;
+  left: 10px;
+}
+
+
 
 
 
@@ -633,8 +751,9 @@ margin: 0;
 
   display: flex;
   width: 100%;
-  min-height: 225px;
+  min-height: 522px;
   margin-bottom: 80px;
+
 }
 
 .about_purchase {
@@ -647,21 +766,31 @@ margin: 0;
   margin: 0 auto;
 
   align-items: flex-start;
-
+  position: relative;
 }
 
-.service {}
+/*--------*/
+.service {
+  margin-top: 65px;
+}
 
 .service_headline {
-
-  font-size: 30px;
-  line-height: 30px;
-  text-transform: uppercase;
   margin: 0;
+  padding: 0;
+
+  font-family: Cuprum;
+  font-size: 30px;
+  line-height: 30PX;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  margin-bottom: 35px;
 }
 
+.service p {
+  margin: 0;
+  padding: 0;
 
-.service_text {
   color: #000000;
   font-family: "PT Sans";
   font-size: 14px;
@@ -670,66 +799,155 @@ margin: 0;
 }
 
 
-.shipping_headline {
-  /*---------стили скопированы с макета в авакоде, но выглядт иначе (подобные случаии ниже)*/
-  color: #32425c;
-  font-size: 36px;
-  line-height: 36px;
-  text-transform: uppercase;
+
+.headline_menu {
+  position: absolute;
+  top: 235px;
 }
 
-.shipping_text {
+.headline_menu::before {
+  content: "";
+
+  background-image: url("../img/line.png"); 
+  background-position: 0 0;
+  background-repeat: repeat;
+
+
+  width: 10px;
+  height: 280px;
+
+
+  position: absolute;
+  top: -46px;
+  left: 230px;
+}
+
+.headline_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.headline_list button {
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  background-color: #32425c;
+  box-shadow: 0 1px 0 #293449;
+
+  padding-top: 21px;
+  padding-bottom: 21px;
+  padding-left: 21px;
+  padding-right: 140px;
+
+  
+
+}
+
+.headline_list:nth-child(3) button {
+  padding-right: 157px;
+}
+
+
+.headline_list .current {
+  background-color: #fff;
+  box-shadow: none;
+}
+.headline_list .current_title{
+color: #32425c;
+}
+
+.headline_list button:hover,
+.headline_list button:focus {
+  background-color: #293449;
+
+  box-shadow: none;
+}
+
+.headline_list button:active {
+  background-color: #ffffff;
+  color: #32425c;
+  box-shadow: none;
+}
+
+
+
+.headline_list h3 {
+  margin: 0;
+  padding: 0;
+
+  color: #fff;
+  font-family: Cuprum;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.headline_list h3:active {
+  color: #32425c;
+}
+
+
+
+
+.shipping {
+  width: 275px;
+
+  position: absolute;
+  top: 240px;
+  left: 315px;
+
+  padding-right: 350px;
+  padding-bottom: 130px;
+}
+
+.shipping h2 {
+  margin: 0;
+
+  color: #32425c;
+  font-family: Cuprum;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 36px;
+  text-transform: uppercase;
+
+  margin-bottom: 35px;
+}
+
+.shipping p {
+  margin: 0;
+  padding: 0;
+
   color: #000000;
   font-family: "PT Sans";
   font-size: 13px;
   font-weight: 400;
   line-height: 24px;
-}
-
-.headline_list {
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-.headline_item_current {
-  /*<----------------------------------как настроить в разных состояниях*/
-  color: #32425c;
-  background-color: #ffffff;
-  border: none;
-
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 30px;
-  font-family: Cuprum;
-}
-
-
-.headline_item {
-  /*<-----------------визуально отличается от макета (код скопирован)-*/
-  color: #ffffff;
-  font-family: Cuprum;
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 30px;
-  background-color: #32425c;
-  border: none;
-}
-
-.headline_item:hover,
-.headline_item:focus {
-  background-color: #293449;
+  line-height: 24px;
 
 }
 
-.headline_item:active {
-  background-color: #ffffff;
-  color: #32425c;
+.shipping::before{
+  content: "";
+
+  width: 470px;
+  height: 260px;
+
+  background-image: url(../img/car.png);
+  background-repeat: no-repeat;
+
+  position: absolute;
+  top: 20px;
+  left: 150px;
 }
+
+
 
 /*-------------------контакты и о компании----------------------*/
 
-.before_footer h2{
+.before_footer h2 {
   margin: 0px;
   padding: 0px;
   margin-bottom: 30px;
@@ -743,37 +961,52 @@ margin: 0;
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 55px;
+  margin-bottom: 40px;
   margin-top: 25px;
 }
 
-.transport_companies_item::before {
-  content: "-";
-  width: 25px;
-  height: 2px;
-  color: #ee3643;
-}
 
 
 .transport_companies_item {
   font-size: 18px;
   list-style: 20px;
   margin-bottom: 15px;
+  padding-left: 35px;
+
+  position: relative;
+}
+
+.transport_companies_item::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background-color: #ee3643;
+
+  position: absolute;
+  left: 2px;
+  top: 9px;
 
 }
-.about_company a{
+
+
+.transport_companies_item:last-child {
+  margin-bottom: 0;
+}
+
+.about_company a {
   padding: 13px 40px;
   border-radius: 5px;
 }
 
-.before_footer h2{
+.before_footer h2 {
   font-size: 30px;
   line-height: 30px;
   margin-bottom: 30px;
 
 
 }
-.contacts a{
+
+.contacts a {
   padding-left: 63px;
   padding-right: 60px;
   padding-top: 13px;
@@ -785,40 +1018,83 @@ margin: 0;
 .before_footer p {
   font-family: "PT Sans";
   font-size: 13px;
-  line-height: 24px; 
+  line-height: 24px;
 
   padding: 0px;
   margin: 0px;
 }
 
-.about_company p:nth-child(2){
+.about_company p:nth-child(2) {
   margin-bottom: 20px;
 }
 
-.contacts p{
+.contacts p {
   margin-bottom: 30px;
 }
 
-.min_map{
+.min_map {
   margin-bottom: 40px;
 }
 
 /*-----------------popua_map--------------*/
 
 .box_popup_map {
+background-color: #fff;
+
   width: 940px;
   height: 447px;
   box-shadow: 0 0 15px 1px rgba(47, 42, 43, 0.5);
   background-color: #565656;
   margin-bottom: 40px;
+
+  margin: 0 auto;
+  /*position: absolute;*/
+  /*position: fixed;
+
+  top: 70px;*/
 }
 
 .popup_map_close {
-  border: none;
+width: 21px;
+height: 21px;
+
+font-size: 0;
+border: 0;
+
+position: absolute;
+top: 7px;
+right: 10px;
+
+cursor: pointer;
+background-color: transparent;
 }
 
+.popup_map_close::before,
+.popup_map_close::after {
+  content: "";
+
+ position: absolute;
+  top: 10px;
+  left: 1px;
+
+
+  width: 21px;
+  height: 4px;
+
+  background-color: #ee3643;
+  border-radius: 1px;
+}
+.popup_map_close:before {
+  transform: rotate(45deg);
+}
+
+.popup_map_close::after {
+  transform: rotate(-45deg);
+}
+
+
 .box_lower_popup {
-  /*width: 620px;*/
+  width: 620px;
   height: 112px;
   background-color: #f1f1f1;
 }
@@ -827,8 +1103,6 @@ margin: 0;
 
 
 .footer_site_info {
-  /*width: 1917px;
-height: 300px;*/
   background-color: #32425c;
 }
 
@@ -845,10 +1119,10 @@ height: 300px;*/
 .footer_site_nav_list a:visited {
   color: #f3f7f9;
   font-size: 18px;
-  
+
 
   display: block;
-  margin-top: 30px; /*-----------------------------не могу понять почему текст не наместе( исправила значение на свое , в авокоде 42px*/
+  margin-top: 30px;
   margin-bottom: 25px;
   margin-right: 60px;
 
@@ -870,12 +1144,11 @@ height: 300px;*/
 .footer_catalog_nav_list {
   list-style: none;
   margin: 0;
-  padding:0;
+  padding: 0;
 
   display: flex;
   justify-content: flex-end;
-/*не хочет становится на одну строку с адрессом ( меняю display на inline-block - ничего 
-меняла в html разметку (добавляла  дивы - ничего не вышло) */
+  width: 525px;
 }
 
 .footer_catalog_nav_list a:link,
@@ -885,8 +1158,7 @@ height: 300px;*/
 
   display: block;
   margin-right: 60px;
-   margin-bottom: 75px;
- 
+
 }
 
 .footer_catalog_nav_list a:hover,
@@ -900,16 +1172,18 @@ height: 300px;*/
 }
 
 .address_footer {
+  margin: 0;
+
   font-style: normal;
   color: #f1f5f7;
   font-size: 18px;
   line-height: 24px;
-  
 
   margin-right: 90px;
-  display: inline-block;
+  width: 322px;
 
-  
+  margin-bottom: 50px;
+
 }
 
 .additional_information {
@@ -979,15 +1253,20 @@ height: 107px;*/
 }
 
 /*---------------------------------------MAIN CATALOG------------------------------------*/
-.personal{
+.personal {
   list-style: none;
   margin: 0;
   padding: 0;
 
+  width: 300px;
+
+
 }
-.personal_box{
+
+.personal_box {
+  /*display: inline-block;   не помогает */
   margin-top: 60px;
-/*margin-left: 100px; сжимается*/
+  /*margin-left: 100px; сжимается*/
 }
 
 
@@ -996,28 +1275,42 @@ height: 107px;*/
   color: #000;
 
   background-color: #fff;
-
+  
   padding-top: 13px;
   padding-bottom:13px;
-padding-left: 45px;
+  padding-left: 45px;
   padding-right: 40px;
 
   margin-right: 45px;
- margin-top: 60px;
+   margin-top: 60px;
 /*margin-left: 100px;*/
 
   position: relative;
 }
 
-.personal_profile ::before{
+.personal_profile li:nth-child(1) {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 45px;
+  padding-right: 40px;
+
+ 
+  margin-top: 50px;
+  margin-left: 100px;
+
+
+}
+
+
+.personal_profile ::before {
   position: absolute;
   content: "";
   top: 15px;
   left: 13px;
 
-width: 20px;
-height: 18px;
-background-color: #c5c5c5;
+  width: 20px;
+  height: 18px;
+  background-color: #c5c5c5;
 }
 
 .personal_list {
@@ -1026,28 +1319,39 @@ background-color: #c5c5c5;
   padding: 0px;
 
   margin-left: 17px;
+  margin-top: 15px;
 
   display: flex;
   min-height: 15px;
   width: 210px;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .personal_item a:link,
 .personal_item a:visited {
-  color: #32425c; 
+  color: #32425c;
   font-size: 16px;
   line-height: 18px;
-  text-decoration: underline; 
-
-  position: relative;
+  text-decoration: underline;
 }
-.personal_item a:first-child::after{
+
+
+.personal_item:first-child a{
+  position: relative;
+
+}
+.personal_item:first-child a::after {
   position: absolute;
   content: "";
-  top: 4px;
-  left: 5px;
-  background-color: #32425c;
+
+width: 4px;
+height: 5px;
+background-color: #32425c;
+border-radius: 50%;
+
+  top: 7px;
+  left: 90px;
+  
 }
 
 .personal_item a:hover,
@@ -1062,6 +1366,17 @@ background-color: #c5c5c5;
   opacity: 0.3;
 }
 
+.perforators_page{
+  display: flex;
+  flex-wrap: wrap;
+  
+  justify-content: space-between;
+
+  width: 940px;
+  min-height: 1050px;
+  margin: 0 auto;
+}
+
 h1.inner_page {
   color: #32425c;
   font-size: 30px;
@@ -1072,7 +1387,7 @@ h1.inner_page {
   padding-bottom: 35px;
   padding-left: 30px;
   background-color: #f2f6f8;
-  width: 940px;
+  width: 910px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
@@ -1091,7 +1406,7 @@ h1.inner_page {
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 25px;
- 
+
 }
 
 .breadcrumbs a {
@@ -1103,7 +1418,8 @@ h1.inner_page {
   line-height: 18px;
   text-transform: uppercase;
 }
-.breadcrumbs_current{
+
+.breadcrumbs_current {
   color: #000000;
   font-family: "PT Sans";
   font-size: 13px;
@@ -1111,9 +1427,11 @@ h1.inner_page {
   line-height: 18px;
   text-transform: uppercase;
 }
-.breadcrumbs-current::after {
+
+.breadcrumbs_current::after {
   display: none;
 }
+
 .breadcrumbs_item {
   position: relative;
 
@@ -1123,65 +1441,84 @@ h1.inner_page {
 .breadcrumbs_item::after {
   content: "";
   position: absolute;
-  top: 7px;
+  top: 5px;
   right: -25px;
 
+  width: 8px;
+  height: 8px;
 
-
-/*правильно сделан значок? (не доконца поняла как расчитывать координаты)*/
-width: 8px;
-height: 8px;
-border-right: 1px solid #c5c9d1;
-border-top: 1px solid #c5c9d1;
-transform: rotate(45deg);
+  border-right: 1px solid #c5c9d1;
+  border-top: 1px solid #c5c9d1;
+  transform: rotate(45deg);
   background-color: #fff;
 }
+
 .breadcrumbs_item:last-child {
   margin-right: 0;
 }
 
-.headline_filter {
-  color: #000000;
-  font-family: "PT Sans";
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 18px;
+.home_page {
+  
+
+  background-image: url(../svg/icon-home.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0 ;  /*обернуть ?*/
 }
 
-/*------------------------------выгляяет не как на макете (код скопирован) */
 
 
-.filters{
-width: 220px;
+.filters {
+  width: 220px;
+}
+.headline_filters{
+ margin: 0;
+
+  padding-top:14px;
+  padding-bottom: 15px;
+  padding-left: 18px;
+  padding-right: 150px;
+ 
+color: #000000;
+font-family: "PT Sans";
+font-size: 13px;
+font-weight: 400;
+line-height: 18px;
+text-transform: uppercase;
+
+ background-color: #f7f3ec;
+ border-radius: 3px;
 }
 
-.filters ul{
+.filters ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
- .filters_manufacturers{
+.filters_manufacturers {
   margin-bottom: 20px;
   padding-left: 30px;
- }
+}
 
- .filters_supply{
+.filters_supply {
   margin-bottom: 20px;
   padding-left: 30px;
- }
+}
 
-  .filters_supply:last-child{
+.filters_supply:last-child {
   margin-bottom: 75px;
 }
 
-.filter_by_price {
+.price_direction {
   list-style: none;
+  margin: 0;
+
+  display: flex;
+  width: 45px;
+  justify-content: space-between;
 }
 
-.ascending {}
 
-.descending {}
 
 legend {
   color: #000000;
@@ -1201,7 +1538,7 @@ legend {
 
 
 .filters label {
- color: #000000;
+  color: #000000;
   font-family: "PT Sans";
   font-size: 15px;
   font-weight: 400;
@@ -1216,32 +1553,134 @@ legend {
   user-select: none;
 }
 
-.input_checkbox + label::before {
+.range_filter {
+width: 220px;
+margin-bottom: 25px;
+}
+
+.range_controls {
+
+width: 180px;
+height: 41px;
+background-color: #f7f3ec;
+border-radius: 3px;
+
+margin-bottom: 25px;
+
+
+  padding-top: 39px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  position: relative;
+}
+
+.range_controls .scale {
+  height: 2px;
+
+  background: #d7dcde;
+
+}
+.range_controls .bar {
+  width: 70%;
+  height: 2px;
+
+  background: #00ca74;
+}
+.range_controls .toggle {
+position: absolute;
+  top: 30px;
+  left: 0;
+
+  width: 4px;
+  height: 4px;
+  padding: 0;
+
+  border: 8px solid #ffffff;
+  background-color: #b1b1b1;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 #e0ddd8;
+
+  cursor: pointer;
+}
+
+.range_controls .toggle_min {
+  left: 20px;
+}
+
+.range_controls .toggle_max {
+  left: 130px;
+}
+
+.price_controls {
+  font-size: 0;
+}
+
+.price_controls input {
+  display: inline-block;
+ 
+
+  font-family: "PT Sans";
+  font-size: 17px;
+  line-height: 18px;
+  text-transform: uppercase;
+  text-align: center;
+
+width: 95px;
+height: 38px;
+background-color: #f7f3ec;
+
+border: none;
+border-radius: 3px;
+margin-right: 30px;
+}
+.price_controls input:last-child{
+  margin-right: 0;
+}
+
+.min_price{
+  position: relative;
+}
+
+.min_price::before {
+  content: "";
+  position:absolute;
+  top: 19px;
+  left: 105px;
   
+width: 10px;
+height: 1px;
+color: #444444;
+}/*не работает*/
+
+.input_checkbox+label::before {
+
   position: absolute;
   content: "";
-  top:-2px;
-  left:-30px;
+  top: -2px;
+  left: -30px;
 
   width: 20px;
   height: 20px;
 
-  border: 2px solid #c5c5c5;
-  border-radius: 2px;
+  background-image: url("../svg/checkbox-off.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
- .input_checkbox:checked + label::after {
+
+.input_checkbox:checked+label::after {
   position: absolute;
   content: "";
   top: -3px;
   left: -27px;
 
-  width: 23px;
+  width: 22px;
   height: 17px;
-  
-  background-color: #c5c5c5;
-  /*background-image: url("svg/cross.svg");
+
+
+  background-image: url("../svg/checkbox-on.svg");
   background-repeat: no-repeat;
-  background-position: 0 0;*/
+  background-position: 0 0;
 }
 
 
@@ -1251,7 +1690,7 @@ legend {
   padding: 0;
 }
 
-.input_radio + label::before {
+.input_radio+label::before {
   position: absolute;
   content: "";
   top: -5px;
@@ -1259,12 +1698,12 @@ legend {
 
   width: 25px;
   height: 25px;
-  
+
   border: 2px solid #c5c5c5;
   border-radius: 50%;
 }
 
-.input_radio:checked + label::after {
+.input_radio:checked+label::after {
   position: absolute;
   content: "";
   top: 5px;
@@ -1282,70 +1721,121 @@ legend {
   color: #000000;
   font-family: "PT Sans";
   font-size: 13px;
-  line-height: 18px;
+  text-transform: uppercase;
   font-weight: 400;
- 
- padding: 15px 39px;
+
+  padding: 15px 40px;
 
   border: 1px solid #e5e5e5;
   border-radius: 3px;
-  background-color: #ffffff;
+  background-color: #ffffff; 
+}
+
+.sorting{
+display: flex;
+
+
+width: 680px;
+height: 18px; /*при min-height вытягивается сильно*/
+background-color: #f7f3ec;
+border-radius: 3px;
+
+padding-top: 14px;
+padding-bottom: 15px;
+padding-left: 20px;
+
 
 }
 
-.box_sorting {
-  /*
-width: 700px;
-height: 38px;*/
-  background-color: #f7f3ec;
+
+.headline_sorting{
+  margin: 0;
+
+
+color: #000000;
+font-family: "PT Sans";
+font-size: 13px;
+font-weight: 400;
+line-height: 18px;
+text-transform: uppercase;
+
+margin-right: 140px;
 }
 
 .sorting_list {
   list-style: none;
+  margin:0;
+  padding: 0;
+  
+  display: flex;
+  flex-wrap: wrap;
+  width: 360px;
+  justify-content: space-between;
 }
 
 .sorting_item:link,
 .sorting_item:visited {
-  line-height: 18px;
-  opacity: 0.3;
-  color: #000000;
   font-family: "PT Sans";
   font-size: 13px;
   font-weight: 400;
+  line-height: 18px;
+  color: #000000;
+  opacity: 0.3;
   border-bottom: 1px dotted #ee3643;
+  text-transform: uppercase;
+
 }
 
 .sorting_item:hover,
 .sorting_item:focus {
   opacity: 0.3;
-  color: #000000;
-  font-family: "PT Sans";
-  font-size: 13px;
-  font-weight: 400;
   border-bottom: 1px solid #ee3643;
 }
 
 
 .sorting_item:active {
-  opacity: 0.3;
-  font-family: "PT Sans";
-  font-size: 13px;
-  font-weight: 400;
+  opacity: 1;
   color: #ee3643;
+}
+
+.sorting_current{
+  opacity: 1;
+ text-decoration: none;
+  color: #ee3643;
+
 }
 
 
 
 /*-----------------карточки товаров-----------*/
-
+.catalog_items {
+  width: 700px;
+  margin: 20px auto;
+}
 
 .catalog_item {
+  position: relative;
+
   width: 220px;
   height: 318px;
   border: 1px solid #e5e5e5;
   background-color: #ffffff;
-   margin-bottom: 20px;
-   margin-right: 20px;
+}
+.catalog_item .flag {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  
+  width: 60px;
+  height: 60px;
+  
+  text-indent: -1000px;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.catalog-item .flag-new {
+  background: url("img/new-flag.png") no-repeat 0 0;
 }
 .catalog_item:nth-child(3n) {
   margin-right: 0;
@@ -1359,22 +1849,17 @@ height: 38px;*/
 }
 
 .perforator_name {
-  text-align: center;
-}
+  min-height: 40px;
+  padding: 0 25px;
+  margin-top: 10px;
+  margin-bottom: 15px; 
 
-
-.goods_name:link,
-.goods_name:visited,
-.goods_name:hover,
-.goods_name:focus,
-.goods_name:active {
   font-style: normal;
   color: #000000;
   font-family: "PT Sans";
   font-size: 18px;
   font-weight: 700;
   line-height: 20px;
-
 }
 
 .price {
@@ -1404,7 +1889,7 @@ del {
 
 .buy_button {
   /*width: 41px;
-height: 10px;*/
+   height: 10px;*/
   color: #ffffff;
   font-size: 14px;
   line-height: 18px;
@@ -1417,10 +1902,11 @@ height: 10px;*/
   border: none;
 }
 
-.buy_button:hover {
+.buy_button:hover,
+.buy_button:focus {
   /*
-width: 41px;
-height: 10px;*/
+  width: 41px;
+  height: 10px;*/
   color: #ffffff;
   font-size: 14px;
   font-weight: 400;
@@ -1430,23 +1916,6 @@ height: 10px;*/
   height: 38px;
   box-shadow: inset 0 -3px 0 #367315;
   background-color: #5fbb2d;
-}
-
-/*display: block; опять же где прописывать это своество если кнопки нет, вроде как классу catalog_item*/
-
-.buy_button:focus {
-  /*
-width: 41px;
-height: 10px;*/
-  color: #ffffff;
-  font-size: 14px;
-  line-height: 18px;
-  text-transform: uppercase;
-  width: 135px;
-  height: 38px;
-  box-shadow: inset 0 -3px 0 #367315;
-  background-color: #5fbb2d;
-  display: block;
 }
 
 .buy_button:active {
@@ -1532,12 +2001,13 @@ height: 12px;*/
   display: flex;
   width: 285px;
   min-height: 10px;
-  
+
 }
 
-.pagination_item{
-   margin-right: 10px;
+.pagination_item {
+  margin-right: 10px;
 }
+
 .pagination_item:last-child {
   margin-right: 0;
 }
@@ -1548,16 +2018,17 @@ height: 12px;*/
   font-family: "PT Sans";
   font-size: 13px;
   font-weight: 400;
+  text-transform: uppercase;
 
 
   border: 1px solid #e5e5e5;
-  border-radius:5px; 
+  border-radius: 5px;
   background-color: #ffffff;
-  
+
   display: block;
-  padding-top:13px;
-  padding-bottom:14px;
-  padding-left:16px;
+  padding-top: 13px;
+  padding-bottom: 14px;
+  padding-left: 16px;
   padding-right: 16px;
 }
 
@@ -1565,7 +2036,7 @@ height: 12px;*/
 
 .pagination_list a:hover,
 .pagination_list a:focus {
-  
+
   border: 1px solid #bdc6ca;
 }
 
@@ -1580,28 +2051,29 @@ height: 12px;*/
   font-size: 13px;
   font-weight: 400;
 
-  border-radius:5px;
+  border-radius: 5px;
 
-  padding-top:14px;
-  padding-bottom:15px;
-  padding-left:16px;
+  padding-top: 14px;
+  padding-bottom: 15px;
+  padding-left: 16px;
   padding-right: 16px;
-  
+
 
 }
 
 .punch_container {
   display: flex;
-width: 100%;
-min-height: 260px;
+  width: 100%;
+  min-height: 260px;
   background-color: #f2f6f8;
   padding-top: 65px;
 }
-.punch_box{
-  margin:0 auto;
+
+.punch_box {
+  margin: 0 auto;
   padding: 0;
-  min-height:120px;
-  width: 940px; 
+  min-height: 120px;
+  width: 940px;
 }
 
 .headline_punch {
@@ -1624,63 +2096,124 @@ min-height: 260px;
 
 /*----------------ПОПАП(главная)------------*/
 
-.form_message {
+.form_message_box {
   width: 620px;
   height: 430px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.75);
+  background-color: #fff;
+
+  margin: 0 auto;
+
+  padding-left: 80px
+  padding-right: 80px;
+  padding-top: 55px;
+
+  /*position:absolute;*/ 
+  position: relative;
 }
 
-.label_index {
+.form_message_box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+background-color: #ee3643;
+width: 620px;
+height: 7px;
+}
+
+.form_message_box::avter {
+  content: "";
+  position: absolute;
+  top: 315px;
+  left: 0;
+
+width: 620px;
+height: 112px;
+background-color: #f4f4f4;
+} /*не работает*/
+
+.form_message_box form{
+width: 460px;
+margin: 0 auto;
+
+
+
+}
+
+.form_message label {
   color: #000000;
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
+  
+  display: block;
+  margin-bottom: 12px; 
 }
 
-.input_index:nth-child(1) {
+
+.form_message input[type="text"]{
   width: 220px;
   height: 38px;
   border: 2px solid #dee3e4;
   background-color: #ffffff;
+
+  margin: 0;
+  /*padding: 15px; должны быть паддинги чтовф вводимый текст не прилипал (по жтому не могу задать его только плейсхолдеру)*/
+
+ margin-bottom: 22px;
 }
 
-.input_index:nth-child(2) {
+.form_message input[type="e-mail"] {
   width: 220px;
   height: 38px;
   border: 2px solid #dee3e4;
   background-color: #ffffff;
+
+  margin: 0;
+  padding: 0;
+
+  margin-bottom: 22px;
 }
 
-.input_index:nth-child(3) {
+.form_message textarea{
   width: 460px;
   height: 114px;
   border: 2px solid #dee3e4;
   background-color: #ffffff;
+
+  margin: 0;
+  padding: 0;
+}
+.form_message input[type="submit"]{
+
+  padding-right:200px;
+  padding-left:200px;
+
+  margin: 0 auto;
+}
+.message_list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+width: 460px;
+min-height: 220px;
+
+margin-bottom: 75px;
+}
+.message_item{
+  min-height: 65px; /*почему такие большие блоки?*/
 }
 
-/*<------------------------------------не понимаю почему не работает*/
-
-.input_index:nth-child(1):hover,
-.input_index:nth-child(2):hover,
-.input_index:nth-child(1):focus,
-.input_index:nth-child(2):focus {
-  border: 2px solid #b5b5b5;
-}
-
-.input_index:nth-child(3):hover,
-.input_index:nth-child(3):focus,
-  {
-  border: 2px solid #b5b5b5;
-}
-
-.input_index:nth-child(1):active,
-.input_index:nth-child(2):active,
-.input_index:nth-child(3):active {
-  border: 2px solid #ee3643;
-}
-
-::-webkit-input-placeholder {
-  /*нашла шаблон в интернете , обьяснишь? */
+input [placeholder="Имя Фамилия"],
+input [placeholder="email@exampl.com"],
+input [placeholder="В свободной фрме"]
+{
   color: #999999;
   font-family: "PT Sans";
   font-size: 13px;
@@ -1688,16 +2221,47 @@ min-height: 260px;
   line-height: 18px;
 }
 
-.placeholder_index {
-  color: #a9a9a9;
-  font-family: "PT Sans";
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 18px;
 
+.message_close {
+width: 21px;
+height: 21px;
+
+font-size: 0;
+border: 0;
+
+position: absolute;
+top: 7px;
+right: 10px;
+
+cursor: pointer;
+background-color: transparent;
 }
 
-/*<-----------------------стилизуется текст , который ввожу сама, а не подсказка*/
+.message_close::before,
+.message_close::after {
+  content: "";
+
+ position: absolute;
+  top: 10px;
+  left: 1px;
+
+
+  width: 21px;
+  height: 4px;
+
+  background-color: #ee3643;
+  border-radius: 1px;
+}
+.message_close:before {
+  transform: rotate(45deg);
+}
+
+.message_close::after {
+  transform: rotate(-45deg);
+}
+
+
+
 
 
 /*----------------ПОПАП(каталог)------------*/
@@ -1736,7 +2300,26 @@ background:#ee3643;
   font-size: 30px;
   font-weight: 400;
   line-height: 30px;
-  margin-top: 0px;
+
+  padding-top: 75px;
+  padding-left: 180px;
+
+  position: relative;
+}
+
+.popua_catalog_headline::before{
+  position: absolute;
+  content: "";
+
+  top: 20px;
+
+
+width: 66px;
+height: 66px;
+
+
+background-image: url();
+background-color: #ccc;
 }
 
 .popup_close {
@@ -1749,25 +2332,8 @@ background:#ee3643;
   background-color: #f1f1f1;
 }
 
-/*-------------нет на стаилгайде-------*/
-.popup_catalog_checkout:link,
-.popup_catalog_checkout:visited {
-  color: #ffffff;
-  background-color: #ee3643;
-  line-height: 18px;
-  text-transform: uppercase;
-}
 
-.popup_catalog_checkout:hover,
-.popup_catalog_checkout:focus {
-  background-color: #ca2c37;
 
-}
-
-.popup_catalog_checkout:active {
-  background-color: #fff;
-  color: #000;
-}
 
 .punch_lower_box {
   width: 620px;
@@ -1778,19 +2344,22 @@ background:#ee3643;
 .popup_catalog_list {
   list-style: none;
   margin: 0px;
+  display: flex;
+
+  padding-top: 40px;
+}
+.popup_catalog_list li{
+  margin-right: 20px;
+}
+.popup_catalog_list li:last-child{
+  margin-right: 0;
 }
 
-.popup_catalog_button {
-  border: none;
-  background-color: #fff;
-  color: #000000;
-  font-family: Cuprum;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  text-transform: uppercase;
-}
 
+ .popup_catalog_button{
+  padding: 14px 60px;
+  
+}
 .popup_catalog_button:hover,
 .popup_catalog_button:focus {
   background-color: #ee3643;
@@ -1805,34 +2374,36 @@ background:#ee3643;
 
 
 /*----------header--------------*/
- 
+
 .shopping_bar {
   margin: 0 auto;
   padding: 0;
 
   display: flex;
   width: 940px;
-  min-height: 45px;
+  min-height: 42px;
 }
 
-.purchase_inform_list{
+.purchase_inform_list {
   display: flex;
   margin: 0;
   padding: 0;
 }
-.purchase_inform_list a{
- display: block;
- padding-top: 14px;
- padding-bottom: 14px;
- padding-left: 45px;
- padding-right: 26px
+
+.purchase_inform_list a {
+  display: block;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 45px;
+  padding-right: 26px
 }
 
-h1{
+h1 {
   margin-left: 50px;
   margin-top: 50px;
   margin-bottom: 45px;
 }
+
 .inform_bar {
   display: flex;
   margin: 0 auto;
@@ -1850,8 +2421,13 @@ h1{
 
 .box_shopping_bar {
   width: 100%;
-  min-height: 45px; /*почему шире?*/
+  min-height: 42px;
+  /*почему шире?*/
   background-color: #293449;
+}
+
+.box_shopping_bar:hover {
+
 }
 
 .box_inform_and_navigation {
@@ -1861,64 +2437,106 @@ h1{
 }
 
 /*---------------------*/
-.site_navigation_list{
+.site_navigation_list {
   display: flex;
   flex-wrap: wrap;
+
+
   box-shadow: inset 0 -5px 0 #293449;
   background-color: #32425c;
   min-height: 60px;
 }
 
-.site_navigation_list a {
-  display: block;
-  vertical-align: middle;
-  padding-left:30px;
-  padding-right:30px;
-  padding-top:20px;
-  padding-bottom:25px ;
-}
-.site_navigation_list a:first-child {
-  padding-left:50px;
-  padding-right:35px;
-  padding-top:20px;
-  padding-bottom:25px ;
-}
-
-.site_navigation_list a:last-child {
-  padding-left:30px;
-  padding-right:55px;
-  padding-top:20px;
-  padding-bottom:25px ;
-}
-
-.site_navigation_list a:nth-child(3){
-  padding-left:30px;
-  padding-right:30px;
-  padding-top:20px ;
-  padding-bottom:25px ;
-}
 /*----------main--------------*/
-
+/*
 .catalog_navigation {
   display: flex;
   min-height: 410px;
   width: 940px;
 }
+*/
 
-.o {
-  display: flex;
-  justify-content: space-between;
-  min-height: 143px;
-   width: 940px;
+
+.sliders {
+  position: relative;
+  background-image: url(../img/slider.jpg);
+  background-repeat: no-repeat;
+
+
+width: 620px;
+height: 266px;
+
+  
+  position: relative;
 }
 
-.slider {
-  background-color: #f3f7f8;
-  width: 620px;
-  height: 266px;
+.slider_list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/*их же нескалько (слайдов)*/
+.slide_title {
+color: #ffffff;
+font-size: 36px;
+font-weight: 700;
+line-height: 36px;
+text-transform: uppercase;
+margin: 0;
+padding:0;
+
+position: absolute;
+
+top: 27px;
+left: 23px;
 }
 
-/*слайдор*/
+.slide_text{ 
+  padding: 0;
+  margin: 0;
+
+ position: absolute;
+ top: 65px;
+ left: 25px;
+
+color: #ffffff;
+font-size: 18px;
+line-height: 24px;
+}
+
+.slide_button{
+ position: absolute;
+ top: 205px;
+ left: 25px;
+
+ padding-left: 50px;
+}
+
+label .forward{
+width: 22px;
+height: 22px;
+background-color:  transparent;
+border: 2px solid #fff;
+transform: rotate(45deg);
+
+position: absolute;
+top: 115px;
+right: 25px;
+}
+
+label .backwards{
+width: 22px;
+height: 22px;
+background-color:  transparent;
+border: 2px solid #fff;
+transform: rotate(45deg);
+
+position: absolute;
+top: 115px;
+left: 25px;
+}
+
+
 
 .horizontal_сolumn {
   display: flex;
@@ -1926,10 +2544,13 @@ h1{
   width: 940px;
   margin: 0 auto;
   margin-bottom: 20px;
+  background-color: #f9f5f0;
+
+  position: relative;
 }
 
 
-.catalog_list_index{
+.catalog_list_index {
   list-style: none;
   padding: 0;
 
@@ -1939,24 +2560,29 @@ h1{
   width: 940px;
   min-height: 320px;
 }
+
 /*через last-child тоже не сработал*/
 
 
 .catalog_list {
-  /*можно ли сверстать каталог на  главной странице и на странице каталога одним правилом? */
-  width: 940px; /*задавала ширину для списка католога на  главной странице ( на странице каталога он 700px , но если задам эту ширину помещается
-                только две карточки тавара , почему так?*/
+
+  width: 700px;
+
+
   margin: 0 auto;
   margin-bottom: 20px;
 }
 
 .manufacturers_list {
+  list-style: none;
 
   display: flex;
-  justify-content:space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
   min-height: 260px;
   width: 940px;
-  flex-wrap: wrap;
+
   margin: 0 auto;
 }
 
@@ -1968,15 +2594,13 @@ h1{
   justify-content: space-between;
   margin: 0 auto;
 }
-  
+
 
 .about_company {
   width: 520px;
 }
-стос
-
-.main_footer {
- margin-top: 85px; 
+ .main_footer {
+  margin-top: 85px;
 }
 
 .footer_site_info {
@@ -1993,9 +2617,9 @@ h1{
   min-height: 110px;
 }
 
-.logo_footer{
+.logo_footer {
 
-margin-right: 170px;
+  margin-right: 170px;
 }
 
 
@@ -2009,7 +2633,8 @@ margin-right: 170px;
 
 .bottom_site_info {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 
   min-height: 40px;
   width: 940px;
@@ -2022,10 +2647,10 @@ margin-right: 170px;
   display: flex;
   width: 100%;
   min-height: 110px;
- background-color: #293449;
+  background-color: #293449;
 }
 
- .additional_info {
+.additional_info {
   display: flex;
   width: 940px;
   min-height: 45px;
@@ -2033,10 +2658,7 @@ margin-right: 170px;
   background-color: transparent;
 }
 
-/*почему отступ не уходит после margin:0;  ??
-отступ работает только у контейнера .footer_social, по этому задавла margin через него
-отмтупор много и они дублируются из-за того что пробовала по разному  */
-.footer_contacts {
+а .footer_contacts {
   margin: 0px;
   margin-left: 0px;
   margin-right: 160px;
@@ -2052,46 +2674,45 @@ margin-right: 170px;
 }
 
 .footer_copyright {
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   margin: 0px;
   margin-left: auto;
   min-height: 35px;
   width: 255px;
-  
+
 }
 
-.copyright{
+.copyright {
   margin-top: 40px;
-  margin-bottom:35px;
-  margin-right:120px;
+  margin-bottom: 35px;
+  margin-right: 120px;
 }
-  
 
-  
-  .catalog{
 
-width: 700px;
-height: 990px;
+
+.catalog {
+
+  width: 700px;
+  height: 990px;
 }
 
 .catalog_list {
   display: flex;
   flex-wrap: wrap;
-  
+
   list-style: none;
-  margin: 0 ;
+  margin: 0;
   padding: 0;
   margin-bottom: 50px;
-} 
- 
+}
+
 .catalog_columns {
   display: flex;
   justify-content: space-between;
   width: 945px;
- min-height: 1050px;
-  margin:0 auto;
+  min-height: 1050px;
+  margin: 0 auto;
 }
-.pagination_list{
 
-}
+.pagination_list {}
