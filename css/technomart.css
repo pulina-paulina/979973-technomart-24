@@ -444,7 +444,6 @@ address {
   margin: 0 auto;
   padding: 0;
   width: 940px;
- 
 
   margin-bottom: 53px;
   position: relative;
@@ -806,7 +805,6 @@ address {
   height: 61px;
 
   margin-bottom: 1px;
-  padding-left: 23px;
 }
 
 .headline_list .current {
@@ -969,6 +967,7 @@ address {
   list-style: none;
   margin: 0;
   padding: 0;
+
   margin-bottom: 40px;
   margin-top: 25px;
 }
@@ -978,7 +977,7 @@ address {
 
 .transport_companies_item {
   font-size: 18px;
-  list-style: 20px;
+  
   margin-bottom: 15px;
   padding-left: 35px;
 
@@ -2266,7 +2265,7 @@ legend {
 
 
 .form_message input[type="text"],
-.form_message input[type="e-mail"],
+.form_message input[type="email"],
 .form_message textarea {
 
   border: 2px solid #dee3e4;
@@ -2290,22 +2289,22 @@ legend {
 
 .form_message input[type="text"]:hover,
 .form_message input[type="text"]:focus,
-.form_message input[type="e-mail"]:hover,
-.form_message input[type="e-mail"]:focus,
+.form_message input[type="email"]:hover,
+.form_message input[type="email"]:focus,
 .form_message textarea:hover,
 .form_message textarea:focus {
   border: 2px solid #b5b5b5;
 }
 
 .form_message input[type="text"]:active,
-.form_message input[type="e-mail"]:active,
+.form_message input[type="email"]:active,
 .form_message textarea:active {
   border: 2px solid #ee3643;
 }
 
 
 .form_message input[type="text"],
-.form_message input[type="e-mail"] {
+.form_message input[type="email"] {
 
   width: 220px;
   height: 38px;
@@ -2322,14 +2321,7 @@ legend {
 }
 
 
-
-width: 460px;
-height: 114px;
-
 .form_message input[type="submit"] {
-
-  padding-right: 200px;
-  padding-left: 200px;
 
   margin: 0 auto;
 }
@@ -2346,6 +2338,9 @@ height: 114px;
   min-height: 220px;
 }
 
+ form .form_message{
+  padding: 0;
+}
 
 
 .message_close {
@@ -2391,9 +2386,6 @@ height: 114px;
 .button_message {
   padding: 14px 200px;
   margin: 0 auto;
-
-  margin-top: 37px;
-  margin-left: 80px;
 }
 
 .down_box_message {
@@ -2675,7 +2667,7 @@ h1 {
 /*----------main--------------*/
 
 
-.slider {
+.sliders {
   position: absolute;
 
   top: 143px;
