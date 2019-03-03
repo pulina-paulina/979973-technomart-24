@@ -444,7 +444,7 @@ address {
   margin: 0 auto;
   padding: 0;
   width: 940px;
-  min-height: 415px;
+ 
 
   margin-bottom: 53px;
   position: relative;
@@ -830,7 +830,7 @@ address {
 
 
 
-.headline_list h3 {
+.headline_list span {
   margin: 0;
   padding: 0;
 
@@ -845,7 +845,7 @@ address {
   text-align: left;
 }
 
-.headline_list h3:active {
+.headline_list span:active {
   color: #32425c;
 }
 
