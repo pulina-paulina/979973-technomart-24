@@ -335,10 +335,17 @@ address {
 
   display: flex;
   justify-content: space-between;
-  margin: 0px;
-  margin-left: auto;
 
   position: relative;
+  margin-left: auto;
+}
+
+.profile_item {
+  margin-right: 10px;
+}
+
+.profile_item:last-child {
+  margin-right: 0;
 }
 
 .profile_list a:link,
@@ -353,14 +360,11 @@ address {
   padding-left: 25px;
   padding-right: 25px;
 
-
   box-sizing: border-box;
   height: 45px;
   text-align: center;
 
   background-color: #fff;
-
-  margin-right: 10px;
 }
 
 .profile_list a:hover,
@@ -382,11 +386,9 @@ address {
   fill: #c5c5c5;
 }
 
-.profile_list li:last-child {
-  margin-right: 0;
+.profile_item a .come_in {
+  padding-left: 46px;
 }
-
-
 
 .come_in_icon {
   position: absolute;
@@ -1298,14 +1300,11 @@ address {
   padding: 0;
 
   width: 300px;
-
-
 }
 
 .user_box {
-  margin-left: 50px;
-
   position: relative;
+  margin-left: auto;
 }
 
 .user_box:hover .user_icon path,
@@ -1318,8 +1317,6 @@ address {
 .user_box:active {
   opacity: 0.3;
 }
-
-
 
 .user_icon {
   position: absolute;
