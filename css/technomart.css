@@ -1,10 +1,10 @@
 body {
+  min-width: 960px;
   margin: 0;
-
 
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 14px;
-
+  line-height: 18px;
   font-weight: 400;
 }
 
@@ -35,31 +35,35 @@ input[type="radio"].visually-hidden {
   overflow: hidden;
 }
 
+
 .button {
   font: inherit;
   color: #ffffff;
-  text-align: center;
-  background-color: #ee3643;
-  vertical-align: middle;
   text-transform: uppercase;
+  
+  background-color: #ee3643;
   border: none;
 
   display: inline-block;
   padding: 14px 45px;
   border-radius: 5px;
-}
 
-.button:hover {
+  text-align: center;
+  vertical-align: middle;
+}
+.button:hover,
+.button:focus  {
   background-color: #ca2c37;
 }
-
-.button:focus {
-  background-color: #ca2c37;
-}
-
 .button:active {
   background-color: #ba2732;
 }
+.button.disabled,
+.button:disabled{
+  cursor: default;
+  opacity: 0,5;
+}
+
 
 hr {
   color: #f2f6f8;
@@ -70,38 +74,69 @@ hr {
 /*----------------------------HEADER-------------------------------------*/
 
 .tehnomart_logo {
-  position: absolute;
-  top: 0;
-  left: 0;
+ z-index: 10;
 }
 
 .shopping_bar {
   background-color: #293449;
   justify-content: flex-end;
+  height: 42px;
 
   position: relative;
 }
 
-.shopping_bar:hover {
-  background-color: #212a3a;
-}
 
 /*----------строка поиска---------------*/
+.search_header{
+  display: flex;
+  flex-wrap: wrap;
+  width: 260px;
+
+  align-items: center;
+
+  padding-left: 15px;
+}
+
+.search_header:hover,
+.search_header:focus{
+  background-color: #fff;
+}
+
+.search_header:hover .search_line,
+.search_header:focus .search_line{
+  background-color: #fff;
+  width: 85%;
+}
+
+.search_header:hover .serch_button,
+.search_header:focus .serch_button{
+ padding-right: 7px;
+}
+.search_header:hover path{
+ fill: #e9292a;
+}
+
+
+.search_header:hover .search_headline,
+.search_header:focus .search_headline{
+ display: none;
+}
+
 
 .search_headline {
   color: #ffffff;
   font-size: 17px;
 
-  margin-left: 15px;
+  margin-left: 7px;
+  margin-right: 3px;
 
-  position: relative;
 }
 
 .search_line {
-  display: inline-block;
   margin: 0;
   padding: 0;
-  min-height: 40px;
+  height: 40px;
+  width: 185px;
 
   background-color: #293449;
   color: #000;
@@ -110,12 +145,8 @@ hr {
   border: none;
 }
 
-.search_line:hover,
-.search_line:focus {
-  background-color: #212a3a;
-}
-
-.search_line:active {
+.search_line:focus,
+.search_line:hover {
   background-color: #ffffff;
 
   /*стиль текста в строке*/
@@ -128,24 +159,28 @@ hr {
   line-height: 18px;
 }
 
-.search_line:active .search_headline {
-  display: none;
-}
 
 .serch_button {
-  margin-left: 15px;
-  opacity: 0, 5;
+  border: none;
+  background: transparent;
+
+  margin: 0;
+  padding: 0;
 }
 
-.serch_button:hover,
-.serch_button:focus {
-  opacity: 1;
+.serch_button   path{
+ fill:rgba(252, 252, 252, 0.3);
+}
+
+.serch_button:hover path,
+.serch_button:focus path {
+ fill:rgba(252, 252, 252, 1);
 }
 
 .serch_button:active path {
   fill: #e9292a;
-
 }
+
 
 /*------------shopping_bar (продолжение верхней строки шапки)---------------*/
 
@@ -160,7 +195,6 @@ hr {
   color: #ffffff;
   font-size: 17px;
   line-height: 18px;
-  background-color: #293449;
 
   box-sizing: border-box;
   height: 42px;
@@ -170,7 +204,6 @@ hr {
 
 .purchase_inform_item a:hover,
 .purchase_inform_item a:focus {
-
   background-color: #212a3a;
 }
 
@@ -179,7 +212,8 @@ hr {
   opacity: 0.6;
 }
 
-.purchase_inform_list a .basket_current {
+.purchase_inform_list .basket_current {
+
   background-color: #ee3643;
 }
 
@@ -356,7 +390,7 @@ address {
   font-weight: 400;
 
   display: block;
-  padding-top: 10px;
+  padding-top: 13px;
   padding-left: 25px;
   padding-right: 25px;
 
@@ -392,10 +426,8 @@ address {
 
 .come_in_icon {
   position: absolute;
-  top: 13px;
+  top: 10px;
 }
-
-
 
 
 .site_navigation_list {
@@ -798,6 +830,7 @@ address {
   padding: 0;
 
   background-color: #32425c;
+  color: #fff;
   box-shadow: 0 1px 0 #293449;
 
   box-sizing: border-box;
@@ -805,14 +838,18 @@ address {
   height: 61px;
 
   margin-bottom: 1px;
+  padding: 15px;
+
+  color: #fff;
+  font-family: Cuprum;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
 }
 
 .headline_list .current {
   background-color: #fff;
-
-}
-
-.headline_list .current_title {
   color: #32425c;
 }
 
@@ -823,27 +860,6 @@ address {
 
 .headline_list .headline_paragraph:active {
   background-color: #ffffff;
-  color: #32425c;
-}
-
-
-
-.headline_list span {
-  margin: 0;
-  padding: 0;
-
-  color: #fff;
-  font-family: Cuprum;
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 30px;
-
-
-  min-width: 80px;
-  text-align: left;
-}
-
-.headline_list span:active {
   color: #32425c;
 }
 
@@ -1047,12 +1063,10 @@ address {
 /*-----------------popua_map--------------*/
 
 .box_popup_map {
-  background-color: #fff;
-
   width: 940px;
   height: 447px;
   box-shadow: 0 0 15px 1px rgba(47, 42, 43, 0.5);
-  background-color: #565656;
+  background-color: #c5c5c5;
   margin-bottom: 40px;
 
   margin: 0 auto;
@@ -1306,14 +1320,13 @@ address {
   margin-left: auto;
 }
 
-.user_box:hover .user_icon path,
-.user_box:focus .user_icon path,
-.user_box:hover .logout_icon path,
-.user_box:focus .logout_icon path {
+
+.user_personal:hover >svg path,
+.user_personal:focus >svg path {
   fill: #32425c;
 }
 
-.user_box:active {
+.user_personal:active {
   opacity: 0.3;
 }
 
@@ -1323,16 +1336,38 @@ address {
   left: 13px;
 }
 
+.logout_icon {
+  position: absolute;
+  top: 17px;
+  right: 10px;
+}
+
+/* состояния отдельно для каждой иконк
 .user_icon:hover path,
 .user_icon:focus path {
   fill: #32425c;
 }
+
+.user_icon:active{
+  opacity: 0.3;
+}  
 
 .logout_icon {
   position: absolute;
   top: 17px;
   right: 10px;
 }
+.login_icon:hover path,
+.login_icon:focus path {
+  fill: #32425c;
+}
+
+.login_icon:active{
+  opacity: 0.3;
+}
+*/
+
+
 
 .personal_profile {
   display: block;
@@ -1545,17 +1580,12 @@ h1.inner_page {
 
 .filters_manufacturers {
   margin-bottom: 20px;
-  padding-left: 30px;
 }
 
 .filters_supply {
   margin-bottom: 20px;
-  padding-left: 30px;
 }
 
-.filters_supply:last-child {
-  margin-bottom: 75px;
-}
 
 .price_direction {
   list-style: none;
@@ -1691,92 +1721,94 @@ legend {
 
   border: none;
   border-radius: 3px;
-  margin-right: 30px;
 }
 
-.price_controls input:last-child {
-  margin-right: 0;
-}
 
 .min_price {
   position: relative;
+  margin-right: 30px;
 }
 
 .min_price::before {
   content: "";
+
   position: absolute;
-  top: 19px;
-  left: 105px;
+  top: 5px;
+  left: 10px;
 
   width: 10px;
   height: 1px;
   color: #444444;
 }
 
-.input_checkbox+label::before {
+.label_checkbox{
+  position: relative;
+  padding-left:36px;
+}
 
+.label_checkbox input[type="checkbox"] + .checkbox_indicator{
   position: absolute;
-  content: "";
   top: -2px;
-  left: -30px;
+  left: 9px;
 
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
 
-  background-image: url("../svg/checkbox-off.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
+  background-image: url(../svg/checkbox-off.svg);
 }
 
-.input_checkbox:checked+label::after {
+.label_checkbox input[type="checkbox"]:checked  + .checkbox_indicator{
+ display: block;
   position: absolute;
-  content: "";
-  top: -3px;
-  left: -27px;
+  top: -2px;
+  left: 9px;
 
-  width: 22px;
-  height: 17px;
-
-
-  background-image: url("../svg/checkbox-on.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
+  width: 27px;
+  height: 23px;
+ 
+  background-image: url(../svg/checkbox-on.svg);
 }
 
-
-.supply_radio_list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.supply_label{
+  padding-left: 35px;
+  position: relative;
 }
 
-.input_radio+label::before {
-  position: absolute;
-  content: "";
-  top: -5px;
-  left: -35px;
+.supply_label input[type="radio"] + .radio_indicator{
+ position: absolute;
 
-  width: 25px;
-  height: 25px;
+top:-3px;
+left: 5px;
 
-  border: 2px solid #c5c5c5;
-  border-radius: 50%;
+ width: 25px;
+ height: 25px;
+
+ background-image: url(../svg/radio-off.svg);
+ opacity: 0,6;
 }
 
-.input_radio:checked+label::after {
+.supply_label input[type="radio"]:checked + .radio_indicator{
+ position: absolute;
 
-  position: absolute;
-  content: "";
-  top: 5px;
-  left: -25px;
+top:-3px;
+left: 5px;
 
-  width: 10px;
-  height: 10px;
+ width: 25px;
+ height: 25px;
 
-  background-color: #c5c5c5;
-  border-radius: 50%;
+ background-image: url(../svg/radio-on.svg);
+ opacity: 0,6;
 }
 
+.supply_label input[type="radio"]:focus + .radio_indicator,
+.supply_label input[type="radio"]:hover + .radio_indicator{
+
+opacity: 1;
+}
+
+.supply_label input[type="radio"]:active + .radio_indicator{
+opacity: 0,3;
+}
 
 .button_submit {
 
@@ -1793,6 +1825,10 @@ legend {
   height: 38px;
 
   text-align: center;
+
+  margin-top: 75px;
+  padding: 0;
+  outline: none;
 
   border: 1px solid #e5e5e5;
   background-color: #ffffff;
@@ -2057,7 +2093,7 @@ legend {
   width: 0;
   height: 0;
 
-  border: 20px solid white;
+  border: 19px solid white;
   border-left-color: #ee3643;
 
 }
@@ -2111,13 +2147,11 @@ legend {
   margin-right: 0;
 }
 
-.pagination_item a:last-child {
-  width: 140px;
-}
-
 
 .pagination_list a:link,
 .pagination_list a:visited {
+
+  display: block;
 
   color: #000;
   font-family: "PT Sans";
@@ -2125,9 +2159,6 @@ legend {
   line-height: 18px;
   font-weight: 400;
   text-transform: uppercase;
-
-
-  display: block;
 
   box-sizing: border-box;
   width: 38px;
@@ -2141,18 +2172,18 @@ legend {
   padding-top: 10px;
 }
 
-.pagination_list a:hover,
-.pagination_list a:focus {
+.pagination_item a:hover,
+.pagination_item a:focus {
 
   border: 1px solid #bdc6ca;
 }
 
-.pagination_list a:active {
+.pagination_item a:active {
   border: 1px solid #ee3643;
 }
 
-.pagination_item>.next {
 
+ a .next{
   width: 140px;
   height: 38px;
 }
@@ -2178,8 +2209,8 @@ legend {
 
   text-align: center;
   padding-top: 10px;
-
 }
+
 
 .punch_container {
   display: flex;
@@ -2205,13 +2236,18 @@ legend {
 
   line-height: 30px;
   text-transform: uppercase;
+
+  margin-bottom: 30px;
 }
 
 .text_punch {
-  font-size: 14px;
+  font-size: 13px;
   font-family: "PT Sans";
   line-height: 24px;
   font-weight: 400;
+
+  margin:0;
+  padding: 0;
 }
 
 /*----------------ПОПАП(главная)------------*/
@@ -2241,13 +2277,16 @@ legend {
 .up_box_message {
   background-color: #fff;
 
+  padding-top: 55px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
-.form_message_box form {
+.down_box_message {
   width: 100%;
   box-sizing: border-box;
 
-  padding-top: 55px;
+  padding-top: 30px;
   padding-left: 80px;
   padding-right: 80px;
 
@@ -2335,7 +2374,6 @@ legend {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 465px;
-  min-height: 220px;
 }
 
  form .form_message{
@@ -2536,10 +2574,6 @@ legend {
   padding-top: 40px;
   padding-left: 80px;
   padding-right: 80px;
-
-
-
-
 }
 
 .popup_catalog_list li {
@@ -2657,6 +2691,7 @@ h1 {
 .site_navigation_list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
 
   box-shadow: inset 0 -5px 0 #293449;
@@ -2675,6 +2710,10 @@ h1 {
 
   width: 620px;
   height: 266px;
+
+  background-color: #c5c5c5;
+
+  transition: background-image 0.5s ease, background-color 0.5s ease;
 }
 
 .slider_list {
@@ -2682,6 +2721,25 @@ h1 {
   margin: 0;
   padding: 0;
 }
+
+.slide{
+  display: none;
+}
+
+#forward:checked ~ .sliders #slide1,
+#back:checked ~ .sliders #slide2
+{
+  display: block;
+}
+
+#forwad:checked ~ .sliders {
+   background-image: url(../img/slider_1.jpg);
+}
+
+#back:checked ~ .sliders{
+  background-image: url(../img/slider_2.jpg);
+}
+
 
 .slide_title {
   color: #ffffff;
@@ -2713,49 +2771,44 @@ h1 {
 
 .slide_button {
   position: absolute;
+  z-index: 20;
   top: 205px;
   left: 25px;
 
   padding-left: 50px;
 }
 
-.slider_list .slider_1 {
-  background-image: url(../img/slider_1.jpg);
-  background-position: 0 0;
-  background-repeat: no-repeat;
+.slider_controls label{
+  display: inline-block;
+  vertical-align:middle; 
 
-  display: none;
-}
-
-.slider_list .slider_2 {
-  background-image: url(../img/slider_22.jpg);
-
-  background-repeat: no-repeat;
-}
-
-label .forward {
   width: 22px;
   height: 22px;
   background-color: transparent;
   border: 2px solid #fff;
   transform: rotate(45deg);
 
+  cursor: pointer;
+
   position: absolute;
+  z-index: 20;
   top: 115px;
+}
+
+.slider_controls label:first-child{
   right: 25px;
+  border-bottom:none;
+  border-left: none; 
 }
 
-label .backwards {
-  width: 22px;
-  height: 22px;
-  background-color: transparent;
-  border: 2px solid #fff;
-  transform: rotate(45deg);
-
-  position: absolute;
-  top: 115px;
+.slider_controls label:last-child{
   left: 25px;
+  border-top:none; 
+  border-right: none;
 }
+
+
+
 
 
 
