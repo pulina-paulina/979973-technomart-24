@@ -109,7 +109,7 @@
             <a class="button slide_button" href="#">Открыть каталог</a>
           </li>
           <li class="slider_item slide" id="slide2">
-            <h3 class="slide_title">Дрели</h3>
+            <h4 class="slide_title">Дрели</h4>
             <p class="slide_text">Соседям на радость!</p>
             <a class="button slide_button" href="#">Открыть каталог</a>
           </li>
@@ -176,7 +176,6 @@
       </div>
     </section>
     <section class="popular_manufacturers">
-      <div class="horizontal_box">
         <div class="horizontal_сolumn">
           <h2>Популярные производители:</h2>
           <a href="#">Все производители</a>
@@ -207,7 +206,7 @@
             <a href="#"><img src="img/Metabo.png" alt="METABO work. don't play" width="204" height="69" class="logo_manufacturer"></a>
           </li>
         </ul>
-      </div>
+      
     </section>
     <section class="box_about_purchase">
       <div class="about_purchase">
@@ -279,7 +278,7 @@
         <p>Вы можете забрать тавар сами,<br>
           заехав в наш офис:</p>
         <img src="img/map_index.jpg" alt="map" width="300" height="158" class="min_map"><br>
-        <a href="#" class="button">Заблудились?Напишите нам!</a>
+        <a href="#" class="button open_form">Заблудились?Напишите нам!</a>
       </section>
     </div>
     <div class="box_popup_map">
@@ -289,24 +288,23 @@
     <section class="form_message_box">
       <div class="up_box_message">
         <form method="post" name="write_to_us" action="URL" class="form_message">
-          <button class="message_close">Закрыть</button>
+          <button class="popup_message_close">Закрыть</button>
           <ul class="message_list">
             <li class="message_item">
               <label for="Your_name">Ваше имя:</label>
-              <input type="text" id="Your_name" placeholder="Имя Фамилия">
+              <input type="text" id="Your_name" placeholder="Имя Фамилия" name="user_name">
             </li>
             <li class="message_item">
               <label for="Your_e-mail">Ваш e-mail:</label>
-              <input type="email" id="Your_e-mail" placeholder="email@exampl.com">
+              <input type="email" id="Your_e-mail" placeholder="email@exampl.com" name="user_email">
             </li>
             <li class="message_item">
               <label for="message">Текст письма:</label>
-              <textarea rows="10" cols="30" id="message" placeholder="В свободной фрме"></textarea>
+              <textarea rows="10" cols="30" id="message" placeholder="В свободной фрме" name="user_massage"></textarea>
             </li>
           </ul>
         </form>
       </div>
-      <div class="overlay"></div>
       <div class="down_box_message">
         <form class="form_message">
           <input type="submit" value="Отправить" class="button button_message">
@@ -383,6 +381,11 @@
       </div>
     </div>
   </footer>
+
+  <div class="overlay"></div>
+
+<script src="js/script.js"></script>
+
 </body>
 
 </html>
