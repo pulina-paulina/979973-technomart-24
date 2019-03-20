@@ -1,4 +1,4 @@
-var button_buy = document.querySelector(".buy");
+var button_buy = document.querySelectorAll(".buy");
 var popup_catalog = document.querySelector(".popup_catalog");
 var popup_catalog_close = document.querySelector(".popup_catalog_close");
 var overlay = document.querySelector(".overlay");
