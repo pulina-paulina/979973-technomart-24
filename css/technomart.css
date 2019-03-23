@@ -2903,13 +2903,13 @@ form .form_message {
   background-color: #ee3643;
 }
 
-li[name="slide1"] {
+li[id="slide1"] {
   width: 620px;
   height: 266px;
   background-image: url(../img/slider_1.jpg);
 }
 
-li[name="slide2"] {
+li[id="slide2"] {
   width: 620px;
   height: 266px;
   background-image: url(../img/slider_2.jpg);
