@@ -36,10 +36,6 @@ var text_messag = form_message.querySelector("[name=user_massage]");
 
 var user_name = localStorage.getItem(".username");
 
-
-
-
-
 link_message.addEventListener("click", function(evt) {
   evt.preventDefault();
   form_message.classList.add("form_show");
@@ -158,4 +154,13 @@ headlineList.querySelectorAll('a').forEach(function(elem){
 		clickedElem.classList.add('current');
 		block.classList.add('sections_item_show');
 	});	
+});
+
+var searchForm = document.querySelector('.search_header');
+var searchLine = searchForm.querySelector('input');
+searchLine.addEventListener('focus', function(){
+	searchForm.classList.add('active');
+});
+searchLine.addEventListener('blur', function(){
+	searchForm.classList.remove('active');
 });
