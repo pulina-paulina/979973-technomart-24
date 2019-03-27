@@ -3,30 +3,22 @@
 var link_map = document.querySelector(".map");
 var big_map = document.querySelector(".box_popup_map");
 var map_close = document.querySelector(".popup_map_close");
-var overlay = document.querySelector(".overlay");
 
 link_map.addEventListener("click", function(evt) {
   evt.preventDefault();
   big_map.classList.add("map_show");
-  overlay.classList.add("overlay_show");
 });
 
 map_close.addEventListener("click", function() {
   big_map.classList.remove("map_show");
-  overlay.classList.remove("overlay_show");
 });
 
-overlay.addEventListener("click", function() {
-  big_map.classList.remove("map_show");
-  overlay.classList.remove("overlay_show");
-});
 
 /*---------форма---------*/
 
 var link_message = document.querySelector(".open_form");
 var form_message = document.querySelector(".form_message_box");
 var message_close = document.querySelector(".popup_message_close");
-var overlay = document.querySelector(".overlay");
 
 /*переменные внутри формы*/
 var username = form_message.querySelector("[name=user_name]");
@@ -39,20 +31,13 @@ var user_name = localStorage.getItem(".username");
 link_message.addEventListener("click", function(evt) {
   evt.preventDefault();
   form_message.classList.add("form_show");
-  overlay.classList.add("overlay_show");
   username.focus();
 });
 
 message_close.addEventListener("click", function(evt) {
   evt.preventDefault();
   form_message.classList.remove("form_show");
-  overlay.classList.remove("overlay_show");
-
-});
-
-overlay.addEventListener("click", function() {
-  form_message.classList.remove("form_show");
-  overlay.classList.remove("overlay_show");
+  popup.classList.remove("modal_error");
 });
 
 /*внутри формы*/
@@ -61,8 +46,9 @@ message.addEventListener("submit", function(evt) {
 
   if (!username.value || email.value || text_messag.value) {
     evt.preventDefault();
-    consol.log("Заполните поля форм");
-
+    form_message.classList.remove("modal_error");
+    form_message.offsetWidth = popup.offsetWidth;
+    form_message.classList.add("modal_error");
   } else {
     localStorage.setItem("username", username.value);
   }
@@ -76,7 +62,6 @@ window.addEventListener("keydown", function(evt) {
     if (big_map.classList.contains("map_show")) {
       evt.preventDefault();
       big_map.classList.remove("map_show");
-      overlay.classList.remove("overlay_show");
     }
   }
 });
@@ -86,11 +71,10 @@ window.addEventListener("keydown", function(evt) {
     if (form_message.classList.contains("form_show")) {
       evt.preventDefault();
       form_message.classList.remove("form_show");
-      overlay.classList.remove("overlay_show");
     }
-
   }
 });
+
 
 /*-слайдер-*/
 var sliders = document.querySelector('.sliders');
@@ -174,18 +158,11 @@ document.querySelectorAll('.buy').forEach(function(elem) {
     e.preventDefault();
 
     popup_catalog.classList.add("popup_catalog_show");
-    overlay.classList.add("overlay_show");
   })
 });
 
 popup_catalog_close.addEventListener("click", function(evt) {
   evt.preventDefault();
   popup_catalog.classList.remove("popup_catalog_show");
-  overlay.classList.remove("overlay_show")
 
-});
-
-overlay.addEventListener("click", function() {
-  popup_catalog.classList.remove("popup_catalog_show");
-  overlay.classList.remove("overlay_show");
 });

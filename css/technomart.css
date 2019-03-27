@@ -155,7 +155,6 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   font-size: 17px;
 }
 
-
 .search_line {
   margin: 0;
   padding: 0;
@@ -179,7 +178,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   background-color: #ffffff;
 
   color: #000000;
-  font-family: Cuprum;
+  font-family: Cuprum, Arial, sans-serif;
   font-size: 17px;
   font-weight: 400;
   line-height: 18px;
@@ -246,11 +245,11 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 }
 
 .purchase_inform_list .bookmarks {
-  padding-left: 41px;
+  padding-left: 42px;
 }
 
 .purchase_inform_list .basket {
-  padding-left: 47px;
+  padding-left: 48px;
 }
 
 .purchase_inform_list .basket_current {
@@ -342,7 +341,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   margin-left: 51px;
   margin-top: 5px;
 
-  width: 198px;
+  width: 196px;
   min-height: 60px;
 }
 
@@ -396,9 +395,9 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   font-size: 14px;
 
   box-sizing: border-box;
-  margin-top: 5px;
-  padding-left: 9px;
-  padding-right: 9px;
+  margin-top: 4px;
+  padding-left: 11px;
+  padding-right: 8px;
 
   max-width: 270px;
 }
@@ -609,7 +608,6 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   background-position: 0 0;
 }
 
-
 .catalog_navigation_item:nth-child(4) {
   background-color: #8ed78f;
 
@@ -658,12 +656,11 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
-
-
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
   min-width: 135px;
+  max-width: 170px;
 
   background-color: rgba(0, 0, 0, 0.1);
 
@@ -683,7 +680,6 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.catalog_navigation_list a:nth-child()
 /*---popular_goods---*/
 
 .horizontal_сolumn {
@@ -706,7 +702,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   padding: 0;
 
   margin-top: 30px;
-  margin-left: 25px;
+  margin-left: 28px;
 
   max-width: 630px;
 }
@@ -725,6 +721,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   right: 25px;
 
   box-sizing: inherit;
+  max-height: 50px;
   width: 253px;
   min-height: 38px;
 
@@ -788,6 +785,11 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   left: 51%;
 }
 
+.manufacturers_item:nth-child(5) img {
+  top: 50%;
+  left: 51%;
+}
+
 /*--about_purchase--*/
 
 .box_about_purchase {
@@ -801,15 +803,15 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 .about_purchase {
   display: flex;
   flex-wrap: wrap;
-  width: 940px;
+  width: 960px;
   min-height: 455px;
+  padding-left: 18px;
 
   margin: 0 auto;
 }
 
-
 .service {
-  margin-top: 63px;
+  margin-top: 64px;
   margin-bottom: 69px;
   width: 100%;
   min-height: 97px;
@@ -819,13 +821,13 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   margin: 0;
   padding: 0;
 
-  font-family: Cuprum;
+  font-family: Cuprum, Arial, sans-serif;
   font-size: 30px;
   line-height: 30PX;
   font-weight: 400;
   text-transform: uppercase;
 
-  margin-bottom: 25px;
+  margin-bottom: 26px;
 }
 
 .service p {
@@ -833,7 +835,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   padding: 0;
 
   color: #000000;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
   font-weight: 400;
@@ -841,7 +843,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 
 .headline_sections {
   position: relative;
-  margin-right: 70px;
+  margin-right: 80px;
 }
 
 .headline_sections::before {
@@ -882,7 +884,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   box-shadow: 0 1px 0 #293449;
 
   color: #fff;
-  font-family: Cuprum;
+  font-family: Cuprum, Arial, sans-serif;
   font-size: 21px;
   font-weight: 700;
   line-height: 30px;
@@ -914,7 +916,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   padding: 0;
 
   color: #32425c;
-  font-family: Cuprum;
+  font-family: Cuprum, Arial, sans-serif;
   font-size: 36px;
   font-weight: 400;
   line-height: 36px;
@@ -928,7 +930,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   padding: 0;
 
   color: #000000;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 24px;
@@ -974,7 +976,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 }
 
 .credit {
-  padding-right: 350px;
+  padding-right: 356px;
 }
 
 .credit::before {
@@ -1002,6 +1004,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 
 .sections_item_show {
   display: block;
+  animation: bounce 0.6s;
 }
 
 /*---контакты и о компании---*/
@@ -1025,8 +1028,8 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   margin: 0;
   padding: 0;
 
-  margin-bottom: 40px;
-  margin-top: 25px;
+  margin-bottom: 38px;
+  margin-top: 20px;
 }
 
 .transport_companies_item {
@@ -1066,10 +1069,6 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   max-width: 520px;
 }
 
-.contacts {
-  max-width: 300px;
-}
-
 .contacts .open_form {
   box-sizing: border-box;
 
@@ -1079,23 +1078,27 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 }
 
 .before_footer p {
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
 
   padding: 0px;
   margin: 0px;
 
-  margin-bottom: 22px;
+  margin-bottom: 23px;
+}
+
+.before_footer p:nth-child(3){
+  margin-bottom: 0;
 }
 
 .contacts p {
   margin-bottom: 30px;
-  max-width: 300px;
+  max-width: 180px;
 }
 
 .min_map {
-  margin-bottom: 40px;
+  margin-bottom: 37px;
 }
 
 .map {
@@ -1171,7 +1174,6 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 
 /*----------FOOTER------------*/
 
-
 .footer_site_info {
   background-color: #32425c;
 }
@@ -1187,13 +1189,13 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   flex-wrap: wrap;
 
   min-width: 555px;
-  padding-top: 40px;
+  padding-top: 41px;
 
   margin-left: auto;
 }
 
 .footer_site_nav_list li {
-  margin-right: 60px;
+  margin-right: 59px;
 }
 
 .footer_site_nav_list li:last-child {
@@ -1254,6 +1256,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 }
 
 /*-нижняя строка footer-*/
+
 .address_footer {
   margin: 0;
 
@@ -1266,6 +1269,11 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   width: 322px;
 
   margin-bottom: 50px;
+  margin-left: 5px;
+}
+
+.address_footer a{
+  margin-left: 0;
 }
 
 .footer_catalog_nav a:last-child {
@@ -1278,6 +1286,9 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   line-height: 18px;
   margin-bottom: 0px;
   margin-top: 0px;
+  margin-right: 161px;
+
+  max-width: 230px;
 }
 
 .social_networks {
@@ -1290,6 +1301,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   width: 135px;
 
   margin: 0 auto;
+  margin-top: -3px;
 }
 
 .social_button {
@@ -1315,13 +1327,17 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   margin-right: 0;
 }
 
+.social_button svg{
+margin-top: -3x;
+}
+
 .feedback {
   color: #ffffff;
   font-size: 16px;
   line-height: 18px;
 
   margin: 0px;
-  margin-right: 50px;
+  margin-right: 51px;
 }
 
 .developer_contacts:link,
@@ -1344,7 +1360,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 .developed {
   color: #ffffff;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 17px;
 
   margin: 0;
 }
@@ -1408,7 +1424,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   padding: 0px;
 
   margin-left: 17px;
-  margin-top: 10px;
+  margin-top: 8px;
 
   display: flex;
   min-height: 15px;
@@ -1421,7 +1437,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   line-height: 18px;
   text-decoration: underline;
 
-  padding-right: 30px;
+  padding-right: 32px;
 }
 
 .personal_item:first-child a {
@@ -1500,28 +1516,26 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 
 .breadcrumbs a {
   color: #000000;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
   text-transform: uppercase;
 }
-
 
 .breadcrumbs_current {
   color: #000000;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
   text-transform: uppercase;
 }
-
 
 .breadcrumbs_item {
   position: relative;
 
-  padding-right: 40px;
+  padding-right: 41px;
 }
 
 .breadcrumbs_item::after {
@@ -1542,7 +1556,6 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 .breadcrumbs_item:last-child {
   padding-right: 0;
 }
-
 
 .breadcrumbs_item:first-child {
   width: 14px;
@@ -1581,7 +1594,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   padding-right: 18px;
 
   color: #000000;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
@@ -1614,7 +1627,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   content: "";
   position: absolute;
 
-  top: 40px;
+  top: 42px;
   left: -5px;
 
   width: 220px;
@@ -1626,7 +1639,6 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   margin-bottom: 0;
 }
 
-
 .filters_item:nth-child(3) {
   margin-top: 25px;
 }
@@ -1634,6 +1646,8 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 .price_direction {
   list-style: none;
   margin: 0;
+  padding: 0;
+  padding-left: 45px;
 
   display: flex;
   width: 45px;
@@ -1655,12 +1669,12 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 
 .filters_item .filters_category {
   color: #000000;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 17px;
   font-weight: 700;
   line-height: 30px;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
   width: 220px;
 }
 
@@ -1676,7 +1690,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 
 .filters label {
   color: #000000;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 20px;
@@ -1730,23 +1744,23 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   top: 30px;
   left: 0;
 
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   padding: 0;
 
   border: 8px solid #ffffff;
-  background-color: #b1b1b1;
+  background: #b1b1b1;
   border-radius: 50%;
   box-shadow: 0 2px 1px 0 #e0ddd8;
 
   cursor: pointer;
 }
 
-.range_controls .toggle_min {
+.range_controls .toggle_min{
   left: 20px;
 }
 
-.range_controls .toggle_max {
+.range_controls .toggle_max{
   left: 160px;
 }
 
@@ -1771,7 +1785,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   display: inline-block;
   vertical-align: middle;
 
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 17px;
   line-height: 18px;
   text-transform: uppercase;
@@ -1838,8 +1852,8 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 .supply_label input[type="radio"]+.radio_indicator {
   position: absolute;
 
-  top: -5px;
-  left: 1px;
+  top: -3px;
+  left: 0;
 
   width: 25px;
   height: 25px;
@@ -1850,8 +1864,8 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 .supply_label input[type="radio"]:checked+.radio_indicator {
   position: absolute;
 
-  top: -5px;
-  left: 1px;
+  top: -3px;
+  left: 0;
 
   width: 25px;
   height: 25px;
@@ -1870,20 +1884,20 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 
 .button_submit {
   color: #000000;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
-  line-height: 18px;
+  line-height: 19px;
   text-transform: uppercase;
   font-weight: 400;
 
   box-sizing: border-box;
 
   width: 140px;
-  min-height: 38px;
+  min-height: 39px;
 
   text-align: center;
 
-  margin-top: 60px;
+  margin-top: 63px;
   padding: 0;
   outline: none;
 
@@ -1924,7 +1938,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   margin: 0;
 
   color: #000000;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
@@ -1940,13 +1954,13 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 
   display: flex;
   flex-wrap: wrap;
-  width: 360px;
+  width: 354px;
   justify-content: space-between;
 }
 
 .sorting_item a:link,
 .sorting_item a:visited {
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
@@ -1974,10 +1988,8 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   color: #ee3643;
 }
 
-
-
-
 /*---карточки товаров----*/
+
 .catalog_item {
   position: relative;
   display: inline-block;
@@ -1986,16 +1998,16 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   width: 218px;
   height: 318px;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   line-height: 20px;
   font-weight: bold;
   text-align: center;
 
   border: 1px solid #ccc;
 
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
 }
 
 .catalog_item:hover,
@@ -2073,6 +2085,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   width: 218px;
   height: 88px;
   padding: 40px 0;
+  padding-top: 41px;
 
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 10;
@@ -2090,7 +2103,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   min-height: 38px;
 
   margin: 0 auto;
-  margin-bottom: 7px;
+  margin-bottom: 9px;
   padding-top: 10px;
   padding-bottom: 7px;
   padding-left: 25px;
@@ -2101,7 +2114,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   color: white;
   font-size: 14px;
   font-weight: normal;
-  font-family: "Cuprum", sans-serif;
+  font-family: "Cuprum", Arial, sans-serif;;
   line-height: 18px;
   text-decoration: none;
   text-transform: uppercase;
@@ -2113,6 +2126,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   background: white;
   border: 3px solid #63a63e;
   border-bottom-color: #63a63e;
+  padding-top: 7px;
 
   opacity: 1;
 }
@@ -2135,6 +2149,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   text-align: left;
 
   position: relative;
+  padding-top: 11px;
 }
 
 .actions .buy:hover,
@@ -2172,22 +2187,22 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 
   padding: 0 25px;
   margin-top: 0;
-  margin-bottom: 11px;
+  margin-bottom: 12px;
 
   color: #000000;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 18px;
   font-weight: 700;
-  line-height: 21px
+  line-height: 20px
 }
 
 .catalog_item .discount {
   color: #a9a9a9;
 
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 17px;
   font-weight: 700;
-  line-height: 18px;
+  line-height: 17px;
 
   text-decoration: line-through;
   text-transform: uppercase;
@@ -2210,7 +2225,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   width: 140px;
   padding: 10px 30px;
 
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 17px;
   line-height: 18px;
   font-weight: 700;
@@ -2258,7 +2273,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 }
 
 .catalog_index .catalog_item:nth-child(3n) .title {
-  margin-bottom: 15px;
+  margin-bottom: 11px;
 }
 
 .catalog_index .catalog_item:nth-child(4n) {
@@ -2293,7 +2308,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   display: block;
 
   color: #000;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -2330,7 +2345,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   background-color: #ee3643;
 
   color: #ffffff;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
 
@@ -2381,8 +2396,8 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
 
 .text_punch {
   font-size: 13px;
-  font-family: "PT Sans";
-  line-height: 24px;
+  font-family: "PT Sans", Arial, sans-serif;
+  line-height: 25px;
   font-weight: 400;
 
   margin: 0;
@@ -2461,7 +2476,7 @@ input[placeholder="Поиск:"]:-ms-input-placeholder {
   padding: 10px 16px;
 
   color: #a9a9a9;
-  font-family: "PT Sans";
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
@@ -2652,6 +2667,10 @@ form .form_message {
   display: none;
 }
 
+.popup_catalog::before{
+  content: "";
+}
+
 .popup_catalog_show {
   display: block;
 }
@@ -2660,7 +2679,7 @@ form .form_message {
   margin: 0;
 
   color: #000000;
-  font-family: Cuprum;
+  font-family: Cuprum, Arial, sans-serif;
   font-size: 30px;
   font-weight: 400;
   line-height: 30px;
@@ -2797,7 +2816,7 @@ form .form_message {
 }
 
 .slide_title {
-  font-family: Cuprum;
+  font-family: Cuprum, Arial, sans-serif;
   color: #ffffff;
   font-size: 35px;
   line-height: 36px;
@@ -2987,9 +3006,10 @@ li[id="slide2"] {
 .top_site_info {
   display: flex;
   min-height: 70px;
-  width: 940px;
+  width: 948px;
   justify-content: space-between;
   margin: 0 auto;
+  padding-left: 7px;
 }
 
 .bottom_site_info {
@@ -3000,7 +3020,7 @@ li[id="slide2"] {
   min-height: 40px;
   width: 940px;
   margin: 0 auto;
-  padding-top: 22px;
+  padding-top: 23px;
 }
 
 .box_additional_info {
@@ -3017,7 +3037,7 @@ li[id="slide2"] {
   margin: 0 auto;
   background-color: transparent;
 
-  padding-top: 38px;
+  padding-top: 37px;
 }
 
 .footer_contacts {
@@ -3037,10 +3057,6 @@ li[id="slide2"] {
   width: 255px;
 }
 
-.copyright {
-  margin-right: 170px;
-}
-
 .catalog_list {
   width: 700px;
 
@@ -3050,9 +3066,8 @@ li[id="slide2"] {
 
   margin: 0;
   padding: 0;
-
-  margin: 20 auto;
-  margin-bottom: 25px;
+  
+  margin-bottom: 30px;
 }
 
 .catalog_columns {
@@ -3070,24 +3085,46 @@ li[id="slide2"] {
   justify-content: space-between;
 }
 
-.overlay {
-  position: fixed;
+@keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
 
-  top: 0;
-  left: 0;
-  z-index: 20;
+  70% {
+    transform: translateY(30px);
+  }
 
-  width: 100%;
-  height: 100%;
+  90% {
+    transform: translateY(-10px);
+  }
 
-  background-color
-: rgba(0, 0, 0, 0.5);
-
-  display: none;
+  100% {
+    transform: translateY(0);
+  }
 }
 
-.overlay_show {
-  display: block;
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
 }
 
-
+.modal_error {
+  animation: shake 0.6s;
+}
